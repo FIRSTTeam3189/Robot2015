@@ -1,7 +1,9 @@
 package org.usfirst.frc.team3189.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team3189.robot.commands.ExampleCommand;
+
+import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,5 +36,18 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+	private Joystick leftJoystick = new Joystick(RobotMap.leftJoystickChannel);
+	private Joystick rightJoystick = new Joystick(RobotMap.rightJoytickChannel);
+	
+	public double getLeftY () {
+		return leftJoystick.getY();
+	}
+	
+	public double getRightY () {
+		return rightJoystick.getY();
+	}
+	
+	
+	
 }
 
