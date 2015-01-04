@@ -2,8 +2,11 @@ package org.usfirst.frc.team3189.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team3189.robot.commands.TestSetState;
+import org.usfirst.frc.team3189.robot.commands.TestToggle;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -36,8 +39,18 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	private Joystick leftJoystick = new Joystick(RobotMap.leftJoystickChannel);
-	private Joystick rightJoystick = new Joystick(RobotMap.rightJoytickChannel);
+	private Joystick leftJoystick = new Joystick(OIMap.leftJoystickChannel);
+	private Joystick rightJoystick = new Joystick(OIMap.rightJoytickChannel);
+	
+	private Button extendButton = new JoystickButton(leftJoystick, OIMap.buttonExtend);
+	private Button retractButton = new JoystickButton(leftJoystick, OIMap.buttonRetract);
+	private Button toggleButton = new JoystickButton(leftJoystick, OIMap.buttonToggle);
+	
+	public OI() {
+		extendButton.whenPressed(new TestSetState(true));
+		retractButton.whenPressed(new TestSetState(false));
+		toggleButton.whenPressed(new TestToggle());
+	}
 	
 	public double getLeftY () {
 		return leftJoystick.getY();
