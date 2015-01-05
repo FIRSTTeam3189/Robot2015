@@ -11,14 +11,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class DriveTrain extends Subsystem {
+public class LongDriveTrain extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	private SpeedController left;
 	private SpeedController right;
 	
-	public DriveTrain() {
+	public LongDriveTrain() {
 		left = new Talon(RobotMap.leftMotor);
 		right = new Talon(RobotMap.rightMotor);
 	}

@@ -19,6 +19,12 @@ public class RobotMap {
 	
 	public static final int leftMotor = 0;
 	public static final int rightMotor = 1;
+	public static final int testMotor = 2;
+	
+	
+	public static final int aiChannel = 0;
+	public static final int testAIChannel = 1;
+	
 	
 	public static final int testDIChannel = 0;
 	public static final int testSolenoid1Channel = 0;

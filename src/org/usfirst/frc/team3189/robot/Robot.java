@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
-import org.usfirst.frc.team3189.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team3189.robot.subsystems.LongDriveTrain;
 import org.usfirst.frc.team3189.robot.subsystems.Test;
 
 /**
@@ -19,7 +19,7 @@ import org.usfirst.frc.team3189.robot.subsystems.Test;
  */
 public class Robot extends IterativeRobot {
 
-	public static final DriveTrain driveTrain = new DriveTrain();
+	public static final LongDriveTrain driveTrain = new LongDriveTrain();
 	public static final Test test = new Test();
 	public static OI oi;
 
