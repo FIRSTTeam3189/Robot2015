@@ -25,8 +25,22 @@ public class LongDrivetrain extends Subsystem {
         setDefaultCommand(new ArcadeDriveCommand());
     }
     
-    public void move (Joystick joystick) {
-    	drive.arcadeDrive(joystick, true);
+    /**
+     * Tank drive method for drivetrain
+     * @param left power to left side
+     * @param right power to right side
+     */
+    public void tankDrive(double left, double right) {
+    	drive.tankDrive(left, right);
+    }
+    
+    /**
+     * arcade drive method for drive train
+     * @param magnitude the speed of the robot
+     * @param direction the direction to turn in
+     */
+    public void arcadeDrive(double magnitude, double direction) {
+    	drive.arcadeDrive(magnitude, direction);
     }
     
     public void kill () {
