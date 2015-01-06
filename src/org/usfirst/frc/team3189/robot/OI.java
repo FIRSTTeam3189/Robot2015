@@ -56,6 +56,10 @@ public class OI {
 		return leftJoystick.getY();
 	}
 	
+	public double getLeftX() {
+		return leftJoystick.getX();
+	}
+	
 	public double getRightY () {
 		return rightJoystick.getY();
 	}

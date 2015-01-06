@@ -2,6 +2,7 @@ package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.RobotMap;
+import org.usfirst.frc.team3189.robot.commands.LateralCommand;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Gyro;
@@ -20,7 +21,7 @@ public class LateralDrivetrain extends Subsystem {
     private Gyro gyro;
     
     public LateralDrivetrain() {
-    	centerMotor = new Talon(RobotMap.testMotor);
+    	centerMotor = new Talon(RobotMap.centerMotorChannel);
     	analogChannel = new AnalogInput(RobotMap.aiChannel);
     	gyro = new Gyro(analogChannel);
     }
@@ -28,6 +29,15 @@ public class LateralDrivetrain extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new LateralCommand());
+    }
+    
+    /**
+     * 
+     * @return The angle of the gyro
+     */
+    public double getGyroAngle(){
+    	return gyro.getAngle();
     }
     
     /**
