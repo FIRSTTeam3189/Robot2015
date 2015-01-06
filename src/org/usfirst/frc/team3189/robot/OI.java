@@ -1,7 +1,7 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.TestSetState;
-import org.usfirst.frc.team3189.robot.commands.TestToggle;
+import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -41,14 +41,14 @@ public class OI {
 	private Joystick joystick = new Joystick(OIMap.joystickChannel);
 
 	
-	private Button extendButton = new JoystickButton(joystick, OIMap.buttonExtend);
-	private Button retractButton = new JoystickButton(joystick, OIMap.buttonRetract);
-	private Button toggleButton = new JoystickButton(joystick, OIMap.buttonToggle);
+	private Button extendLiferPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
+	private Button retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
+	private Button toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
 	
 	public OI() {
-		extendButton.whenPressed(new TestSetState(true));
-		retractButton.whenPressed(new TestSetState(false));
-		toggleButton.whenPressed(new TestToggle());
+		extendLiferPneumaticsButton.whenPressed(new SetLifterPistonState(true));
+		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
+		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
 	}
 	
 	public Joystick getJoystick() {

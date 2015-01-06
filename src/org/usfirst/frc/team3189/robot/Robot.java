@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
+import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.Test;
 
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
 	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
 	public static final Test test = new Test();
+	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
 	public static OI oi;
 
     Command autonomousCommand;

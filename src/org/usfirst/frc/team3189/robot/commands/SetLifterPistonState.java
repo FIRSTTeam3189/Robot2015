@@ -7,13 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TestSetState extends Command {
+public class SetLifterPistonState extends Command {
 
-	private boolean isPistonExtended;
-	
-    public TestSetState(boolean isPistonExtended) {
-    	requires(Robot.test);
-    	this.isPistonExtended = isPistonExtended;
+	private boolean extendPiston;
+    public SetLifterPistonState(boolean extend) {
+    	extendPiston = extend;
+    	requires(Robot.lifterPneumatics);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +21,7 @@ public class TestSetState extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.test.setPistonState(isPistonExtended);
+    	Robot.lifterPneumatics.setExtended(extendPiston);
     }
 
     // Make this return true when this Command no longer needs to run execute()
