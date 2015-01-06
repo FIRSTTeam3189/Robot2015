@@ -8,9 +8,9 @@ import org.usfirst.frc.team3189.robot.Robot;
 /**
  *
  */
-public class TankDriveCommand extends Command {
+public class ArcadeDriveCommand extends Command {
 
-    public TankDriveCommand() {
+    public ArcadeDriveCommand() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.longDrivetrain);
     }
@@ -21,7 +21,7 @@ public class TankDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.move(Robot.oi.getLeftY(), Robot.oi.getRightY());
+    	Robot.longDrivetrain.move(Robot.oi.getJoystick());
     }
 
     // Make this return true when this Command no longer needs to run execute()

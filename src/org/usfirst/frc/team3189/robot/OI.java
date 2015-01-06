@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.commands.TestSetState;
 import org.usfirst.frc.team3189.robot.commands.TestToggle;
 
@@ -39,12 +39,12 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	private Joystick leftJoystick = new Joystick(OIMap.leftJoystickChannel);
-	private Joystick rightJoystick = new Joystick(OIMap.rightJoytickChannel);
+	private Joystick joystick = new Joystick(OIMap.joystickChannel);
+
 	
-	private Button extendButton = new JoystickButton(leftJoystick, OIMap.buttonExtend);
-	private Button retractButton = new JoystickButton(leftJoystick, OIMap.buttonRetract);
-	private Button toggleButton = new JoystickButton(leftJoystick, OIMap.buttonToggle);
+	private Button extendButton = new JoystickButton(joystick, OIMap.buttonExtend);
+	private Button retractButton = new JoystickButton(joystick, OIMap.buttonRetract);
+	private Button toggleButton = new JoystickButton(joystick, OIMap.buttonToggle);
 	
 	public OI() {
 		extendButton.whenPressed(new TestSetState(true));
@@ -52,17 +52,18 @@ public class OI {
 		toggleButton.whenPressed(new TestToggle());
 	}
 	
+	public Joystick getJoystick() {
+		return joystick;
+	}
+	
 	public double getLeftY () {
-		return leftJoystick.getY();
+		return joystick.getY();
 	}
 	
 	public double getLeftX() {
-		return leftJoystick.getX();
+		return joystick.getX();
 	}
 	
-	public double getRightY () {
-		return rightJoystick.getY();
-	}
 	
 	
 	

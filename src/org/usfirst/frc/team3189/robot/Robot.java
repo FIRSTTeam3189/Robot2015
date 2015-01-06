@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.Test;
@@ -35,7 +35,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         // instantiate the command used for the autonomous period
 		Status.initStatus();
-        autonomousCommand = new TankDriveCommand();
+        autonomousCommand = new ArcadeDriveCommand();
     }
 	
 	public void disabledPeriodic() {
