@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
-import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.LateralCommand;
 
@@ -8,7 +7,6 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 
 /**
  * The middle pivoting wheel motor

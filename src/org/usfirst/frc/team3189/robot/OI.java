@@ -1,12 +1,11 @@
 package org.usfirst.frc.team3189.robot;
 
+import org.usfirst.frc.team3189.robot.commands.TestSetState;
+import org.usfirst.frc.team3189.robot.commands.TestToggle;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
-import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
-import org.usfirst.frc.team3189.robot.commands.TestSetState;
-import org.usfirst.frc.team3189.robot.commands.TestToggle;
 
 /**
  * This class is the glue that binds the controls on the physical operator
