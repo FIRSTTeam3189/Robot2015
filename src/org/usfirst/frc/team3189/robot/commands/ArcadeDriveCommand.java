@@ -4,6 +4,7 @@ package org.usfirst.frc.team3189.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.Constants;
 
 /**
  *
@@ -21,7 +22,7 @@ public class ArcadeDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getLeftY(), -Robot.oi.getLeftX());
+    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getLeftY(), Robot.oi.getLeftX() * Constants.ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
     }
 
     // Make this return true when this Command no longer needs to run execute()
