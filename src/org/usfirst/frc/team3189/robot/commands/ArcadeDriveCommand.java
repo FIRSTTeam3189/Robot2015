@@ -22,7 +22,7 @@ public class ArcadeDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getLeftY(), Robot.oi.getLeftX() * Constants.ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
+    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getLeftY(), -Robot.oi.getLeftX() * Constants.ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
     }
 
     // Make this return true when this Command no longer needs to run execute()
