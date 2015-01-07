@@ -9,8 +9,11 @@ public class Status {
 	public static final String TEST_AI_KEY    = "Test Analog Input";
 	public static final String TEST_DI_KEY    = "Test Digital Input";
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
+	public static final String SONAR_DISTANCE_KEY = "Sonar Percieved Distance";
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
+	
+	public static final String SONAR_DISTANCE_MULTIPLIER_KEY = "Sonar Distance Multiplier";
 	
 	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
 	public static final String AUTO_BACKWARD_POWER_KEY = "Autonomous Backward Power";
@@ -33,6 +36,8 @@ public class Status {
 	
 	public static void initStatus () {
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
+		
+		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.getData());
@@ -58,8 +63,11 @@ public class Status {
 		SmartDashboard.putBoolean(TEST_DI_KEY, Robot.test.getTestDI());
 		SmartDashboard.putNumber(TEST_AI_KEY, Robot.test.getTestAI());
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.lateralDrivetrain.getGyroAngle());
+		SmartDashboard.putNumber(SONAR_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
+		
+		sonarDistanceMultiplier.setData(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY));
 		
 		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
 		autoBackwardPower.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));
