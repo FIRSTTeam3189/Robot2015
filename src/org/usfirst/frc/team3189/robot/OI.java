@@ -88,12 +88,12 @@ public class OI {
 		
 		// Auto next tote buttons
 		autoNextToteForwardButton.whenPressed(new AutoNextTote());
-		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.AUTO_NEXT_TOTE_ROTATE_TIME, false));
+		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.autoNextToteRotateTime, false));
 		
 		// Auto pickup buttons
-		autoPickupForwardButton.whenPressed(new AutoForward(Variables.PICKUP_FORWARD_TIME));
-		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.PICKUP_BACKWARD_TIME));
-		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));	
+		autoPickupForwardButton.whenPressed(new AutoForward(Variables.autoPickupForwardTime));
+		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.autoPickupBackwardTime));
+		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));	
 	}
 }
 
