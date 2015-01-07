@@ -8,5 +8,11 @@ public class OIMap {
 	public static final int buttonExtend = 3;
 	public static final int buttonRetract = 2;
 	public static final int buttonToggle = 1;
-
+	public static final int buttonAuto = 4;
+	public static final int buttonReset = 5;
+	public static final int buttonNextToteForward = 6;
+	public static final int buttonPickupForward = 7;
+	public static final int buttonPickupBack = 8;
+	public static final int buttonPickupRotate = 9;
+	public static final int buttonNextToteRotate = 10;
 }

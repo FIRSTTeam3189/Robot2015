@@ -1,7 +1,13 @@
 package org.usfirst.frc.team3189.robot;
 
+import org.usfirst.frc.team3189.robot.commands.ResetButtonsCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
+import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
+import org.usfirst.frc.team3189.robot.commands.autonomous.AutoRotate;
+import org.usfirst.frc.team3189.robot.commands.autonomous.Autonomous;
+import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -45,10 +51,22 @@ public class OI {
 	private Button retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
 	private Button toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
 	
+	// Auto and reset buttons
+	private Button autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
+	private Button resetButtonsButton = new JoystickButton(joystick, OIMap.buttonReset);
+	
+	// Auto next tote buttons
+	private Button autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
+	private Button autoNextToteRotateButton = new JoystickButton(joystick, OIMap.buttonNextToteRotate);
+	
+	// Auto pickup buttons
+	private Button autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
+	private Button autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBack);
+	private Button autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
+	
+	
 	public OI() {
-		extendLiferPneumaticsButton.whenPressed(new SetLifterPistonState(true));
-		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
-		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
+		this.resetButtons();
 	}
 	
 	public Joystick getJoystick() {
@@ -63,7 +81,26 @@ public class OI {
 		return joystick.getX();
 	}
 	
-	
+	public void resetButtons(){
+		extendLiferPneumaticsButton.whenPressed(new SetLifterPistonState(true));
+		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
+		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
+		
+		// Auto command and reset
+		autoCommandButton.whileHeld(new Autonomous());
+		resetButtonsButton.whenPressed(new ResetButtonsCommand());
+		
+		// Auto next tote buttons
+		autoNextToteForwardButton.whileHeld(new AutoNextTote());
+		autoNextToteRotateButton.whileHeld(new AutoRotate(Variables.AUTO_NEXT_TOTE_ROTATE_TIME, false));
+		
+		// Auto pickup buttons
+		autoPickupForwardButton.whileHeld(new AutoForward(Variables.PICKUP_FORWARD_TIME));
+		autoPickupBackwardButton.whileHeld(new AutoForward(Variables.PICKUP_BACKWARD_TIME));
+		autoPickupRotateButton.whileHeld(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));
+		
+		
+	}
 	
 	
 }
