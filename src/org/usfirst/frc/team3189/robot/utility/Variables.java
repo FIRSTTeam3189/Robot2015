@@ -4,9 +4,6 @@ public class Variables {
 	// This is a longdrivetrain turning factor
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
-	// This is the sonar multiplier
-	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(1.0);
-	
 	// Autonomous power variables
 	public static ValueReference<Double> autoForwardPower  = new ValueReference<Double>(-.5);
 	public static ValueReference<Double> autoBackwardPower = new ValueReference<Double>(.5);
