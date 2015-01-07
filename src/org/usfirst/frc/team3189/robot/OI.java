@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.ResetButtonsCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
@@ -29,7 +28,6 @@ public class OI {
 	
 	// Auto and reset buttons
 	private Button autoCommandButton;
-	private Button resetButtonsButton;
 	
 	// Auto next tote buttons
 	private Button autoNextToteForwardButton;
@@ -82,7 +80,6 @@ public class OI {
 		
 		// Auto command and reset
 		autoCommandButton.whenPressed(new Autonomous());
-		resetButtonsButton.whenPressed(new ResetButtonsCommand());
 		
 		// Auto next tote buttons
 		autoNextToteForwardButton.whenPressed(new AutoNextTote());
