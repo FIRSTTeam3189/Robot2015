@@ -29,9 +29,9 @@ public class AutoRotate extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (turnRight) {
-    		Robot.longDrivetrain.tankDrive(Variables.AUTO_FORWARD_POWER, -Variables.AUTO_FORWARD_POWER);
+    		Robot.longDrivetrain.tankDrive(Variables.AUTO_ROTATE_POWER, -Variables.AUTO_ROTATE_POWER);
     	} else {
-    		Robot.longDrivetrain.tankDrive(-Variables.AUTO_FORWARD_POWER, Variables.AUTO_FORWARD_POWER);
+    		Robot.longDrivetrain.tankDrive(-Variables.AUTO_ROTATE_POWER, Variables.AUTO_ROTATE_POWER);
     	}
     }
 
