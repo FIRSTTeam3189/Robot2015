@@ -10,11 +10,10 @@ public class OIMap {
 	public static final int buttonToggle = 1;
 	
 	//Autonomous button mapping
-	public static final int buttonAuto = 4;
-	public static final int buttonReset = 5;
-	public static final int buttonNextToteForward = 6;
-	public static final int buttonPickupForward = 7;
-	public static final int buttonPickupBack = 8;
-	public static final int buttonPickupRotate = 9;
-	public static final int buttonNextToteRotate = 10;
+	public static final int buttonAuto = 8;
+	public static final int buttonNextToteForward = 10;
+	public static final int buttonPickupForward = 6;
+	public static final int buttonPickupBackward = 7;
+	public static final int buttonPickupRotate = 5;
+	public static final int buttonNextToteRotate = 4;
 }

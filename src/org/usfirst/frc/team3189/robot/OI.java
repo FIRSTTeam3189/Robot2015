@@ -42,7 +42,7 @@ public class OI {
 	
 	
 	public OI() {
-		this.resetButtons();
+		this.initButtons();
 	}
 	
 	public Joystick getJoystick() {
@@ -57,16 +57,14 @@ public class OI {
 		return joystick.getX();
 	}
 	
-	public void resetButtons(){
-		System.out.println("Reset Buttons Called");
+	public void initButtons(){
 		// Teleop Buttons
 		extendLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
 		toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
 		
-		// Auto and reset buttons
+		// Autonomous command button
 		autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
-		resetButtonsButton = new JoystickButton(joystick, OIMap.buttonReset);
 		
 		// Auto next tote buttons
 		autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
@@ -74,7 +72,7 @@ public class OI {
 		
 		// Auto pickup buttons
 		autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
-		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBack);
+		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBackward);
 		autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
 		
 		// Teleop Buttons

@@ -2,7 +2,7 @@ package org.usfirst.frc.team3189.robot.utility;
 
 public class Variables {
 	// This is a longdrivetrain turning factor
-	public static ValueReference<Double> ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR = new ValueReference<Double>(.8);
+	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
 	// Autonomous power variables
 	public static ValueReference<Double> autoForwardPower  = new ValueReference<Double>(-.5);
