@@ -3,8 +3,6 @@ package org.usfirst.frc.team3189.robot.commands.autonomous;
 import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
-import edu.wpi.first.wpilibj.command.Command;
-
 /**
  *
  */
