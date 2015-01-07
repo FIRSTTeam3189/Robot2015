@@ -63,17 +63,17 @@ public class OI {
 		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
 		
 		// Auto command and reset
-		autoCommandButton.whileHeld(new Autonomous());
+		autoCommandButton.whenPressed(new Autonomous());
 		resetButtonsButton.whenPressed(new ResetButtonsCommand());
 		
 		// Auto next tote buttons
-		autoNextToteForwardButton.whileHeld(new AutoNextTote());
-		autoNextToteRotateButton.whileHeld(new AutoRotate(Variables.AUTO_NEXT_TOTE_ROTATE_TIME, false));
+		autoNextToteForwardButton.whenPressed(new AutoNextTote());
+		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.AUTO_NEXT_TOTE_ROTATE_TIME, false));
 		
 		// Auto pickup buttons
-		autoPickupForwardButton.whileHeld(new AutoForward(Variables.PICKUP_FORWARD_TIME));
-		autoPickupBackwardButton.whileHeld(new AutoForward(Variables.PICKUP_BACKWARD_TIME));
-		autoPickupRotateButton.whileHeld(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));	
+		autoPickupForwardButton.whenPressed(new AutoForward(Variables.PICKUP_FORWARD_TIME));
+		autoPickupBackwardButton.whenPressed(new AutoForward(Variables.PICKUP_BACKWARD_TIME));
+		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));	
 	}
 }
 
