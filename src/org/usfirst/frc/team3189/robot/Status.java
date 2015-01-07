@@ -10,9 +10,11 @@ public class Status {
 	public static final String TEST_DI_KEY    = "Test Digital Input";
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
+	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
 	
 	public static void initStatus () {
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
+		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, AUTO_FORWARD_POWER);
 	}
 	
 	public static void updateStatus () {
@@ -20,5 +22,6 @@ public class Status {
 		SmartDashboard.putNumber(TEST_AI_KEY, Robot.test.getTestAI());
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.lateralDrivetrain.getGyroAngle());
 		ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR = SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY);
+		AUTO_FORWARD_POWER = SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY);
 	}
 }

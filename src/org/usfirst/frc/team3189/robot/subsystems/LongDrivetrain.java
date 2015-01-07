@@ -4,7 +4,6 @@ package org.usfirst.frc.team3189.robot.subsystems;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -32,6 +31,7 @@ public class LongDrivetrain extends Subsystem {
      */
     public void tankDrive(double left, double right) {
     	drive.tankDrive(left, right);
+    	
     }
     
     /**
