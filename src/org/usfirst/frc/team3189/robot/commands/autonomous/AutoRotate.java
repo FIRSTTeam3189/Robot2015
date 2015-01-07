@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.commands.autonomous;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.ValueReference;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -10,10 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class AutoRotate extends Command {
 	
-	private double time;
+	private ValueReference<Double> time;
 	private boolean turnRight;
 
-	public AutoRotate(double duration, boolean turnRight) {
+	public AutoRotate(ValueReference<Double> duration, boolean turnRight) {
     	time = duration;
     	this.turnRight = turnRight;
     	requires (Robot.longDrivetrain);
@@ -23,15 +24,15 @@ public class AutoRotate extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(time);
+    	setTimeout(time.getData());
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (turnRight) {
-    		Robot.longDrivetrain.tankDrive(Variables.AUTO_ROTATE_POWER, -Variables.AUTO_ROTATE_POWER);
+    		Robot.longDrivetrain.tankDrive(Variables.AUTO_ROTATE_POWER.getData(), -Variables.AUTO_ROTATE_POWER.getData());
     	} else {
-    		Robot.longDrivetrain.tankDrive(-Variables.AUTO_ROTATE_POWER, Variables.AUTO_ROTATE_POWER);
+    		Robot.longDrivetrain.tankDrive(-Variables.AUTO_ROTATE_POWER.getData(), Variables.AUTO_ROTATE_POWER.getData());
     	}
     }
 

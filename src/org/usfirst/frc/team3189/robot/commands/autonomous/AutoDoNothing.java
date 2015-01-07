@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.commands.autonomous;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.ValueReference;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -8,15 +9,15 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class AutoDoNothing extends Command {
-	private double time;
-    public AutoDoNothing(double duration) {
+	private ValueReference<Double> time;
+    public AutoDoNothing(ValueReference<Double> duration) {
         requires(Robot.longDrivetrain);
         time = duration;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(time);
+    	setTimeout(time.getData());
     }
 
     // Called repeatedly when this Command is scheduled to run

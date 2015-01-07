@@ -32,25 +32,25 @@ public class Status {
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
 	
 	public static void initStatus () {
-		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
+		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR.getData());
 		
-		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower);
-		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, AUTO_BACKWARD_POWER);
-		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, AUTO_ROTATE_POWER);
+		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
+		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, AUTO_BACKWARD_POWER.getData());
+		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, AUTO_ROTATE_POWER.getData());
 		
-		SmartDashboard.putNumber(AUTO_FORWARD_TIME_KEY, AUTO_FORWARD_TIME);
-		SmartDashboard.putNumber(AUTO_BACKWARD_TIME_KEY, AUTO_BACKWARD_TIME);
-		SmartDashboard.putNumber(AUTO_ROTATE_TIME_KEY, AUTO_ROTATE_TIME);
+		SmartDashboard.putNumber(AUTO_FORWARD_TIME_KEY, AUTO_FORWARD_TIME.getData());
+		SmartDashboard.putNumber(AUTO_BACKWARD_TIME_KEY, AUTO_BACKWARD_TIME.getData());
+		SmartDashboard.putNumber(AUTO_ROTATE_TIME_KEY, AUTO_ROTATE_TIME.getData());
 		
-		SmartDashboard.putNumber(PICKUP_FORWARD_TIME_KEY, PICKUP_FORWARD_TIME);
-		SmartDashboard.putNumber(PICKUP_BACKWARD_TIME_KEY, PICKUP_BACKWARD_TIME);
-		SmartDashboard.putNumber(PICKUP_TIME_KEY, PICKUP_TIME);
-		SmartDashboard.putNumber(PICKUP_ROTATE_TIME_KEY, PICKUP_ROTATE_TIME);
+		SmartDashboard.putNumber(PICKUP_FORWARD_TIME_KEY, PICKUP_FORWARD_TIME.getData());
+		SmartDashboard.putNumber(PICKUP_BACKWARD_TIME_KEY, PICKUP_BACKWARD_TIME.getData());
+		SmartDashboard.putNumber(PICKUP_TIME_KEY, PICKUP_TIME.getData());
+		SmartDashboard.putNumber(PICKUP_ROTATE_TIME_KEY, PICKUP_ROTATE_TIME.getData());
 		
-		SmartDashboard.putNumber(AUTO_NEXT_TOTE_TIME_KEY, AUTO_NEXT_TOTE_TIME);
-		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, AUTO_NEXT_TOTE_ROTATE_TIME);
+		SmartDashboard.putNumber(AUTO_NEXT_TOTE_TIME_KEY, AUTO_NEXT_TOTE_TIME.getData());
+		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, AUTO_NEXT_TOTE_ROTATE_TIME.getData());
 		
-		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, AUTO_SCORE_TIME);
+		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, AUTO_SCORE_TIME.getData());
 
 	}
 	
@@ -59,25 +59,25 @@ public class Status {
 		SmartDashboard.putNumber(TEST_AI_KEY, Robot.test.getTestAI());
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.lateralDrivetrain.getGyroAngle());
 		
-		ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR = SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY);
+		ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		
-		autoForwardPower  = SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY);
-		AUTO_BACKWARD_POWER = SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY);
-		AUTO_ROTATE_POWER   = SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY);
+		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
+		AUTO_BACKWARD_POWER.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));
+		AUTO_ROTATE_POWER.setData(SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY));
 		
-		AUTO_FORWARD_TIME  = SmartDashboard.getNumber(AUTO_FORWARD_TIME_KEY);
-		AUTO_BACKWARD_TIME = SmartDashboard.getNumber(AUTO_BACKWARD_TIME_KEY);
-		AUTO_ROTATE_TIME   = SmartDashboard.getNumber(AUTO_ROTATE_TIME_KEY);
+		AUTO_FORWARD_TIME.setData(SmartDashboard.getNumber(AUTO_FORWARD_TIME_KEY));
+		AUTO_BACKWARD_TIME.setData(SmartDashboard.getNumber(AUTO_BACKWARD_TIME_KEY));
+		AUTO_ROTATE_TIME.setData(SmartDashboard.getNumber(AUTO_ROTATE_TIME_KEY));
 		
-		PICKUP_FORWARD_TIME  = SmartDashboard.getNumber(PICKUP_FORWARD_TIME_KEY);
-		PICKUP_BACKWARD_TIME = SmartDashboard.getNumber(PICKUP_BACKWARD_TIME_KEY);
-		PICKUP_TIME = SmartDashboard.getNumber(PICKUP_TIME_KEY);
-		PICKUP_ROTATE_TIME   = SmartDashboard.getNumber(PICKUP_ROTATE_TIME_KEY);
+		PICKUP_FORWARD_TIME.setData(SmartDashboard.getNumber(PICKUP_FORWARD_TIME_KEY));
+		PICKUP_BACKWARD_TIME.setData(SmartDashboard.getNumber(PICKUP_BACKWARD_TIME_KEY));
+		PICKUP_TIME.setData(SmartDashboard.getNumber(PICKUP_TIME_KEY));
+		PICKUP_ROTATE_TIME.setData(SmartDashboard.getNumber(PICKUP_ROTATE_TIME_KEY));
 		
-		AUTO_NEXT_TOTE_TIME = SmartDashboard.getNumber(AUTO_NEXT_TOTE_TIME_KEY);
-		AUTO_NEXT_TOTE_ROTATE_TIME = SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY);
+		AUTO_NEXT_TOTE_TIME.setData(SmartDashboard.getNumber(AUTO_NEXT_TOTE_TIME_KEY));
+		AUTO_NEXT_TOTE_ROTATE_TIME.setData(SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY));
 		
-		AUTO_SCORE_TIME = SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY);
+		AUTO_SCORE_TIME.setData(SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY));
 
 	}
 }

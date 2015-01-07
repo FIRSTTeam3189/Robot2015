@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ResetButtonsCommand extends Command {
 
     public ResetButtonsCommand() {
-        
+        requires(Robot.test);
     }
 
     // Called just before this Command runs the first time

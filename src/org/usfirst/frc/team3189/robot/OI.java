@@ -23,22 +23,22 @@ public class OI {
 	private Joystick joystick = new Joystick(OIMap.joystickChannel);
 
 	// Teleop Buttons
-	private Button extendLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
-	private Button retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
-	private Button toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
+	private Button extendLifterPneumaticsButton;
+	private Button retractLifterPneumaticsButton;
+	private Button toggleLifterPneumaticsButton;
 	
 	// Auto and reset buttons
-	private Button autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
-	private Button resetButtonsButton = new JoystickButton(joystick, OIMap.buttonReset);
+	private Button autoCommandButton;
+	private Button resetButtonsButton;
 	
 	// Auto next tote buttons
-	private Button autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
-	private Button autoNextToteRotateButton = new JoystickButton(joystick, OIMap.buttonNextToteRotate);
+	private Button autoNextToteForwardButton;
+	private Button autoNextToteRotateButton;
 	
 	// Auto pickup buttons
-	private Button autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
-	private Button autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBack);
-	private Button autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
+	private Button autoPickupForwardButton;
+	private Button autoPickupBackwardButton;
+	private Button autoPickupRotateButton;
 	
 	
 	public OI() {
@@ -58,6 +58,25 @@ public class OI {
 	}
 	
 	public void resetButtons(){
+		System.out.println("Reset Buttons Called");
+		// Teleop Buttons
+		extendLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
+		retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
+		toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
+		
+		// Auto and reset buttons
+		autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
+		resetButtonsButton = new JoystickButton(joystick, OIMap.buttonReset);
+		
+		// Auto next tote buttons
+		autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
+		autoNextToteRotateButton = new JoystickButton(joystick, OIMap.buttonNextToteRotate);
+		
+		// Auto pickup buttons
+		autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
+		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBack);
+		autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
+		
 		// Teleop Buttons
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));

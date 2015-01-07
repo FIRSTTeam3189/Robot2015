@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.commands.autonomous;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.ValueReference;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class AutoForward extends Command {
-	private double time;
-    public AutoForward(double duration) {
+	private ValueReference<Double> time;
+    public AutoForward(ValueReference<Double> duration) {
     	requires(Robot.longDrivetrain);
     	time = duration;
         // Use requires() here to declare subsystem dependencies
@@ -19,12 +20,12 @@ public class AutoForward extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(time);
+    	setTimeout(time.getData());
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.tankDrive(Variables.autoForwardPower, Variables.autoForwardPower);
+    	Robot.longDrivetrain.tankDrive(Variables.autoForwardPower.getData(), Variables.autoForwardPower.getData());
     	
     }
 
