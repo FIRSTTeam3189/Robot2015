@@ -3,6 +3,7 @@ package org.usfirst.frc.team3189.robot;
 import org.usfirst.frc.team3189.robot.commands.ResetButtonsCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoRotate;
@@ -72,7 +73,7 @@ public class OI {
 		
 		// Auto pickup buttons
 		autoPickupForwardButton.whenPressed(new AutoForward(Variables.PICKUP_FORWARD_TIME));
-		autoPickupBackwardButton.whenPressed(new AutoForward(Variables.PICKUP_BACKWARD_TIME));
+		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.PICKUP_BACKWARD_TIME));
 		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));	
 	}
 }

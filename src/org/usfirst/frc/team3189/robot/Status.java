@@ -34,7 +34,7 @@ public class Status {
 	public static void initStatus () {
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR);
 		
-		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, AUTO_FORWARD_POWER);
+		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower);
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, AUTO_BACKWARD_POWER);
 		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, AUTO_ROTATE_POWER);
 		
@@ -61,7 +61,7 @@ public class Status {
 		
 		ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR = SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY);
 		
-		AUTO_FORWARD_POWER  = SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY);
+		autoForwardPower  = SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY);
 		AUTO_BACKWARD_POWER = SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY);
 		AUTO_ROTATE_POWER   = SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY);
 		

@@ -5,7 +5,7 @@ public class Variables {
 	public static double ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR = .5;
 	
 	// Autonomous power variables
-	public static double AUTO_FORWARD_POWER  = .5;
+	public static double autoForwardPower  = .5;
 	public static double AUTO_BACKWARD_POWER = -.3;
 	public static double AUTO_ROTATE_POWER   = .5;
 	
