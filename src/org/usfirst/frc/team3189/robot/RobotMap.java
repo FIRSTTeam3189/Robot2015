@@ -22,9 +22,9 @@ public class RobotMap {
 	public static final int centerMotorChannel = 2;
 	
 	
-	public static final int aiGyroChannel  = 0;
+	public static final int aiSonarChannel = 0;
 	public static final int testAIChannel  = 1;
-	public static final int aiSonarChannel = 2;
+	public static final int aiGyroChannel  = 2;
 	
 	
 	public static final int testDIChannel = 0;
