@@ -2,7 +2,7 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
-import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
+import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,7 +21,7 @@ public class LongDrivetrain extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-        setDefaultCommand(new ArcadeDriveCommand());
+        setDefaultCommand(new TankDriveCommand());
     }
     
     /**

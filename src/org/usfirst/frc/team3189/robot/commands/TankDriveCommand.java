@@ -10,9 +10,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ArcadeDriveCommand extends Command {
+public class TankDriveCommand extends Command {
 
-    public ArcadeDriveCommand() {
+    public TankDriveCommand() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.longDrivetrain);
     }
@@ -23,7 +23,8 @@ public class ArcadeDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getJoystickY(), -Robot.oi.getJoystickX() * arcadeJoystickXSensitivityFactor.getData());
+    	Robot.longDrivetrain.tankDrive(Robot.oi.getMainJoystickY(), Robot.oi.getMainJoystickY());
+//    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getMainJoystickY(), -Robot.oi.getMainJoystickX() * arcadeJoystickXSensitivityFactor.getData());
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

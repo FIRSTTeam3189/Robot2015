@@ -1,7 +1,7 @@
 
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
+import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
@@ -37,7 +37,7 @@ public class Robot extends IterativeRobot {
 		Status.initStatus();
 		
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ArcadeDriveCommand();
+        autonomousCommand = new TankDriveCommand();
     }
 	
 	public void disabledPeriodic() {

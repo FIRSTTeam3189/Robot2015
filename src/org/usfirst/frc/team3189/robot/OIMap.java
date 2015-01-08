@@ -2,7 +2,8 @@ package org.usfirst.frc.team3189.robot;
 
 public class OIMap {
 	
-	public static final int joystickChannel = 0;
+	public static final int mainJoystickChannel = 0;
+	public static final int rotationalJoystickChannel = 1;
 	
 	//Teleop button mapping
 	public static final int buttonExtend = 3;

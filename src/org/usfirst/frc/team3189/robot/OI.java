@@ -19,7 +19,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	
-	private Joystick joystick = new Joystick(OIMap.joystickChannel);
+	private Joystick mainJoystick = new Joystick(OIMap.mainJoystickChannel);
+	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
 
 	// Teleop Buttons
 	private Button extendLifterPneumaticsButton;
@@ -43,35 +44,47 @@ public class OI {
 		this.initButtons();
 	}
 	
-	public Joystick getJoystick() {
-		return joystick;
+	public Joystick getMainJoystick() {
+		return mainJoystick;
 	}
 	
-	public double getJoystickY () {
-		return joystick.getY();
+	public double getMainJoystickY () {
+		return mainJoystick.getY();
 	}
 	
-	public double getJoystickX() {
-		return joystick.getX();
+	public double getMainJoystickX() {
+		return mainJoystick.getX();
+	}
+	
+	public Joystick getRotationalJoystick() {
+		return rotationalJoystick;
+	}
+	
+	public double getRotationalJoystickY () {
+		return rotationalJoystick.getY();
+	}
+	
+	public double getRotationalJoystickX() {
+		return rotationalJoystick.getX();
 	}
 	
 	public void initButtons(){
 		// Teleop Buttons
-		extendLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
-		retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
-		toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
+		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
+		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
+		toggleLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonToggle);
 		
 		// Autonomous command button
-		autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
+		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
 		
 		// Auto next tote buttons
-		autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
-		autoNextToteRotateButton = new JoystickButton(joystick, OIMap.buttonNextToteRotate);
+		autoNextToteForwardButton = new JoystickButton(mainJoystick, OIMap.buttonNextToteForward);
+		autoNextToteRotateButton = new JoystickButton(mainJoystick, OIMap.buttonNextToteRotate);
 		
 		// Auto pickup buttons
-		autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
-		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBackward);
-		autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
+		autoPickupForwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupForward);
+		autoPickupBackwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupBackward);
+		autoPickupRotateButton = new JoystickButton(mainJoystick, OIMap.buttonPickupRotate);
 		
 		// Teleop Buttons
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
