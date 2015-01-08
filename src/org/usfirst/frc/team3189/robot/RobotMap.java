@@ -16,8 +16,13 @@ public class RobotMap {
     public static final int sonarAnalogChannel = 0;
 	
 	public static final int testDIChannel = 0;
-	public static final int lifterPiston1Extend = 0;
+	
+	public static final int lifterPiston1Extend  = 0;
 	public static final int lifterPiston1Retract = 1;
-	public static final int lifterPiston2Extend = 2;
+	
+	public static final int lifterPiston2Extend  = 2;
 	public static final int lifterPiston2Retract = 3;
+	
+	public static final int gearboxExtendChannel  = 0;
+	public static final int gearboxRetractChannel = 1;
 }

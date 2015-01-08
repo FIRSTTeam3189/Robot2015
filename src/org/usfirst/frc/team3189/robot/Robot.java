@@ -2,6 +2,7 @@
 package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.TankDriveCommand;
+import org.usfirst.frc.team3189.robot.subsystems.Gearbox;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
@@ -25,6 +26,7 @@ public class Robot extends IterativeRobot {
 	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
 	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
 	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
+	public static final Gearbox gearbox = new Gearbox();
 
     Command autonomousCommand;
 
