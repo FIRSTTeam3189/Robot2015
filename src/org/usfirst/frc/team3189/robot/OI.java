@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.ResetButtonsCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
@@ -29,7 +28,6 @@ public class OI {
 	
 	// Auto and reset buttons
 	private Button autoCommandButton;
-	private Button resetButtonsButton;
 	
 	// Auto next tote buttons
 	private Button autoNextToteForwardButton;
@@ -42,7 +40,7 @@ public class OI {
 	
 	
 	public OI() {
-		this.resetButtons();
+		this.initButtons();
 	}
 	
 	public Joystick getJoystick() {
@@ -57,16 +55,14 @@ public class OI {
 		return joystick.getX();
 	}
 	
-	public void resetButtons(){
-		System.out.println("Reset Buttons Called");
+	public void initButtons(){
 		// Teleop Buttons
 		extendLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonRetract);
 		toggleLifterPneumaticsButton = new JoystickButton(joystick, OIMap.buttonToggle);
 		
-		// Auto and reset buttons
+		// Autonomous command button
 		autoCommandButton = new JoystickButton(joystick, OIMap.buttonAuto);
-		resetButtonsButton = new JoystickButton(joystick, OIMap.buttonReset);
 		
 		// Auto next tote buttons
 		autoNextToteForwardButton = new JoystickButton(joystick, OIMap.buttonNextToteForward);
@@ -74,7 +70,7 @@ public class OI {
 		
 		// Auto pickup buttons
 		autoPickupForwardButton = new JoystickButton(joystick, OIMap.buttonPickupForward);
-		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBack);
+		autoPickupBackwardButton = new JoystickButton(joystick, OIMap.buttonPickupBackward);
 		autoPickupRotateButton = new JoystickButton(joystick, OIMap.buttonPickupRotate);
 		
 		// Teleop Buttons
@@ -84,16 +80,15 @@ public class OI {
 		
 		// Auto command and reset
 		autoCommandButton.whenPressed(new Autonomous());
-		resetButtonsButton.whenPressed(new ResetButtonsCommand());
 		
 		// Auto next tote buttons
 		autoNextToteForwardButton.whenPressed(new AutoNextTote());
-		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.AUTO_NEXT_TOTE_ROTATE_TIME, false));
+		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.autoNextToteRotateTime, false));
 		
 		// Auto pickup buttons
-		autoPickupForwardButton.whenPressed(new AutoForward(Variables.PICKUP_FORWARD_TIME));
-		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.PICKUP_BACKWARD_TIME));
-		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.PICKUP_ROTATE_TIME, true));	
+		autoPickupForwardButton.whenPressed(new AutoForward(Variables.autoPickupForwardTime));
+		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.autoPickupBackwardTime));
+		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));	
 	}
 }
 

@@ -1,7 +1,7 @@
 
 package org.usfirst.frc.team3189.robot.commands;
 
-import static org.usfirst.frc.team3189.robot.utility.Variables.ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR;
+import static org.usfirst.frc.team3189.robot.utility.Variables.arcadeJoystickXSensitivityFactor;
 
 import org.usfirst.frc.team3189.robot.Robot;
 
@@ -23,7 +23,7 @@ public class ArcadeDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getJoystickY(), -Robot.oi.getJoystickX() * ARCADE_JOYSTICK_X_SENSITIVITY_FACTOR.getData());
+    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getJoystickY(), -Robot.oi.getJoystickX() * arcadeJoystickXSensitivityFactor.getData());
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

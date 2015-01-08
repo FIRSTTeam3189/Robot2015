@@ -9,9 +9,9 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.*;
 public class AutoPickup extends CommandGroup {
     
     public  AutoPickup() {
-        addSequential(new AutoForward(PICKUP_FORWARD_TIME));
-        addSequential(new AutoDoNothing(PICKUP_TIME));// <--Replace with pickup command when ready.
-        addSequential(new AutoBackward(PICKUP_BACKWARD_TIME));
-        addSequential(new AutoRotate(PICKUP_ROTATE_TIME, true));
+        addSequential(new AutoForward(autoPickupForwardTime));
+        addSequential(new AutoDoNothing(autoPickupTime));// <--Replace with pickup command when ready.
+        addSequential(new AutoBackward(autoPickupBackwardTime));
+        addSequential(new AutoRotate(autoPickupRotateTime, true));
     }
 }
