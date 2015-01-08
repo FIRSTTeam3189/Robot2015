@@ -5,7 +5,6 @@ import org.usfirst.frc.team3189.robot.commands.LateralCommand;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 

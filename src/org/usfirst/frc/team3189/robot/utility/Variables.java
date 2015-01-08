@@ -6,11 +6,13 @@ public class Variables {
 	
 	// Sonar
 	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);
+	public static ValueReference<Double> sonarInRangeInInches = new ValueReference<Double>(16.0);
 	
 	// Autonomous power variables
 	public static ValueReference<Double> autoForwardPower  = new ValueReference<Double>(-.5);
 	public static ValueReference<Double> autoBackwardPower = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoRotatePower   = new ValueReference<Double>(.65);
+	public static ValueReference<Double> autoSidewaysPower = new ValueReference<Double>(.5);
 	
 	// Autonomous duration variables
 	public static ValueReference<Double> autoForwardTime  = new ValueReference<Double>(1.0);

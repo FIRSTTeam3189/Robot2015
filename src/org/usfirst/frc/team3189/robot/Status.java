@@ -14,10 +14,12 @@ public class Status {
 	
 	public static final String SONAR_DISTANCE_MULTIPLIER_KEY = "Sonar Distance Multiplier";
 	public static final String SONAR_PERCIEVED_DISTANCE_KEY = "Sonar Percieved Distance";
+	public static final String SONAR_IN_RANGE_IN_INCHES = "Sonar In Range In Inches";
 	
 	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
 	public static final String AUTO_BACKWARD_POWER_KEY = "Autonomous Backward Power";
 	public static final String AUTO_ROTATE_POWER_KEY = "Autonomous Rotate Power";
+	public static final String AUTO_SIDEWAYS_POWER_KEY = "Autonomous Sideways Power";
 	
 	public static final String AUTO_FORWARD_TIME_KEY = "Autonomous Forward Time";
 	public static final String AUTO_BACKWARD_TIME_KEY = "Autonomous Backward Time";
@@ -38,10 +40,12 @@ public class Status {
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
 		
 		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData());
+		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.getData());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.getData());
 		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, autoRotatePower.getData());
+		SmartDashboard.putNumber(AUTO_SIDEWAYS_POWER_KEY, autoSidewaysPower.getData());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_TIME_KEY, autoForwardTime.getData());
 		SmartDashboard.putNumber(AUTO_BACKWARD_TIME_KEY, autoBackwardTime.getData());
@@ -65,10 +69,12 @@ public class Status {
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		
 		sonarDistanceMultiplier.setData(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData()));
+		sonarInRangeInInches.setData(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.getData()));
 		
 		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
 		autoBackwardPower.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));
 		autoRotatePower.setData(SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY));
+		autoSidewaysPower.setData(SmartDashboard.getNumber(AUTO_SIDEWAYS_POWER_KEY));
 		
 		autoForwardTime.setData(SmartDashboard.getNumber(AUTO_FORWARD_TIME_KEY));
 		autoBackwardTime.setData(SmartDashboard.getNumber(AUTO_BACKWARD_TIME_KEY));
