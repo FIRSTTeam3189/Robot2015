@@ -5,7 +5,7 @@ public class Variables {
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
 	// Sonar
-	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(4.269);
+	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);
 	
 	// Autonomous power variables
 	public static ValueReference<Double> autoForwardPower  = new ValueReference<Double>(-.5);
