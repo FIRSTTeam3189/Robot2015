@@ -12,6 +12,5 @@ public class AutoPickup extends CommandGroup {
         addSequential(new AutoForward(autoPickupForwardTime));
         addSequential(new AutoDoNothing(autoPickupTime));// <--Replace with pickup command when ready.
         addSequential(new AutoBackward(autoPickupBackwardTime));
-        addSequential(new AutoRotate(autoPickupRotateTime, true));
     }
 }
