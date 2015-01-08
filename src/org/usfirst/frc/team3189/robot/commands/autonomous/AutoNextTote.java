@@ -9,7 +9,6 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.*;
 public class AutoNextTote extends CommandGroup {
     
     public  AutoNextTote() {
-        addSequential(new AutoForward(autoNextToteTime));
-        addSequential(new AutoRotate(autoNextToteRotateTime, false));
+        addSequential(new AutoSideways());
     }
 }
