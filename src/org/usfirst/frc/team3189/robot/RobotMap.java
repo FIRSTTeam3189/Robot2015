@@ -22,10 +22,9 @@ public class RobotMap {
 	public static final int centerMotorChannel = 2;
 	
 	
-	public static final int aiChannel = 2;
+	public static final int aiChannel = 0;
 	public static final int testAIChannel = 1;
 	
-    public static final int sonarAnalogChannel = 0;
 	
 	public static final int testDIChannel = 0;
 	public static final int lifterPiston1Extend = 0;
