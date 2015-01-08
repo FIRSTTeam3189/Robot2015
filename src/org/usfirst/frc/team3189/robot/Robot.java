@@ -1,16 +1,15 @@
 
 package org.usfirst.frc.team3189.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
-import org.usfirst.frc.team3189.robot.subsystems.Test;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,17 +20,13 @@ import org.usfirst.frc.team3189.robot.subsystems.Test;
  */
 public class Robot extends IterativeRobot {
 
-	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
-	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
-	public static final Test test = new Test();
-	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
 	public static OI oi;
+	
+	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
+	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
+	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
 
     Command autonomousCommand;
-    
-    public Robot(){
-    	super();
-    }
 
     /**
      * This function is run when the robot is first started up and should be
@@ -39,8 +34,9 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-        // instantiate the command used for the autonomous period
 		Status.initStatus();
+		
+        // instantiate the command used for the autonomous period
         autonomousCommand = new ArcadeDriveCommand();
     }
 	

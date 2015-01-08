@@ -60,9 +60,6 @@ public class Status {
 	}
 	
 	public static void updateStatus () {
-		SmartDashboard.putBoolean(TEST_DI_KEY, Robot.test.getTestDI());
-		SmartDashboard.putNumber(TEST_AI_KEY, Robot.test.getTestAI());
-		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.lateralDrivetrain.getGyroAngle());
 		//SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));

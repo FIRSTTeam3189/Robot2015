@@ -2,7 +2,6 @@ package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.LateralCommand;
-import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Gyro;
@@ -16,14 +15,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class LateralDrivetrain extends Subsystem {
     
 	private Talon centerMotor;
-    private AnalogInput analogChannel;
-    private Gyro gyro;
     //private AnalogInput sonar;
     
     public LateralDrivetrain() {
     	centerMotor = new Talon(RobotMap.centerMotorChannel);
-    	analogChannel = new AnalogInput(RobotMap.aiChannel);
-    	gyro = new Gyro(analogChannel);
     	//sonar = new AnalogInput(RobotMap.sonarAnalogChannel);
     }
 
@@ -37,13 +32,6 @@ public class LateralDrivetrain extends Subsystem {
     	return sonar.getVoltage() * Variables.sonarDistanceMultiplier.getData();
     }*/
     
-    /**
-     * 
-     * @return The angle of the gyro
-     */
-    public double getGyroAngle(){
-    	return gyro.getAngle();
-    }
     
     /**
      * Sets movement speed of motor
