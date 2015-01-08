@@ -1,6 +1,8 @@
 package org.usfirst.frc.team3189.robot;
 
+import org.usfirst.frc.team3189.robot.commands.SetGearCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.ShiftGearCommand;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
@@ -39,6 +41,10 @@ public class OI {
 	private Button autoPickupBackwardButton;
 	private Button autoPickupRotateButton;
 	
+	// Gearbox
+	private Button gear1;
+	private Button gear2;
+	private Button toggleGears;
 	
 	public OI() {
 		this.initButtons();
@@ -69,6 +75,8 @@ public class OI {
 	}
 	
 	public void initButtons(){
+		// Instantiation
+		
 		// Teleop Buttons
 		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
@@ -86,6 +94,13 @@ public class OI {
 		autoPickupBackwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupBackward);
 		autoPickupRotateButton = new JoystickButton(mainJoystick, OIMap.buttonPickupRotate);
 		
+		// Gearbox
+		gear1 = new JoystickButton(rotationalJoystick, OIMap.buttonGear1);
+		gear2 = new JoystickButton(rotationalJoystick, OIMap.buttonGear2);
+		toggleGears = new JoystickButton(rotationalJoystick, OIMap.buttonToggleGears);
+		
+		// Set Functionality
+		
 		// Teleop Buttons
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
@@ -101,7 +116,12 @@ public class OI {
 		// Auto pickup buttons
 		autoPickupForwardButton.whenPressed(new AutoForward(Variables.autoPickupForwardTime));
 		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.autoPickupBackwardTime));
-		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));	
+		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));
+		
+		// Gearbox
+		gear1.whenPressed(new SetGearCommand(false));
+		gear2.whenPressed(new SetGearCommand(true));
+		toggleGears.whenPressed(new ShiftGearCommand());
 	}
 }
 
