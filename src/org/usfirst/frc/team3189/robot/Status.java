@@ -60,7 +60,7 @@ public class Status {
 	}
 	
 	public static void updateStatus () {
-		//SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
+		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		
