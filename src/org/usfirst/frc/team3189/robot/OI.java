@@ -119,9 +119,9 @@ public class OI {
 		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));
 		
 		// Gearbox
-		gear1.whenPressed(new SetGearCommand(false));
-		gear2.whenPressed(new SetGearCommand(true));
-		toggleGears.whenPressed(new ShiftGearCommand());
+//		gear1.whenPressed(new SetGearCommand(false));
+//		gear2.whenPressed(new SetGearCommand(true));
+//		toggleGears.whenPressed(new ShiftGearCommand());
 	}
 }
 
