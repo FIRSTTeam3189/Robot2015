@@ -1,15 +1,18 @@
+
 package org.usfirst.frc.team3189.robot.commands;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RotateCommand extends Command {
+public class ArcadeDriveCommand extends Command {
 
-    public RotateCommand() {
+    public ArcadeDriveCommand() {
+        // Use requires() here to declare subsystem dependencies
         requires(Robot.longDrivetrain);
     }
 
@@ -19,9 +22,8 @@ public class RotateCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.tankDrive(Robot.oi.getRotationalJoystickX(), -Robot.oi.getRotationalJoystickX());
+    	Robot.longDrivetrain.arcadeDrive(Robot.oi.getMainJoystickY(), -Robot.oi.getRotationalJoystickX() * Variables.arcadeJoystickXSensitivityFactor.getData());
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
