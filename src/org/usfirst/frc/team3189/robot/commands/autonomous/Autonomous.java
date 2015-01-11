@@ -7,8 +7,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Autonomous extends CommandGroup {
     public  Autonomous() {
-    	addSequential(new AutoPickup());
-    	addSequential(new AutoNextTote());
+    	for (int i = 0; i < 3; ++i) {
+    		addSequential(new AutoPickup());
+    		addSequential(new AutoNextTote());
+    	}
     	addSequential(new AutoScore());
     }
 }
