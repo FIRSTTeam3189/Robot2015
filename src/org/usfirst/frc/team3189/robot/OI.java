@@ -1,5 +1,9 @@
 package org.usfirst.frc.team3189.robot;
 
+import java.nio.file.ClosedFileSystemException;
+
+import org.usfirst.frc.team3189.robot.commands.CloseForks;
+import org.usfirst.frc.team3189.robot.commands.OpenForks;
 import org.usfirst.frc.team3189.robot.commands.SetGearCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ShiftGearCommand;
@@ -23,11 +27,15 @@ public class OI {
 	
 	private Joystick mainJoystick = new Joystick(OIMap.mainJoystickChannel);
 	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
+	private Joystick winchJoystick = new Joystick(OIMap.winchJoystickChannel);
 
 	// Teleop Buttons
 	private Button extendLifterPneumaticsButton;
 	private Button retractLifterPneumaticsButton;
 	private Button toggleLifterPneumaticsButton;
+	
+	private Button openForksButton;
+	private Button closeForksButton;
 	
 	// Auto and reset buttons
 	private Button autoCommandButton;
@@ -74,6 +82,18 @@ public class OI {
 		return rotationalJoystick.getX();
 	}
 	
+	public Joystick getWinchJoystick() {
+		return winchJoystick;
+	}
+	
+	public double getWinchJoystickX() {
+		return winchJoystick.getX();
+	}
+	
+	public double getWinchJoystickY() {
+		return winchJoystick.getY();
+	}
+	
 	public void initButtons(){
 		// Instantiation
 		
@@ -81,6 +101,9 @@ public class OI {
 		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
 		toggleLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonToggle);
+		
+		openForksButton  = new JoystickButton(winchJoystick, 3);
+		closeForksButton = new JoystickButton(winchJoystick, 2);
 		
 		// Autonomous command button
 		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
@@ -105,6 +128,9 @@ public class OI {
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
 		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
+		/*
+		openForksButton.whenPressed(new OpenForks());
+		closeForksButton.whenPressed(new CloseForks());/**/
 		
 		// Auto command and reset
 		autoCommandButton.whenPressed(new Autonomous());
@@ -122,6 +148,7 @@ public class OI {
 //		gear1.whenPressed(new SetGearCommand(false));
 //		gear2.whenPressed(new SetGearCommand(true));
 //		toggleGears.whenPressed(new ShiftGearCommand());
+		
 	}
 }
 
