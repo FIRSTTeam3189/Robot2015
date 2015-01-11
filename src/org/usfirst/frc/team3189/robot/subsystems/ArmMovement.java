@@ -9,13 +9,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * @author Quest Osucha
  */
-public class Winch extends Subsystem {
-    public SpeedController motor;
+public class ArmMovement extends Subsystem {
 	
-    public Winch() {
-    	motor = new Talon(RobotMap.armMovementMotor);
-    }
-    
+	public SpeedController motor;
+	
+	public ArmMovement() {
+		motor = new Talon(RobotMap.winchMotor);
+	}
+	
     public void initDefaultCommand() {
     	
     }

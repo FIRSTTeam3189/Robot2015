@@ -31,10 +31,6 @@ public class Variables {
 	
 	// Autonomous Score variables
 	public static ValueReference<Double> autoScoreTime = new ValueReference<Double>(4.0);
-
-	// Autonomous winch time vars
-	public static ValueReference<Double> autoWinchExtendTime  = new ValueReference<Double>(1.0);
-	public static ValueReference<Double> autoWinchRetractTime = new ValueReference<Double>(1.0);
 	
 	// NExt tote vras
 	public static ValueReference<Double> autoNextToteTime = new ValueReference<Double>(.5);

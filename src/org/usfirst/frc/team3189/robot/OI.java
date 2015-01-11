@@ -23,6 +23,7 @@ public class OI {
 	
 	private Joystick mainJoystick = new Joystick(OIMap.mainJoystickChannel);
 	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
+	private Joystick winchJoystick = new Joystick(OIMap.winchJoystickChannel);
 
 	// Teleop Buttons
 	private Button extendLifterPneumaticsButton;
@@ -72,6 +73,18 @@ public class OI {
 	
 	public double getRotationalJoystickX() {
 		return rotationalJoystick.getX();
+	}
+	
+	public Joystick getWinchJoystick() {
+		return winchJoystick;
+	}
+	
+	public double getWinchJoystickX() {
+		return winchJoystick.getX();
+	}
+	
+	public double getWinchJoystickY() {
+		return winchJoystick.getY();
 	}
 	
 	public void initButtons(){

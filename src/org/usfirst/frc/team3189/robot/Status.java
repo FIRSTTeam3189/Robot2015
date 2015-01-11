@@ -18,9 +18,7 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.autoSidewaysPower
 import static org.usfirst.frc.team3189.robot.utility.Variables.sonarDistanceMultiplier;
 import static org.usfirst.frc.team3189.robot.utility.Variables.sonarInRangeInInches;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchExtendSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoWinchExtendTime;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchRetractSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoWinchRetractTime;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
@@ -57,10 +55,7 @@ public class Status {
 	public static final String AUTO_NEXT_TOTE_ROTATE_TIME_KEY = "Tote Next Rotate Time";
 
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
-	
-	public static final String WINCH_EXTEND_TIME_KEY  = "Winch Extend Time";
-	public static final String WINCH_RETRACT_TIME_KEY = "Winch Retract Time";
-	
+		
 	public static void initStatus () {
 		SmartDashboard.putNumber(WINCH_EXTEND_SPEED_KEY, winchExtendSpeed.getData());
 		SmartDashboard.putNumber(WINCH_RETRACT_SPEED_KEY, winchRetractSpeed.getData());
@@ -88,9 +83,6 @@ public class Status {
 		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, autoNextToteRotateTime.getData());
 		
 		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, autoScoreTime.getData());
-
-		SmartDashboard.putNumber(WINCH_EXTEND_TIME_KEY, autoWinchExtendTime.getData());
-		SmartDashboard.putNumber(WINCH_RETRACT_TIME_KEY, autoWinchRetractTime.getData());
 	}
 	
 	public static void updateStatus () {
@@ -122,8 +114,5 @@ public class Status {
 		autoNextToteRotateTime.setData(SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY));
 		
 		autoScoreTime.setData(SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY));
-		
-		autoWinchExtendTime.setData(SmartDashboard.getNumber(WINCH_EXTEND_TIME_KEY));
-		autoWinchRetractTime.setData(SmartDashboard.getNumber(WINCH_RETRACT_TIME_KEY));
 	}
 }
