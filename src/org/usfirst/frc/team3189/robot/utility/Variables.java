@@ -5,8 +5,8 @@ public class Variables {
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
 	// The speeds of the winch to retract and extend
-	public static ValueReference<Double> winchExtendSpeed  = new ValueReference<Double>(.25);
-	public static ValueReference<Double> winchRetractSpeed = new ValueReference<Double>(.25);
+	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(.25);
+	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(.25);
 	
 	// Sonar
 	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);

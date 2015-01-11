@@ -14,7 +14,7 @@ public class ArmMovement extends Subsystem {
 	public SpeedController motor;
 	
 	public ArmMovement() {
-		motor = new Talon(RobotMap.winchMotor);
+		motor = new Talon(RobotMap.armMovementMotor);
 	}
 	
     public void initDefaultCommand() {

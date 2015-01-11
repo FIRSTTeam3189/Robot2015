@@ -27,4 +27,5 @@ public class RobotMap {
 	// Winch
 	public static final int winchMotor = 3;
 	public static final int armMovementMotor = 4;
+	public static final int forkMotor = 5;
 }

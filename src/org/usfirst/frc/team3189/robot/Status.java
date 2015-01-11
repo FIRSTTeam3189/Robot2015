@@ -17,14 +17,14 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.autoScoreTime;
 import static org.usfirst.frc.team3189.robot.utility.Variables.autoSidewaysPower;
 import static org.usfirst.frc.team3189.robot.utility.Variables.sonarDistanceMultiplier;
 import static org.usfirst.frc.team3189.robot.utility.Variables.sonarInRangeInInches;
-import static org.usfirst.frc.team3189.robot.utility.Variables.winchExtendSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.winchRetractSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkCloseSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkOpenSpeed;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
 	// Winch speed vars
-	public static final String WINCH_EXTEND_SPEED_KEY  = "Winch Extend Speed";
-	public static final String WINCH_RETRACT_SPEED_KEY = "Winch Retract Speed";
+	public static final String FORK_CLOSE_SPEED_KEY = "Fork Close Speed";
+	public static final String FORK_OPEN_SPEED_KEY  = "Fork Open Speed";
 	
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
 	
@@ -57,8 +57,8 @@ public class Status {
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
 		
 	public static void initStatus () {
-		SmartDashboard.putNumber(WINCH_EXTEND_SPEED_KEY, winchExtendSpeed.getData());
-		SmartDashboard.putNumber(WINCH_RETRACT_SPEED_KEY, winchRetractSpeed.getData());
+		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.getData());
+		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.getData());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
 		
@@ -86,8 +86,8 @@ public class Status {
 	}
 	
 	public static void updateStatus () {
-		winchExtendSpeed.setData(SmartDashboard.getNumber(WINCH_EXTEND_SPEED_KEY));
-		winchRetractSpeed.setData(SmartDashboard.getNumber(WINCH_RETRACT_SPEED_KEY));
+		forkCloseSpeed.setData(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
+		forkOpenSpeed.setData(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
 		
 		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		

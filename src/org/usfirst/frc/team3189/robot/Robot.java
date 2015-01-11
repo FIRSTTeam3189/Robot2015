@@ -3,6 +3,7 @@ package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.ArmMovement;
+import org.usfirst.frc.team3189.robot.subsystems.Forks;
 import org.usfirst.frc.team3189.robot.subsystems.Gearbox;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
@@ -27,6 +28,7 @@ public class Robot extends IterativeRobot {
 	
 	public static final Winch winch = new Winch();
 	public static final ArmMovement armMovement = new ArmMovement();
+	public static final Forks forks = new Forks();
 	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
 	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
 	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
