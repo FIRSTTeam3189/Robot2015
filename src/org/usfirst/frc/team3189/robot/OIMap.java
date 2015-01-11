@@ -23,4 +23,8 @@ public class OIMap {
 	public static final int buttonPickupBackward = 7;
 	public static final int buttonPickupRotate = 5;
 	public static final int buttonNextToteRotate = 4;
+	
+	// Fork Control button mapping
+	public static final int buttonCloseForks = 2;
+	public static final int buttonOpenForks = 3;
 }
