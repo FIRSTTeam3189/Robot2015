@@ -20,7 +20,7 @@ public class Variables {
 	public static ValueReference<Double> autoRotateTime   = new ValueReference<Double>(.5);
 	
 	// Autonomous pickup variables
-	public static ValueReference<Double> autoPickupForwardTime  = new ValueReference<Double>(1.0);
+	public static ValueReference<Double> autoPickupForwardTime  = new ValueReference<Double>(5.0);
 	public static ValueReference<Double> autoPickupBackwardTime = new ValueReference<Double>(1.0);
 	public static ValueReference<Double> autoPickupTime         = new ValueReference<Double>(3.0);
 	public static ValueReference<Double> autoPickupRotateTime   = new ValueReference<Double>(.85);
