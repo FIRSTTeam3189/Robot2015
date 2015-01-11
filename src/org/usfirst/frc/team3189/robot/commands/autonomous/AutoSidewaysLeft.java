@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class AutoSideways extends Command {
+public class AutoSidewaysLeft extends Command {
 
-    public AutoSideways() {
+    public AutoSidewaysLeft() {
         requires(Robot.lateralDrivetrain);
     }
 
@@ -20,7 +20,7 @@ public class AutoSideways extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(Variables.autoSidewaysPower.getData());
+    	Robot.lateralDrivetrain.move(-Variables.autoSidewaysPower.getData());
     }
 
     // Make this return true when this Command no longer needs to run execute()

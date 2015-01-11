@@ -8,6 +8,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutoNextTote extends CommandGroup {
     
     public  AutoNextTote() {
-        addSequential(new AutoSideways());
+        addSequential(new AutoSidewaysRight());
     }
 }
