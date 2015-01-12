@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
+import org.usfirst.frc.team3189.robot.commands.ArmMovementDoNothing;
 
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -18,7 +19,7 @@ public class ArmMovement extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-    	
+    	setDefaultCommand(new ArmMovementDoNothing());
     }
     
     public void setSpeed(double speed) {
