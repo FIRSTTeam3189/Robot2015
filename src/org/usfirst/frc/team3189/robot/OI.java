@@ -1,12 +1,8 @@
 package org.usfirst.frc.team3189.robot;
 
-import java.nio.file.ClosedFileSystemException;
-
 import org.usfirst.frc.team3189.robot.commands.CloseForks;
 import org.usfirst.frc.team3189.robot.commands.OpenForks;
-import org.usfirst.frc.team3189.robot.commands.SetGearCommand;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
-import org.usfirst.frc.team3189.robot.commands.ShiftGearCommand;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;

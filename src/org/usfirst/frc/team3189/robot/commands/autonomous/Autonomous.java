@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3189.robot.commands.autonomous;
 
-import org.usfirst.frc.team3189.robot.utility.ValueReference;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;

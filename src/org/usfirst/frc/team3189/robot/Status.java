@@ -1,9 +1,30 @@
 package org.usfirst.frc.team3189.robot;
 
-import static org.usfirst.frc.team3189.robot.utility.Variables.*;
-
-import org.usfirst.frc.team3189.robot.utility.Variables;
-
+import static org.usfirst.frc.team3189.robot.utility.Variables.arcadeJoystickXSensitivityFactor;
+import static org.usfirst.frc.team3189.robot.utility.Variables.armExtendSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.armRetractSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardPower;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardPower;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteRotateTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupBackwardTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupForwardTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupRotateTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotatePower;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotateTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoScoreTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.autoSidewaysPower;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkCloseSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkOpenSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerLevelInterval;
+import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerTolerance;
+import static org.usfirst.frc.team3189.robot.utility.Variables.sonarDistanceMultiplier;
+import static org.usfirst.frc.team3189.robot.utility.Variables.sonarInRangeInInches;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpSpeed;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
