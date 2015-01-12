@@ -4,9 +4,17 @@ public class Variables {
 	// This is the longdrivetrain turning factor
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
-	// The speeds of the winch to retract and extend
+	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(.25);
 	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(.25);
+	
+	// The speeds of the winch to rise and fall
+	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.25);
+	public static ValueReference<Double> winchDownSpeed = new ValueReference<Double>(.25);
+	
+	// The speeds of the arm to extend & retract
+	public static ValueReference<Double> armExtendSpeed  = new ValueReference<Double>(.25);
+	public static ValueReference<Double> armRetractSpeed = new ValueReference<Double>(.25);
 	
 	// Sonar
 	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);

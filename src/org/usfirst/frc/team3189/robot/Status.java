@@ -1,30 +1,16 @@
 package org.usfirst.frc.team3189.robot;
 
-import static org.usfirst.frc.team3189.robot.utility.Variables.arcadeJoystickXSensitivityFactor;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupBackwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupForwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotatePower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoScoreTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoSidewaysPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.sonarDistanceMultiplier;
-import static org.usfirst.frc.team3189.robot.utility.Variables.sonarInRangeInInches;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkCloseSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkOpenSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
-	// Winch speed vars
-	public static final String FORK_CLOSE_SPEED_KEY = "Fork Close Speed";
-	public static final String FORK_OPEN_SPEED_KEY  = "Fork Open Speed";
+	// Arm Speeds
+	public static final String FORK_CLOSE_SPEED_KEY  = "Fork Close Speed";
+	public static final String FORK_OPEN_SPEED_KEY   = "Fork Open Speed";
+	public static final String WINCH_UP_SPEED_KEY    = "Winch Up Speed";
+	public static final String WINCH_DOWN_SPEED_KEY  = "Winch Down Speed";
+	public static final String ARM_EXTEND_SPEED_KEY  = "Arm Extend Speed";
+	public static final String ARM_RETRACT_SPEED_KEY = "Arm Retract Speed";
 	
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
 	
@@ -59,6 +45,10 @@ public class Status {
 	public static void initStatus () {
 		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.getData());
 		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.getData());
+		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.getData());
+		SmartDashboard.putNumber(WINCH_DOWN_SPEED_KEY, winchDownSpeed.getData());
+		SmartDashboard.putNumber(ARM_EXTEND_SPEED_KEY, armExtendSpeed.getData());
+		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.getData());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
 		
@@ -88,6 +78,10 @@ public class Status {
 	public static void updateStatus () {
 		forkCloseSpeed.setData(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
 		forkOpenSpeed.setData(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
+		winchUpSpeed.setData(SmartDashboard.getNumber(WINCH_UP_SPEED_KEY));
+		winchDownSpeed.setData(SmartDashboard.getNumber(WINCH_DOWN_SPEED_KEY));
+		armExtendSpeed.setData(SmartDashboard.getNumber(ARM_EXTEND_SPEED_KEY));
+		armRetractSpeed.setData(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
 		
 		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		
