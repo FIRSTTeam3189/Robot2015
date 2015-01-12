@@ -3,6 +3,7 @@ package org.usfirst.frc.team3189.robot.subsystems;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.WinchDoNothing;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -12,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Winch extends Subsystem {
     public SpeedController motor;
+    public AnalogInput potentiometer;
 	
     public Winch() {
     	motor = new Talon(RobotMap.armMovementMotor);
