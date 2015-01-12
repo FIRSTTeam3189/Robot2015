@@ -11,7 +11,9 @@ public class RobotMap {
 	public static final int rightMotor = 1;
 	public static final int centerMotorChannel = 2;
 	
+	// Analog inputs
     public static final int sonarAnalogChannel = 0;
+    public static final int potentiometerChannel = 1;
 	
     // Lifter pistons
 	public static final int lifterPiston1Extend  = 0;

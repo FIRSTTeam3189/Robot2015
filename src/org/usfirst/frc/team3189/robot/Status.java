@@ -1,9 +1,21 @@
 package org.usfirst.frc.team3189.robot;
 
 import static org.usfirst.frc.team3189.robot.utility.Variables.*;
+
+import org.usfirst.frc.team3189.robot.utility.Variables;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
+	// Sonar vars
+	public static final String SONAR_DISTANCE_MULTIPLIER_KEY = "Sonar Distance Multiplier";
+	public static final String SONAR_PERCIEVED_DISTANCE_KEY = "Sonar Percieved Distance";
+	public static final String SONAR_IN_RANGE_IN_INCHES = "Sonar In Range In Inches";
+	
+	public static final String POTENTIOMETER_ROTATION_KEY = "Potentiometer Rotation";
+	public static final String POTENTIOMETER_LEVEL_INTERVAL_KEY = "Potentiometer Level Interval";
+	public static final String POTENTIOMETER_TOLERANCE_KEY = "Potentiometer Tolerance";
+	
 	// Arm Speeds
 	public static final String FORK_CLOSE_SPEED_KEY  = "Fork Close Speed";
 	public static final String FORK_OPEN_SPEED_KEY   = "Fork Open Speed";
@@ -15,11 +27,6 @@ public class Status {
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
-	
-	// Sonar vars
-	public static final String SONAR_DISTANCE_MULTIPLIER_KEY = "Sonar Distance Multiplier";
-	public static final String SONAR_PERCIEVED_DISTANCE_KEY = "Sonar Percieved Distance";
-	public static final String SONAR_IN_RANGE_IN_INCHES = "Sonar In Range In Inches";
 	
 	// Autonomous power vars
 	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
@@ -43,6 +50,12 @@ public class Status {
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
 		
 	public static void initStatus () {
+		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData());
+		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.getData());
+		
+		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.getData());
+		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.getData());
+		
 		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.getData());
 		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.getData());
 		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.getData());
@@ -51,9 +64,6 @@ public class Status {
 		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.getData());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
-		
-		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData());
-		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.getData());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.getData());
@@ -76,6 +86,16 @@ public class Status {
 	}
 	
 	public static void updateStatus () {
+		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
+		
+		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.winch.getPotRotation());
+		
+		potentiometerLevelInterval.setData(SmartDashboard.getNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY));
+		potentiometerTolerance.setData(SmartDashboard.getNumber(POTENTIOMETER_TOLERANCE_KEY));
+		
+		sonarDistanceMultiplier.setData(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData()));
+		sonarInRangeInInches.setData(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.getData()));
+		
 		forkCloseSpeed.setData(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
 		forkOpenSpeed.setData(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
 		winchUpSpeed.setData(SmartDashboard.getNumber(WINCH_UP_SPEED_KEY));
@@ -83,12 +103,7 @@ public class Status {
 		armExtendSpeed.setData(SmartDashboard.getNumber(ARM_EXTEND_SPEED_KEY));
 		armRetractSpeed.setData(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
 		
-		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
-		
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
-		
-		sonarDistanceMultiplier.setData(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData()));
-		sonarInRangeInInches.setData(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.getData()));
 		
 		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
 		autoBackwardPower.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));

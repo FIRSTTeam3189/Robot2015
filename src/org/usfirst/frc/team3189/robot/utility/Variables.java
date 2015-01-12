@@ -1,24 +1,28 @@
 package org.usfirst.frc.team3189.robot.utility;
 
 public class Variables {
+	// Sonar
+	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);
+	public static ValueReference<Double> sonarInRangeInInches = new ValueReference<Double>(16.0);
+	
+	public static ValueReference<Double> potentiometerLevelInterval = new ValueReference<Double>(3.0);
+	public static ValueReference<Double> potentiometerTolerance = new ValueReference<Double>(.007);
+	
 	// This is the longdrivetrain turning factor
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
 	
 	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(.25);
-	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(.25);
+	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(-.25);
 	
 	// The speeds of the winch to rise and fall
 	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.25);
-	public static ValueReference<Double> winchDownSpeed = new ValueReference<Double>(.25);
+	public static ValueReference<Double> winchDownSpeed = new ValueReference<Double>(-.25);
 	
 	// The speeds of the arm to extend & retract
 	public static ValueReference<Double> armExtendSpeed  = new ValueReference<Double>(.25);
-	public static ValueReference<Double> armRetractSpeed = new ValueReference<Double>(.25);
+	public static ValueReference<Double> armRetractSpeed = new ValueReference<Double>(-.25);
 	
-	// Sonar
-	public static ValueReference<Double> sonarDistanceMultiplier = new ValueReference<Double>(.1596);
-	public static ValueReference<Double> sonarInRangeInInches = new ValueReference<Double>(16.0);
 	
 	// Autonomous power variables
 	public static ValueReference<Double> autoForwardPower  = new ValueReference<Double>(-.5);
