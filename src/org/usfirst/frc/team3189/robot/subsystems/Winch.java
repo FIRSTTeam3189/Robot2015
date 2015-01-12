@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
+import org.usfirst.frc.team3189.robot.commands.WinchDoNothing;
 
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -17,7 +18,7 @@ public class Winch extends Subsystem {
     }
     
     public void initDefaultCommand() {
-    	
+    	setDefaultCommand(new WinchDoNothing());
     }
     
     public void setSpeed(double speed) {
