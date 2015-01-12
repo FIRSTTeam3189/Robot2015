@@ -128,9 +128,9 @@ public class OI {
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
 		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
-		/*
-		openForksButton.whenPressed(new OpenForks());
-		closeForksButton.whenPressed(new CloseForks());/**/
+		
+		openForksButton.whileHeld(new OpenForks());
+		closeForksButton.whileHeld(new CloseForks());
 		
 		// Auto command and reset
 		autoCommandButton.whenPressed(new Autonomous());

@@ -18,7 +18,7 @@ public class Forks extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-    	
+//    	setDefaultCommand(command);
     }
     
     public void setSpeed(double speed) {
