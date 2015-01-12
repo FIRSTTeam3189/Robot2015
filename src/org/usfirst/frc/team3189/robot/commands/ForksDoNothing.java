@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3189.robot.commands;
 
+import org.usfirst.frc.team3189.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -8,8 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ForksDoNothing extends Command {
 
     public ForksDoNothing() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.forks);
     }
 
     // Called just before this Command runs the first time

@@ -102,8 +102,8 @@ public class OI {
 		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
 		toggleLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonToggle);
 		
-		openForksButton  = new JoystickButton(winchJoystick, 3);
-		closeForksButton = new JoystickButton(winchJoystick, 2);
+		openForksButton  = new JoystickButton(winchJoystick, OIMap.buttonOpenForks);
+		closeForksButton = new JoystickButton(winchJoystick, OIMap.buttonCloseForks);
 		
 		// Autonomous command button
 		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
