@@ -14,8 +14,6 @@ public class AutoForward extends Command {
     public AutoForward(ValueReference<Double> duration) {
     	requires(Robot.longDrivetrain);
     	time = duration;
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time

@@ -16,7 +16,7 @@ public class Winch extends Subsystem {
     public AnalogInput potentiometer;
 	
     public Winch() {
-    	motor = new Talon(RobotMap.armMovementMotor);
+    	motor = new Talon(RobotMap.winchMotor);
     	potentiometer = new AnalogInput(RobotMap.potentiometerChannel);
     }
     
@@ -36,7 +36,7 @@ public class Winch extends Subsystem {
      * This method gets the value of the potentiometer.
      * @return the value of the potentiometer
      */
-    public double getPotRotation() {
+    public double getPotRotation () {
     	return potentiometer.getValue();
     }
 }

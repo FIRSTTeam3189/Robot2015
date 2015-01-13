@@ -26,13 +26,13 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	
-	public static final Winch winch = new Winch();
-	public static final ArmMovement armMovement = new ArmMovement();
-	public static final Forks forks = new Forks();
-	public static final LongDrivetrain longDrivetrain = new LongDrivetrain();
-	public static final LateralDrivetrain lateralDrivetrain = new LateralDrivetrain();
-	public static final LifterPneumatics lifterPneumatics = new LifterPneumatics();
-	public static final Gearbox gearbox = new Gearbox();
+	public static Winch winch;
+	public static ArmMovement armMovement;
+	public static Forks forks;
+	public static LongDrivetrain longDrivetrain; 
+	public static LateralDrivetrain lateralDrivetrain;
+	public static LifterPneumatics lifterPneumatics;
+	public static Gearbox gearbox;
 
     Command autonomousCommand;
 
@@ -41,6 +41,13 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	winch = new Winch();
+    	armMovement = new ArmMovement();
+    	forks = new Forks();
+    	longDrivetrain = new LongDrivetrain();
+    	lateralDrivetrain = new LateralDrivetrain();
+    	lifterPneumatics = new LifterPneumatics();
+    	gearbox = new Gearbox();
 		oi = new OI();
 		Status.initStatus();
 		

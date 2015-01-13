@@ -9,12 +9,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Autonomous extends CommandGroup {
     public  Autonomous() {
-    	for (int i = 0; i < 2; ++i) {
-    		addSequential(new AutoSidewaysRight());
-    		addSequential(new AutoForward(Variables.autoForwardTime));
-    		addSequential(new AutoSidewaysLeft());
-    	}
+    	addSequential(new AutoForward(Variables.autoNextToteTime));
     	addSequential(new AutoRotate(Variables.autoRotateTime, false));
+    	addSequential(new AutoForward(Variables.autoForwardTime));
     	addSequential(new AutoBackward(Variables.autoBackwardTime));
+    	addSequential(new AutoRotate(Variables.autoRotateTime, true));
+    	addSequential(new AutoForward(Variables.autoNextToteTime));
     }
 }
