@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.CloseForks;
-import org.usfirst.frc.team3189.robot.commands.DebugMovement;
 import org.usfirst.frc.team3189.robot.commands.OpenForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
@@ -10,6 +9,7 @@ import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoRotate;
 import org.usfirst.frc.team3189.robot.commands.autonomous.Autonomous;
+import org.usfirst.frc.team3189.robot.commands.debug.DebugMovement;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.Joystick;

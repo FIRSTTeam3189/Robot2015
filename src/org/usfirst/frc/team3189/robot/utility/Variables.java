@@ -9,8 +9,8 @@ public class Variables {
 	public static ValueReference<Double> potentiometerTolerance = new ValueReference<Double>(.007);
 	
 	// This is the longdrivetrain turning factor
-	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.8);
-	public static ValueReference<Double> tankDriveRightPowerFactor = new ValueReference<Double>(1.2);
+	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.6);
+	public static ValueReference<Double> tankDriveRightPowerFactor = new ValueReference<Double>(0.985);
 	
 	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(.25);
@@ -40,7 +40,7 @@ public class Variables {
 	public static ValueReference<Double> autoPickupForwardTime  = new ValueReference<Double>(5.0);
 	public static ValueReference<Double> autoPickupBackwardTime = new ValueReference<Double>(1.0);
 	public static ValueReference<Double> autoPickupTime         = new ValueReference<Double>(3.0);
-	public static ValueReference<Double> autoPickupRotateTime   = new ValueReference<Double>(.85);
+	public static ValueReference<Double> autoPickupRotateTime   = new ValueReference<Double>(1.01);
 	
 	// Autonomous Score variables
 	public static ValueReference<Double> autoScoreTime = new ValueReference<Double>(4.0);
