@@ -23,7 +23,7 @@ public class AutoForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.tankDrive(Variables.autoForwardPower.getData(), Variables.autoForwardPower.getData());
+    	Robot.longDrivetrain.tankDrive(Variables.autoForwardPower.getData(), Variables.autoForwardPower.getData(), Variables.tankDriveRightPowerFactor.getData());
     	
     }
 

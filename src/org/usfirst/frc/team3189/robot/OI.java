@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.CloseForks;
+import org.usfirst.frc.team3189.robot.commands.DebugMovement;
 import org.usfirst.frc.team3189.robot.commands.OpenForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
@@ -25,6 +26,9 @@ public class OI {
 	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
 	private Joystick winchJoystick = new Joystick(OIMap.winchJoystickChannel);
 
+	//Debug
+	private Button debugForwardBackwardButton;
+	
 	// Teleop Buttons
 	private Button extendLifterPneumaticsButton;
 	private Button retractLifterPneumaticsButton;
@@ -92,7 +96,8 @@ public class OI {
 	
 	public void initButtons(){
 		// Instantiation
-		
+		// Debug buttons
+		debugForwardBackwardButton = new JoystickButton(winchJoystick, 5);
 		// Teleop Buttons
 		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
@@ -119,7 +124,7 @@ public class OI {
 		toggleGears = new JoystickButton(rotationalJoystick, OIMap.buttonToggleGears);
 		
 		// Set Functionality
-		
+		debugForwardBackwardButton.whenPressed(new DebugMovement());
 		// Teleop Buttons
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));

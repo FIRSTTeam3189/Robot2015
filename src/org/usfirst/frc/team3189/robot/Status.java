@@ -1,30 +1,6 @@
 package org.usfirst.frc.team3189.robot;
 
-import static org.usfirst.frc.team3189.robot.utility.Variables.arcadeJoystickXSensitivityFactor;
-import static org.usfirst.frc.team3189.robot.utility.Variables.armExtendSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.armRetractSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoBackwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoForwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoNextToteTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupBackwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupForwardTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoPickupTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotatePower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoRotateTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoScoreTime;
-import static org.usfirst.frc.team3189.robot.utility.Variables.autoSidewaysPower;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkCloseSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkOpenSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerLevelInterval;
-import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerTolerance;
-import static org.usfirst.frc.team3189.robot.utility.Variables.sonarDistanceMultiplier;
-import static org.usfirst.frc.team3189.robot.utility.Variables.sonarInRangeInInches;
-import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownSpeed;
-import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
@@ -48,6 +24,7 @@ public class Status {
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
+	public static final String TANK_DRIVE_RIGHT_POWER_FACTOR_KEY = "Tank Drive Right Power Factor";
 	
 	// Autonomous power vars
 	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
@@ -85,6 +62,7 @@ public class Status {
 		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.getData());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
+		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.getData());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.getData());
@@ -125,6 +103,7 @@ public class Status {
 		armRetractSpeed.setData(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
 		
 		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
+		tankDriveRightPowerFactor.setData(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));
 		
 		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
 		autoBackwardPower.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));

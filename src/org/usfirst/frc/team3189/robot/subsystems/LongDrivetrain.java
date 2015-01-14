@@ -34,6 +34,12 @@ public class LongDrivetrain extends Subsystem {
     	
     }
     
+    public void tankDrive(double left, double right, double rightPowerFactor) {
+    	drive.tankDrive(left, right * rightPowerFactor);
+    	
+    }
+    
+    
     /**
      * arcade drive method for drive train
      * @param magnitude the speed of the robot
