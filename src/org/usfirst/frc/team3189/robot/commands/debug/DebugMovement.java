@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class DebugMovement extends CommandGroup {
     
-	private static final ValueReference<Double> oneSecond = new ValueReference<Double>(1.0);
+	private static final ValueReference<Double> oneSecond = new ValueReference<Double>(3.0);
 	
     public  DebugMovement() {
     	addSequential(new FullForward(oneSecond));

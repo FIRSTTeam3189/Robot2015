@@ -14,6 +14,6 @@ public class FullBackward extends FullForward {
 
 	@Override
 	protected void execute() {
-		Robot.longDrivetrain.tankDrive(1, 1);
+		Robot.longDrivetrain.tankDrive(-1, -1);
 	}
 }

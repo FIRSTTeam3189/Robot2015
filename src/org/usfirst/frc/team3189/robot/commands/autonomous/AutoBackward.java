@@ -15,6 +15,6 @@ public class AutoBackward extends AutoForward {
 
     @Override
     protected void execute() {
-    	Robot.longDrivetrain.tankDrive(Variables.autoBackwardPower.getData(), Variables.autoBackwardPower.getData());
+    	Robot.longDrivetrain.tankDrive(Variables.autoBackwardPower.getData(), Variables.autoBackwardPower.getData(), Variables.tankDriveRightPowerFactor.getData());
     }
 }
