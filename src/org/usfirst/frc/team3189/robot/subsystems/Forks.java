@@ -29,7 +29,7 @@ public class Forks extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	if (stopLimit.get()){
+    	if (stopLimit.get() && speed > 0){
     		motor.set(0);
     	}else if (slowLimit.get()){
     		motor.set(speed * Variables.forkSlowSpeed.get());
