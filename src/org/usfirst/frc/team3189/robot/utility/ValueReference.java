@@ -5,26 +5,26 @@ public class ValueReference <T> {
 	/**
 	 * the data instance variable of type T
 	 */
-	private T data;
+	private T value;
 	
-	public ValueReference(T data){
-		this.data = data;
+	public ValueReference(T value){
+		this.value = value;
 	}
 	
 	/**
 	 * 
 	 * @return data var of type T
 	 */
-	public T getData () {
-		return data;
+	public T get () {
+		return value;
 	}
 	
 	/**
 	 * Sets data from an arg of type T
 	 * @param data: the data to set
 	 */
-	public void setData(T data) {
-		this.data = data;
+	public void set(T value) {
+		this.value = value;
 	}
 	
 }

@@ -29,7 +29,7 @@ public class LateralDrivetrain extends Subsystem {
     }
     
     public double getSonarDistance(){
-    	return sonar.getValue() * Variables.sonarDistanceMultiplier.getData();
+    	return sonar.getValue() * Variables.sonarDistanceMultiplier.get();
     }
     
     

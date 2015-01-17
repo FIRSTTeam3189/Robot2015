@@ -20,7 +20,7 @@ public class CloseForks extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.forks.setSpeed(-Variables.forkCloseSpeed.getData());
+    	Robot.forks.setSpeed(Variables.forkCloseSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

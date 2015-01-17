@@ -20,7 +20,7 @@ public class WinchFloor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.setSpeed(Variables.winchDownSpeed.getData());
+    	Robot.winch.setSpeed(Variables.winchDownSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

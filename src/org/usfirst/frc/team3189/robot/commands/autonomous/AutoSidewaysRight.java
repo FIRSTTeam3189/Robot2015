@@ -20,12 +20,12 @@ public class AutoSidewaysRight extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(Variables.autoSidewaysPower.getData());
+    	Robot.lateralDrivetrain.move(Variables.autoSidewaysPower.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.lateralDrivetrain.getSonarDistance() < Variables.sonarInRangeInInches.getData();
+        return Robot.lateralDrivetrain.getSonarDistance() < Variables.sonarInRangeInInches.get();
     }
 
     // Called once after isFinished returns true

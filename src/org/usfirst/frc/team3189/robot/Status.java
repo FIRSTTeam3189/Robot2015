@@ -16,6 +16,8 @@ public class Status {
 	// Arm Speeds
 	public static final String FORK_CLOSE_SPEED_KEY  = "Fork Close Speed";
 	public static final String FORK_OPEN_SPEED_KEY   = "Fork Open Speed";
+	public static final String FORK_SPEED_KEY = "Fork Speed";
+	public static final String FORK_SLOW_SPEED_KEY = "Fork Slow Speed";
 	public static final String WINCH_UP_SPEED_KEY    = "Winch Up Speed";
 	public static final String WINCH_DOWN_SPEED_KEY  = "Winch Down Speed";
 	public static final String ARM_EXTEND_SPEED_KEY  = "Arm Extend Speed";
@@ -48,40 +50,42 @@ public class Status {
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
 		
 	public static void initStatus () {
-		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData());
-		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.getData());
+		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.get());
+		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.get());
 		
-		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.getData());
-		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.getData());
+		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
+		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.get());
 		
-		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.getData());
-		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.getData());
-		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.getData());
-		SmartDashboard.putNumber(WINCH_DOWN_SPEED_KEY, winchDownSpeed.getData());
-		SmartDashboard.putNumber(ARM_EXTEND_SPEED_KEY, armExtendSpeed.getData());
-		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.getData());
+		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.get());
+		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.get());
+		SmartDashboard.putNumber(FORK_SPEED_KEY, forkSpeed.get());
+		SmartDashboard.putNumber(FORK_SLOW_SPEED_KEY, forkSlowSpeed.get());
+		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.get());
+		SmartDashboard.putNumber(WINCH_DOWN_SPEED_KEY, winchDownSpeed.get());
+		SmartDashboard.putNumber(ARM_EXTEND_SPEED_KEY, armExtendSpeed.get());
+		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.get());
 		
-		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.getData());
-		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.getData());
+		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.get());
+		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.get());
 		
-		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.getData());
-		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.getData());
-		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, autoRotatePower.getData());
-		SmartDashboard.putNumber(AUTO_SIDEWAYS_POWER_KEY, autoSidewaysPower.getData());
+		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.get());
+		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.get());
+		SmartDashboard.putNumber(AUTO_ROTATE_POWER_KEY, autoRotatePower.get());
+		SmartDashboard.putNumber(AUTO_SIDEWAYS_POWER_KEY, autoSidewaysPower.get());
 		
-		SmartDashboard.putNumber(AUTO_FORWARD_TIME_KEY, autoForwardTime.getData());
-		SmartDashboard.putNumber(AUTO_BACKWARD_TIME_KEY, autoBackwardTime.getData());
-		SmartDashboard.putNumber(AUTO_ROTATE_TIME_KEY, autoRotateTime.getData());
+		SmartDashboard.putNumber(AUTO_FORWARD_TIME_KEY, autoForwardTime.get());
+		SmartDashboard.putNumber(AUTO_BACKWARD_TIME_KEY, autoBackwardTime.get());
+		SmartDashboard.putNumber(AUTO_ROTATE_TIME_KEY, autoRotateTime.get());
 		
-		SmartDashboard.putNumber(PICKUP_FORWARD_TIME_KEY, autoPickupForwardTime.getData());
-		SmartDashboard.putNumber(PICKUP_BACKWARD_TIME_KEY, autoPickupBackwardTime.getData());
-		SmartDashboard.putNumber(PICKUP_TIME_KEY, autoPickupTime.getData());
-		SmartDashboard.putNumber(PICKUP_ROTATE_TIME_KEY, autoPickupRotateTime.getData());
+		SmartDashboard.putNumber(PICKUP_FORWARD_TIME_KEY, autoPickupForwardTime.get());
+		SmartDashboard.putNumber(PICKUP_BACKWARD_TIME_KEY, autoPickupBackwardTime.get());
+		SmartDashboard.putNumber(PICKUP_TIME_KEY, autoPickupTime.get());
+		SmartDashboard.putNumber(PICKUP_ROTATE_TIME_KEY, autoPickupRotateTime.get());
 		
-		SmartDashboard.putNumber(AUTO_NEXT_TOTE_TIME_KEY, autoNextToteTime.getData());
-		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, autoNextToteRotateTime.getData());
+		SmartDashboard.putNumber(AUTO_NEXT_TOTE_TIME_KEY, autoNextToteTime.get());
+		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, autoNextToteRotateTime.get());
 		
-		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, autoScoreTime.getData());
+		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, autoScoreTime.get());
 	}
 	
 	public static void updateStatus () {
@@ -89,39 +93,41 @@ public class Status {
 		
 		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.winch.getPotRotation());
 		
-		potentiometerLevelInterval.setData(SmartDashboard.getNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY));
-		potentiometerTolerance.setData(SmartDashboard.getNumber(POTENTIOMETER_TOLERANCE_KEY));
+		potentiometerLevelInterval.set(SmartDashboard.getNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY));
+		potentiometerTolerance.set(SmartDashboard.getNumber(POTENTIOMETER_TOLERANCE_KEY));
 		
-		sonarDistanceMultiplier.setData(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.getData()));
-		sonarInRangeInInches.setData(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.getData()));
+		sonarDistanceMultiplier.set(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.get()));
+		sonarInRangeInInches.set(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.get()));
 		
-		forkCloseSpeed.setData(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
-		forkOpenSpeed.setData(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
-		winchUpSpeed.setData(SmartDashboard.getNumber(WINCH_UP_SPEED_KEY));
-		winchDownSpeed.setData(SmartDashboard.getNumber(WINCH_DOWN_SPEED_KEY));
-		armExtendSpeed.setData(SmartDashboard.getNumber(ARM_EXTEND_SPEED_KEY));
-		armRetractSpeed.setData(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
+		forkCloseSpeed.set(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
+		forkOpenSpeed.set(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
+		forkSpeed.set(SmartDashboard.getNumber(FORK_SPEED_KEY));
+		forkSlowSpeed.set(SmartDashboard.getNumber(FORK_SLOW_SPEED_KEY));
+		winchUpSpeed.set(SmartDashboard.getNumber(WINCH_UP_SPEED_KEY));
+		winchDownSpeed.set(SmartDashboard.getNumber(WINCH_DOWN_SPEED_KEY));
+		armExtendSpeed.set(SmartDashboard.getNumber(ARM_EXTEND_SPEED_KEY));
+		armRetractSpeed.set(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
 		
-		arcadeJoystickXSensitivityFactor.setData(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
-		tankDriveRightPowerFactor.setData(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));
+		arcadeJoystickXSensitivityFactor.set(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
+		tankDriveRightPowerFactor.set(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));
 		
-		autoForwardPower.setData(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
-		autoBackwardPower.setData(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));
-		autoRotatePower.setData(SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY));
-		autoSidewaysPower.setData(SmartDashboard.getNumber(AUTO_SIDEWAYS_POWER_KEY));
+		autoForwardPower.set(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
+		autoBackwardPower.set(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));
+		autoRotatePower.set(SmartDashboard.getNumber(AUTO_ROTATE_POWER_KEY));
+		autoSidewaysPower.set(SmartDashboard.getNumber(AUTO_SIDEWAYS_POWER_KEY));
 		
-		autoForwardTime.setData(SmartDashboard.getNumber(AUTO_FORWARD_TIME_KEY));
-		autoBackwardTime.setData(SmartDashboard.getNumber(AUTO_BACKWARD_TIME_KEY));
-		autoRotateTime.setData(SmartDashboard.getNumber(AUTO_ROTATE_TIME_KEY));
+		autoForwardTime.set(SmartDashboard.getNumber(AUTO_FORWARD_TIME_KEY));
+		autoBackwardTime.set(SmartDashboard.getNumber(AUTO_BACKWARD_TIME_KEY));
+		autoRotateTime.set(SmartDashboard.getNumber(AUTO_ROTATE_TIME_KEY));
 		
-		autoPickupForwardTime.setData(SmartDashboard.getNumber(PICKUP_FORWARD_TIME_KEY));
-		autoPickupBackwardTime.setData(SmartDashboard.getNumber(PICKUP_BACKWARD_TIME_KEY));
-		autoPickupTime.setData(SmartDashboard.getNumber(PICKUP_TIME_KEY));
-		autoPickupRotateTime.setData(SmartDashboard.getNumber(PICKUP_ROTATE_TIME_KEY));
+		autoPickupForwardTime.set(SmartDashboard.getNumber(PICKUP_FORWARD_TIME_KEY));
+		autoPickupBackwardTime.set(SmartDashboard.getNumber(PICKUP_BACKWARD_TIME_KEY));
+		autoPickupTime.set(SmartDashboard.getNumber(PICKUP_TIME_KEY));
+		autoPickupRotateTime.set(SmartDashboard.getNumber(PICKUP_ROTATE_TIME_KEY));
 		
-		autoNextToteTime.setData(SmartDashboard.getNumber(AUTO_NEXT_TOTE_TIME_KEY));
-		autoNextToteRotateTime.setData(SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY));
+		autoNextToteTime.set(SmartDashboard.getNumber(AUTO_NEXT_TOTE_TIME_KEY));
+		autoNextToteRotateTime.set(SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY));
 		
-		autoScoreTime.setData(SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY));
+		autoScoreTime.set(SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY));
 	}
 }

@@ -24,15 +24,15 @@ public class AutoRotate extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setTimeout(time.getData());
+    	setTimeout(time.get());
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (turnRight) {
-    		Robot.longDrivetrain.tankDrive(Variables.autoRotatePower.getData(), -Variables.autoRotatePower.getData());
+    		Robot.longDrivetrain.tankDrive(Variables.autoRotatePower.get(), -Variables.autoRotatePower.get());
     	} else {
-    		Robot.longDrivetrain.tankDrive(-Variables.autoRotatePower.getData(), Variables.autoRotatePower.getData());
+    		Robot.longDrivetrain.tankDrive(-Variables.autoRotatePower.get(), Variables.autoRotatePower.get());
     	}
     }
 
