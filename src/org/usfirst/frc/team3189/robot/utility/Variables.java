@@ -15,8 +15,8 @@ public class Variables {
 	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(1.0);
 	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(-1.0);
-	public static ValueReference<Double> forkSpeed = new ValueReference<Double>(.2);
-	public static ValueReference<Double> forkSlowSpeed = new ValueReference<Double>(.15);
+	public static ValueReference<Double> forkSpeed = new ValueReference<Double>(.17);
+	public static ValueReference<Double> forkSlowSpeed = new ValueReference<Double>(.12);
 	
 	// The speeds of the winch to rise and fall
 	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.25);
