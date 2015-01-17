@@ -27,4 +27,5 @@ public class OIMap {
 	// Fork Control button mapping
 	public static final int buttonCloseForks = 2;
 	public static final int buttonOpenForks = 3;
+	public static final int buttonManualForks = 1;
 }

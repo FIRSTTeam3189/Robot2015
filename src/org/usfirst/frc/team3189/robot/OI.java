@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.CloseForks;
+import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.OpenForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
@@ -36,6 +37,7 @@ public class OI {
 	
 	private Button openForksButton;
 	private Button closeForksButton;
+	private Button manualForksButton;
 	
 	// Auto and reset buttons
 	private Button autoCommandButton;
@@ -105,6 +107,7 @@ public class OI {
 		
 		openForksButton  = new JoystickButton(winchJoystick, OIMap.buttonOpenForks);
 		closeForksButton = new JoystickButton(winchJoystick, OIMap.buttonCloseForks);
+		manualForksButton = new JoystickButton(winchJoystick, OIMap.buttonManualForks);
 		
 		// Autonomous command button
 		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
@@ -132,6 +135,7 @@ public class OI {
 		
 		openForksButton.whileHeld(new OpenForks());
 		closeForksButton.whileHeld(new CloseForks());
+		manualForksButton.whenPressed(new ForkManualControl());
 		
 		// Auto command and reset
 		autoCommandButton.whenPressed(new Autonomous());
