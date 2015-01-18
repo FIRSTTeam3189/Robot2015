@@ -30,6 +30,7 @@ public class Status {
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
 	public static final String TANK_DRIVE_RIGHT_POWER_FACTOR_KEY = "Tank Drive Right Power Factor";
+	public static final String DRIVETRAIN_INCREMENT = "Drivetrian Increment";
 	
 	// Autonomous power vars
 	public static final String AUTO_FORWARD_POWER_KEY = "Autonomous Forward Power";
@@ -70,6 +71,7 @@ public class Status {
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.get());
 		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.get());
+		SmartDashboard.putNumber(DRIVETRAIN_INCREMENT, drivetrainIncrement.get());
 		
 		SmartDashboard.putNumber(AUTO_FORWARD_POWER_KEY, autoForwardPower.get());
 		SmartDashboard.putNumber(AUTO_BACKWARD_POWER_KEY, autoBackwardPower.get());
@@ -116,6 +118,7 @@ public class Status {
 		
 		arcadeJoystickXSensitivityFactor.set(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		tankDriveRightPowerFactor.set(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));
+		drivetrainIncrement.set(SmartDashboard.getNumber(DRIVETRAIN_INCREMENT));
 		
 		autoForwardPower.set(SmartDashboard.getNumber(AUTO_FORWARD_POWER_KEY));
 		autoBackwardPower.set(SmartDashboard.getNumber(AUTO_BACKWARD_POWER_KEY));

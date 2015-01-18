@@ -11,6 +11,7 @@ public class Variables {
 	// This is the longdrivetrain turning factor
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.6);
 	public static ValueReference<Double> tankDriveRightPowerFactor = new ValueReference<Double>(0.985);
+	public static ValueReference<Double> drivetrainIncrement = new ValueReference<Double>(.75);
 	
 	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(1.0);
