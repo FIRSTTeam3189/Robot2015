@@ -27,6 +27,10 @@ public class Status {
 	public static final String ARM_RETRACT_SPEED_KEY = "Arm Retract Speed";
 	
 	public static final String GYRO_ANGLE_KEY = "Gyro Angle";
+	public static final String ACCEL_X_KEY = "Accel X";
+	public static final String H_DRIVE_FIXED_LEFT = "H-Drive Fixed Left";
+	public static final String H_DRIVE_FIXED_RIGHT = "H-Drive Fixed Right";
+	
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
 	public static final String TANK_DRIVE_RIGHT_POWER_FACTOR_KEY = "Tank Drive Right Power Factor";
@@ -100,6 +104,10 @@ public class Status {
 		SmartDashboard.putBoolean(FORK_SLOW_LIMIT_KEY, Robot.forks.getSlowed());
 		SmartDashboard.putNumber(FORK_CURRENT_SPEED_KEY, Robot.forks.getMotorSpeed());
 		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.winch.getPotRotation());
+		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.longDrivetrain.getGyroAngle());
+		SmartDashboard.putNumber(ACCEL_X_KEY, Robot.longDrivetrain.getAccelX());
+		SmartDashboard.putNumber(H_DRIVE_FIXED_LEFT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
+		SmartDashboard.putNumber(H_DRIVE_FIXED_RIGHT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
 		
 		potentiometerLevelInterval.set(SmartDashboard.getNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY));
 		potentiometerTolerance.set(SmartDashboard.getNumber(POTENTIOMETER_TOLERANCE_KEY));

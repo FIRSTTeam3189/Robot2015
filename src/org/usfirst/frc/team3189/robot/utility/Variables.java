@@ -12,6 +12,8 @@ public class Variables {
 	public static ValueReference<Double> arcadeJoystickXSensitivityFactor = new ValueReference<Double>(.6);
 	public static ValueReference<Double> tankDriveRightPowerFactor = new ValueReference<Double>(0.985);
 	public static ValueReference<Double> drivetrainIncrement = new ValueReference<Double>(.75);
+	public static ValueReference<Double> lowFilterConstant = new ValueReference<Double>(0.98);
+	public static ValueReference<Double> heavyFilterConstant = new ValueReference<Double>(0.9);
 	
 	// The speeds of the forks to open and close
 	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(1.0);
