@@ -5,6 +5,7 @@ import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.AccereratingDriveCommand;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -29,7 +30,7 @@ public class LongDrivetrain extends Subsystem {
 	
 	public LongDrivetrain() {
 		drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
-		Gyro gyro = new Gyro(RobotMap.gyroChannel);
+		gyro = new Gyro(new AnalogInput(RobotMap.gyroChannel));
 		accelerometer = new BuiltInAccelerometer();
 	}
 
@@ -74,8 +75,8 @@ public class LongDrivetrain extends Subsystem {
     public double getHDriveFixedSpeed (boolean left) {
     	accelX = Math.toDegrees(accelerometer.getX());
     	accelXFiltered = Variables.lowFilterConstant.get() * accelXFiltered + (1 - Variables.heavyFilterConstant.get()) * accelX;
-    	gyroError = accelXFiltered - gyro.getAngle();
-    	finalAngle = Variables.lowFilterConstant.get() * ((finalAngle + (gyro.getAngle() + gyroError) / 2)) + (1 - Variables.lowFilterConstant.get()) * accelX;
+    	gyroError = accelXFiltered - getGyroAngle();
+    	finalAngle = Variables.lowFilterConstant.get() * ((finalAngle + (getGyroAngle() + gyroError) / 2)) + (1 - Variables.lowFilterConstant.get()) * accelX;
     	if (left) {
     		return finalAngle;
     	}
@@ -88,7 +89,7 @@ public class LongDrivetrain extends Subsystem {
     }
     
     public double getGyroAngle () {
-    	return gyro.getAngle();
+    	return gyro != null ? gyro.getAngle() : -666;
     }
     
     public double getAccelX () {

@@ -6,17 +6,29 @@ package org.usfirst.frc.team3189.robot;
  * floating around.
  */
 public class RobotMap {
+	/*
+	 * PWM
+	 */
 	// Drivetrain
 	public static final int leftMotor = 0;
 	public static final int rightMotor = 1;
 	public static final int centerMotorChannel = 2;
-	public static final int gyroChannel = 0;
+	// Winch
+	public static final int winchMotor = 3;
+	public static final int armMovementMotor = 4;
+	public static final int forkMotor = 5;
 	
-	// Analog inputs
+	/*
+	 * Analog Inputs
+	 */
+	public static final int gyroChannel = 1;
     public static final int sonarAnalogChannel = 0;
-    public static final int potentiometerChannel = 1;
-	
-    // Lifter pistons
+    public static final int potentiometerChannel = 2;
+    
+    
+    /*
+     * Digital IO
+     */
 	public static final int lifterPiston1Extend  = 0;
 	public static final int lifterPiston1Retract = 1;
 	
@@ -27,12 +39,10 @@ public class RobotMap {
 	public static final int gearboxExtendChannel  = 0;
 	public static final int gearboxRetractChannel = 1;
 	
-	// Winch
-	public static final int winchMotor = 3;
-	public static final int armMovementMotor = 4;
-	public static final int forkMotor = 5;
 
-	// Limit Switch
+	/*
+	 *  Relay
+	 */
 	public static final int slowLimitSwitch = 0;
 	public static final int stopLimitSwitch = 1;
 	

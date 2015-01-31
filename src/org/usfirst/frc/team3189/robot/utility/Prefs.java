@@ -8,7 +8,7 @@ public class Prefs {
 	public static boolean isMichaelCool = true;
 	
 	public static void updatePreferences () {
-		isMichaelCool = robotPreferences.getBoolean("isMichaelCool", true);
+//		isMichaelCool = robotPreferences.getBoolean("isMichaelCool", true);
 	}
 
 }
