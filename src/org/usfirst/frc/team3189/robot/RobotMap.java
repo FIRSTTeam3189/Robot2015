@@ -10,6 +10,7 @@ public class RobotMap {
 	public static final int leftMotor = 0;
 	public static final int rightMotor = 1;
 	public static final int centerMotorChannel = 2;
+	public static final int gyroChannel = 0;
 	
 	// Analog inputs
     public static final int sonarAnalogChannel = 0;

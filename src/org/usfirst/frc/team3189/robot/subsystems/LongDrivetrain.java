@@ -29,7 +29,7 @@ public class LongDrivetrain extends Subsystem {
 	
 	public LongDrivetrain() {
 		drive = new RobotDrive(RobotMap.leftMotor, RobotMap.rightMotor);
-		Gyro gyro = new Gyro(7);
+		Gyro gyro = new Gyro(RobotMap.gyroChannel);
 		accelerometer = new BuiltInAccelerometer();
 	}
 
