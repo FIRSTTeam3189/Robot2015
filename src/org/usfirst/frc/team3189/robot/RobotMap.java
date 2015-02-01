@@ -39,6 +39,10 @@ public class RobotMap {
 	public static final int gearboxExtendChannel  = 0;
 	public static final int gearboxRetractChannel = 1;
 	
+	// Gripper
+	public static final int gripperExtendChannel  = 0;
+	public static final int gripperRetractChannel = 1;
+	
 
 	/*
 	 *  Relay

@@ -2,9 +2,12 @@ package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.CloseForks;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
+import org.usfirst.frc.team3189.robot.commands.GripperExtend;
+import org.usfirst.frc.team3189.robot.commands.GripperRetract;
 import org.usfirst.frc.team3189.robot.commands.OpenForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.WinchLevel3;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
@@ -56,6 +59,10 @@ public class OI {
 	private Button gear2;
 	private Button toggleGears;
 	
+	// Gripper
+	private Button gripperExtend;
+	private Button gripperRetract;
+	
 	public OI() {
 		this.initButtons();
 	}
@@ -99,7 +106,7 @@ public class OI {
 	public void initButtons(){
 		// Instantiation
 		// Debug buttons
-		debugForwardBackwardButton = new JoystickButton(winchJoystick, 5);
+		//debugForwardBackwardButton = new JoystickButton(winchJoystick, 5);
 		// Teleop Buttons
 		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
 		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
@@ -121,13 +128,12 @@ public class OI {
 		autoPickupBackwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupBackward);
 		autoPickupRotateButton = new JoystickButton(mainJoystick, OIMap.buttonPickupRotate);
 		
-		// Gearbox
-		gear1 = new JoystickButton(rotationalJoystick, OIMap.buttonGear1);
-		gear2 = new JoystickButton(rotationalJoystick, OIMap.buttonGear2);
-		toggleGears = new JoystickButton(rotationalJoystick, OIMap.buttonToggleGears);
+		// Gripper
+		gripperExtend  = new JoystickButton(winchJoystick, OIMap.buttonExtendGripper);
+		gripperRetract = new JoystickButton(winchJoystick, OIMap.buttonRetractGripper);
 		
 		// Set Functionality
-		debugForwardBackwardButton.whenPressed(new DebugMovement());
+		//debugForwardBackwardButton.whenPressed(new DebugMovement());
 		// Teleop Buttons
 		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
@@ -153,6 +159,9 @@ public class OI {
 //		gear1.whenPressed(new SetGearCommand(false));
 //		gear2.whenPressed(new SetGearCommand(true));
 //		toggleGears.whenPressed(new ShiftGearCommand());
+		
+		gripperExtend.whenPressed(new GripperExtend());
+		gripperRetract.whenPressed(new GripperRetract());
 		
 	}
 }

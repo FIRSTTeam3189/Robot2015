@@ -28,4 +28,7 @@ public class OIMap {
 	public static final int buttonCloseForks = 2;
 	public static final int buttonOpenForks = 3;
 	public static final int buttonManualForks = 1;
+	
+	public static final int buttonExtendGripper  = 4;
+	public static final int buttonRetractGripper = 5;
 }

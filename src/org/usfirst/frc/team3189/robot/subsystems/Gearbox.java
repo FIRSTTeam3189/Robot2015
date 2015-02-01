@@ -13,7 +13,7 @@ public class Gearbox extends Subsystem {
     private Piston shifter;
     
     public Gearbox() {
-    	shifter = new Piston(RobotMap.gearboxExtendChannel, RobotMap.gearboxRetractChannel, false);
+    	//shifter = new Piston(RobotMap.gearboxExtendChannel, RobotMap.gearboxRetractChannel, false);
     }
     
     public void initDefaultCommand() {
