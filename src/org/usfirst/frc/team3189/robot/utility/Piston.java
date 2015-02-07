@@ -40,5 +40,8 @@ public class Piston {
 		extend.set(!extend.get());
 		retract.set(!retract.get());
 	}
+	public boolean isExtended(){
+		return extend.get();
+	}
 
 }

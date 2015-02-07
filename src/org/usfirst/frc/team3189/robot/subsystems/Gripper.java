@@ -6,6 +6,7 @@ import org.usfirst.frc.team3189.robot.utility.Piston;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -26,6 +27,9 @@ public class Gripper extends Subsystem {
     
     public void retractGripper(){
     	gripperPiston.retract();
+    }
+    public void updateStatus(){
+    	SmartDashboard.putBoolean("Grabber", gripperPiston.isExtended());
     }
 }
 
