@@ -1,10 +1,10 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.CloseForks;
+import org.usfirst.frc.team3189.robot.commands.RetractForks;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.GripperExtend;
 import org.usfirst.frc.team3189.robot.commands.GripperRetract;
-import org.usfirst.frc.team3189.robot.commands.OpenForks;
+import org.usfirst.frc.team3189.robot.commands.ExtendForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.WinchLevel3;
@@ -139,8 +139,8 @@ public class OI {
 		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
 		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
 		
-		openForksButton.whileHeld(new OpenForks());
-		closeForksButton.whileHeld(new CloseForks());
+		openForksButton.whileHeld(new ExtendForks());
+		closeForksButton.whileHeld(new RetractForks());
 		manualForksButton.whenPressed(new ForkManualControl());
 		
 		// Auto command and reset

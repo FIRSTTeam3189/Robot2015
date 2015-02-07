@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * @author Quest Osucha
  */
-public class OpenForks extends Command {
+public class RetractForks extends Command {
 	
-    public OpenForks() {
+    public RetractForks() {
         requires(Robot.forks);
     }
 
@@ -20,7 +20,7 @@ public class OpenForks extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.forks.setSpeed(Variables.forkOpenSpeed.get());
+    	Robot.forks.setSpeed(Variables.forkCloseSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

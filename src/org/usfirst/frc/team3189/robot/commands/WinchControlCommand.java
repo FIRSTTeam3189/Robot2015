@@ -20,7 +20,6 @@ public class WinchControlCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.winch.setSpeed(Robot.oi.getWinchJoystickY());
-    	Robot.armMovement.setSpeed(Robot.oi.getWinchJoystickX());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,13 +30,11 @@ public class WinchControlCommand extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.winch.kill();
-    	Robot.armMovement.kill();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	Robot.winch.kill();
-    	Robot.armMovement.kill();
     }
 }
