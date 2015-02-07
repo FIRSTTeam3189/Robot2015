@@ -13,6 +13,7 @@ import org.usfirst.frc.team3189.robot.subsystems.Winch;
 import org.usfirst.frc.team3189.robot.utility.Prefs;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -38,6 +39,7 @@ public class Robot extends IterativeRobot {
 	public static Gripper gripper;
 
     Command autonomousCommand;
+    Preferences roboPrefs;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -54,7 +56,7 @@ public class Robot extends IterativeRobot {
     	gripper = new Gripper();
 		oi = new OI();
 		Status.initStatus();
-		Prefs.initPreferences();
+//		Prefs.initPreferences();
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ArcadeDriveCommand();
