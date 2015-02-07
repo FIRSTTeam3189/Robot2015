@@ -9,7 +9,6 @@ import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.Winch;
-import org.usfirst.frc.team3189.robot.utility.Prefs;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Preferences;

@@ -3,7 +3,6 @@ package org.usfirst.frc.team3189.robot.utility;
 import org.usfirst.frc.team3189.robot.Status;
 
 import edu.wpi.first.wpilibj.Preferences;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Prefs {
 	

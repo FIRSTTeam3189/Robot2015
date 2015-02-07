@@ -1,19 +1,17 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.RetractForks;
+import org.usfirst.frc.team3189.robot.commands.ExtendForks;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.GripperExtend;
 import org.usfirst.frc.team3189.robot.commands.GripperRetract;
-import org.usfirst.frc.team3189.robot.commands.ExtendForks;
+import org.usfirst.frc.team3189.robot.commands.RetractForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
-import org.usfirst.frc.team3189.robot.commands.WinchLevel3;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoRotate;
 import org.usfirst.frc.team3189.robot.commands.autonomous.Autonomous;
-import org.usfirst.frc.team3189.robot.commands.debug.DebugMovement;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.Joystick;
