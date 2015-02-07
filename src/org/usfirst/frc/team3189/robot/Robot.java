@@ -54,6 +54,7 @@ public class Robot extends IterativeRobot {
     	gripper = new Gripper();
 		oi = new OI();
 		Status.initStatus();
+		Prefs.initPreferences();
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ArcadeDriveCommand();
@@ -62,7 +63,6 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 		Status.updateStatus();
-		Prefs.updatePreferences();
 	}
 
     public void autonomousInit() {
@@ -76,7 +76,6 @@ public class Robot extends IterativeRobot {
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
         Status.updateStatus();
-        Prefs.updatePreferences();
     }
 
     public void teleopInit() {
@@ -101,7 +100,6 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         Status.updateStatus();
-        Prefs.updatePreferences();
     }
     
     /**
