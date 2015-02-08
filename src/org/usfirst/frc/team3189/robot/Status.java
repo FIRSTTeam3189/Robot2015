@@ -31,6 +31,9 @@ public class Status {
 	public static final String ARM_CLOSE_SPEED = "Arm Close Speed";
 	public static final String ARM_OPEN_SPEED = "Arm Open Speed";
 	
+	public static final String UPPER_IR_STATE = "Upper IR State";
+	public static final String LOWER_IR_STATE = "Lower IR State";
+	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
 	public static final String TANK_DRIVE_RIGHT_POWER_FACTOR_KEY = "Tank Drive Right Power Factor";
 	public static final String DRIVETRAIN_INCREMENT = "Drivetrian Increment";
@@ -124,6 +127,9 @@ public class Status {
 		forkForwardLimit.set(SmartDashboard.getNumber(ARM_FORWARD_LIMIT));
 		forkCloseSpeed.set(SmartDashboard.getNumber(ARM_CLOSE_SPEED));
 		forkOpenSpeed.set(SmartDashboard.getNumber(ARM_OPEN_SPEED));
+		
+		SmartDashboard.putBoolean(UPPER_IR_STATE, Robot.winch.upperIRState());
+		SmartDashboard.putBoolean(LOWER_IR_STATE, Robot.winch.lowerIRState());
 		
 		arcadeJoystickXSensitivityFactor.set(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		tankDriveRightPowerFactor.set(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));

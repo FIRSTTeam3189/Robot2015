@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -14,13 +15,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Winch extends Subsystem {
     public SpeedController motor;
-    public DigitalInput lowerLimit;
-    public DigitalInput upperLimit;
-	
+    public DigitalInput lowerIR;
+    public DigitalInput upperIR;
+    public DigitalInput winchLimit;
+    
     public Winch() {
-    	motor = new Talon(RobotMap.winchMotor);
-    	lowerLimit = new DigitalInput(RobotMap.winchLowerLimitChannel);
-    	upperLimit = new DigitalInput(RobotMap.winchUpperLimitChannel);
+    	motor = new Victor(RobotMap.winchMotor);
+    	lowerIR = new DigitalInput(RobotMap.winchLowerIRChannel);
+    	upperIR = new DigitalInput(RobotMap.winchUpperIRChannel);
+    	winchLimit = new DigitalInput(RobotMap.winchLimit);
     }
     
     public void initDefaultCommand() {
@@ -28,7 +31,7 @@ public class Winch extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	if ((speed > 0 && upperLimit.get()) || (speed < 0 && lowerLimit.get()))
+    	if ((speed < 0 && winchLimit.get()))
     		kill();
     	else
     		motor.set(speed);
@@ -36,6 +39,14 @@ public class Winch extends Subsystem {
     
     public void kill() {
     	motor.set(0);
+    }
+    
+    public boolean lowerIRState(){
+    	return lowerIR.get();
+    }
+    
+    public boolean upperIRState(){
+    	return upperIR.get();
     }
 }
 

@@ -30,9 +30,9 @@ public class Forks extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	if (potentiometer.getVoltage() > Variables.forkForwardLimit.get())
+    	if ((potentiometer.getVoltage() > Variables.forkForwardLimit.get()) && speed > 0)
     		speed = 0;
-    	if (potentiometer.getVoltage() < Variables.forkBackwardLimit.get())
+    	if ((potentiometer.getVoltage() < Variables.forkBackwardLimit.get()) && speed < 0)
     		speed = 0;
     	
     	motor.set(speed);

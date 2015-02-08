@@ -43,11 +43,13 @@ public class RobotMap {
 	public static final int gripperExtendChannel  = 0;
 	public static final int gripperRetractChannel = 1;
 	
+	public static final int winchLimit = 4;
+	
 
 	/*
 	 *  Relay
 	 */
 	
-	public static final int winchLowerLimitChannel = 2;
-	public static final int winchUpperLimitChannel = 3;
+	public static final int winchLowerIRChannel = 2;
+	public static final int winchUpperIRChannel = 3;
 }
