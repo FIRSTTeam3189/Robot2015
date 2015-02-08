@@ -47,8 +47,6 @@ public class RobotMap {
 	/*
 	 *  Relay
 	 */
-	public static final int slowLimitSwitch = 0;
-	public static final int stopLimitSwitch = 1;
 	
 	public static final int winchLowerLimitChannel = 2;
 	public static final int winchUpperLimitChannel = 3;

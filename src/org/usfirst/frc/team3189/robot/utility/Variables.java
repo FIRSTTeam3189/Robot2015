@@ -15,11 +15,8 @@ public class Variables {
 	public static ValueReference<Double> lowFilterConstant = new ValueReference<Double>(0.98);
 	public static ValueReference<Double> heavyFilterConstant = new ValueReference<Double>(0.9);
 	
-	// The speeds of the forks to open and close
-	public static ValueReference<Double> forkOpenSpeed  = new ValueReference<Double>(1.0);
-	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(-1.0);
-	public static ValueReference<Double> forkSpeed = new ValueReference<Double>(.17);
-	public static ValueReference<Double> forkSlowSpeed = new ValueReference<Double>(.12);
+	public static ValueReference<Double> forkForwardLimit = new ValueReference<Double>(3.69);
+	public static ValueReference<Double> forkBackwardLimit = new ValueReference<Double>(0.5);
 	
 	// The speeds of the winch to rise and fall
 	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.25);
@@ -53,4 +50,6 @@ public class Variables {
 	// NExt tote vras
 	public static ValueReference<Double> autoNextToteTime = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoNextToteRotateTime = new ValueReference<Double>(.72);
+	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(-1.0);
+	public static ValueReference<Double> forkOpenSpeed = new ValueReference<Double>(1.0);
 }

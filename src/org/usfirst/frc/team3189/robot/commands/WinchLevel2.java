@@ -20,17 +20,12 @@ public class WinchLevel2 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.winch.getPotRotation() > Variables.potentiometerLevelInterval.get()*2){
-    		Robot.winch.setSpeed(Variables.winchDownSpeed.get());
-    	} else {
-    		Robot.winch.setSpeed(Variables.winchUpSpeed.get());
-    	}
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return Robot.winch.getPotRotation() >= Variables.potentiometerLevelInterval.get()*2 - Variables.potentiometerTolerance.get() &&
-    			Robot.winch.getPotRotation() <= Variables.potentiometerLevelInterval.get()*2 + Variables.potentiometerTolerance.get();
+    	return true;
     }
 
     // Called once after isFinished returns true

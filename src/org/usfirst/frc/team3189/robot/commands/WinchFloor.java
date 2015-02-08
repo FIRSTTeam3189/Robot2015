@@ -20,12 +20,12 @@ public class WinchFloor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.setSpeed(Variables.winchDownSpeed.get());
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.winch.getPotRotation() <= 0;
+        return true;
     }
 
     // Called once after isFinished returns true

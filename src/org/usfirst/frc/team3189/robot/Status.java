@@ -14,12 +14,6 @@ public class Status {
 	public static final String POTENTIOMETER_TOLERANCE_KEY = "Potentiometer Tolerance";
 	
 	// Arm Speeds
-	public static final String FORK_CLOSE_SPEED_KEY  = "Fork Close Speed";
-	public static final String FORK_OPEN_SPEED_KEY   = "Fork Open Speed";
-	public static final String FORK_SPEED_KEY = "Fork Speed";
-	public static final String FORK_SLOW_SPEED_KEY = "Fork Slow Speed";
-	public static final String FORK_STOP_LIMIT_KEY = "Fork Stopped";
-	public static final String FORK_SLOW_LIMIT_KEY = "Fork Slowed";
 	public static final String FORK_CURRENT_SPEED_KEY = "Fork Current Speed";
 	public static final String WINCH_UP_SPEED_KEY    = "Winch Up Speed";
 	public static final String WINCH_DOWN_SPEED_KEY  = "Winch Down Speed";
@@ -31,6 +25,11 @@ public class Status {
 	public static final String H_DRIVE_FIXED_LEFT = "H-Drive Fixed Left";
 	public static final String H_DRIVE_FIXED_RIGHT = "H-Drive Fixed Right";
 	
+	// Arm vars
+	public static final String ARM_BACKWARD_LIMIT = "Arm Back Limit";
+	public static final String ARM_FORWARD_LIMIT = "Arm Forward Limit";
+	public static final String ARM_CLOSE_SPEED = "Arm Close Speed";
+	public static final String ARM_OPEN_SPEED = "Arm Open Speed";
 	
 	public static final String ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY = "Arcade Drive X Sensitivity Factor";
 	public static final String TANK_DRIVE_RIGHT_POWER_FACTOR_KEY = "Tank Drive Right Power Factor";
@@ -64,14 +63,16 @@ public class Status {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
 		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.get());
 		
-		SmartDashboard.putNumber(FORK_CLOSE_SPEED_KEY, forkCloseSpeed.get());
-		SmartDashboard.putNumber(FORK_OPEN_SPEED_KEY, forkOpenSpeed.get());
-		SmartDashboard.putNumber(FORK_SPEED_KEY, forkSpeed.get());
-		SmartDashboard.putNumber(FORK_SLOW_SPEED_KEY, forkSlowSpeed.get());
 		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.get());
 		SmartDashboard.putNumber(WINCH_DOWN_SPEED_KEY, winchDownSpeed.get());
 		SmartDashboard.putNumber(ARM_EXTEND_SPEED_KEY, armExtendSpeed.get());
 		SmartDashboard.putNumber(ARM_RETRACT_SPEED_KEY, armRetractSpeed.get());
+		
+		//Forks Init
+		SmartDashboard.putNumber(ARM_BACKWARD_LIMIT, forkBackwardLimit.get());
+		SmartDashboard.putNumber(ARM_FORWARD_LIMIT, forkForwardLimit.get());
+		SmartDashboard.putNumber(ARM_CLOSE_SPEED, forkCloseSpeed.get());
+		SmartDashboard.putNumber(ARM_OPEN_SPEED, forkOpenSpeed.get());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.get());
 		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.get());
@@ -100,10 +101,8 @@ public class Status {
 	public static void updateStatus () {
 		SmartDashboard.putNumber(SONAR_PERCIEVED_DISTANCE_KEY, Robot.lateralDrivetrain.getSonarDistance());
 		SmartDashboard.putData(Robot.forks);
-		SmartDashboard.putBoolean(FORK_STOP_LIMIT_KEY, Robot.forks.getStopped());
-		SmartDashboard.putBoolean(FORK_SLOW_LIMIT_KEY, Robot.forks.getSlowed());
 		SmartDashboard.putNumber(FORK_CURRENT_SPEED_KEY, Robot.forks.getMotorSpeed());
-		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.winch.getPotRotation());
+		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.forks.getPotRotation());
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.longDrivetrain.getGyroAngle());
 		SmartDashboard.putNumber(ACCEL_X_KEY, Robot.longDrivetrain.getAccelX());
 		SmartDashboard.putNumber(H_DRIVE_FIXED_LEFT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
@@ -115,14 +114,16 @@ public class Status {
 		sonarDistanceMultiplier.set(SmartDashboard.getNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.get()));
 		sonarInRangeInInches.set(SmartDashboard.getNumber(SONAR_IN_RANGE_IN_INCHES, sonarDistanceMultiplier.get()));
 		
-		forkCloseSpeed.set(SmartDashboard.getNumber(FORK_CLOSE_SPEED_KEY));
-		forkOpenSpeed.set(SmartDashboard.getNumber(FORK_OPEN_SPEED_KEY));
-		forkSpeed.set(SmartDashboard.getNumber(FORK_SPEED_KEY));
-		forkSlowSpeed.set(SmartDashboard.getNumber(FORK_SLOW_SPEED_KEY));
 		winchUpSpeed.set(SmartDashboard.getNumber(WINCH_UP_SPEED_KEY));
 		winchDownSpeed.set(SmartDashboard.getNumber(WINCH_DOWN_SPEED_KEY));
 		armExtendSpeed.set(SmartDashboard.getNumber(ARM_EXTEND_SPEED_KEY));
 		armRetractSpeed.set(SmartDashboard.getNumber(ARM_RETRACT_SPEED_KEY));
+		
+		// arm update
+		forkBackwardLimit.set(SmartDashboard.getNumber(ARM_BACKWARD_LIMIT));
+		forkForwardLimit.set(SmartDashboard.getNumber(ARM_FORWARD_LIMIT));
+		forkCloseSpeed.set(SmartDashboard.getNumber(ARM_CLOSE_SPEED));
+		forkOpenSpeed.set(SmartDashboard.getNumber(ARM_OPEN_SPEED));
 		
 		arcadeJoystickXSensitivityFactor.set(SmartDashboard.getNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY));
 		tankDriveRightPowerFactor.set(SmartDashboard.getNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY));
