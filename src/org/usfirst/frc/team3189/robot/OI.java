@@ -61,6 +61,9 @@ public class OI {
 	private Button gripperExtend;
 	private Button gripperRetract;
 	
+	private Button winchToTop;
+	private Button winchToBottom;
+	
 	public OI() {
 		this.initButtons();
 	}
@@ -113,6 +116,9 @@ public class OI {
 		openForksButton  = new JoystickButton(winchJoystick, OIMap.buttonOpenForks);
 		closeForksButton = new JoystickButton(winchJoystick, OIMap.buttonCloseForks);
 		manualForksButton = new JoystickButton(winchJoystick, OIMap.buttonManualForks);
+		
+		winchToTop = new JoystickButton(winchJoystick, OIMap.buttonWinchTop);
+		winchToBottom = new JoystickButton(winchJoystick, OIMap.buttonWinchBottom);
 		
 		// Autonomous command button
 		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
