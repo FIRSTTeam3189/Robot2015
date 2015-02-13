@@ -64,6 +64,7 @@ public class Winch extends Subsystem {
     	}
     }
     
+
     public void moveToTop () {
     	if (!upperIRState()) {
     		setSpeed(Variables.winchUpSpeed.get());
@@ -80,6 +81,7 @@ public class Winch extends Subsystem {
     	}
     }
     
+
     public void kill() {
     	motor.set(0);
     }
