@@ -14,9 +14,10 @@ public class RobotMap {
 	public static final int rightMotor = 1;
 	public static final int centerMotorChannel = 2;
 	// Winch
-	public static final int winchMotor = 3;
+	public static final int winchMotorLeft = 3;
 	public static final int armMovementMotor = 4;
 	public static final int forkMotor = 5;
+	public static final int winchMotorRight = 6;
 	
 	/*
 	 * Analog Inputs

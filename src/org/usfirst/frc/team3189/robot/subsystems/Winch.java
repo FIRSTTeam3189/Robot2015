@@ -16,14 +16,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author Quest Osucha
  */
 public class Winch extends Subsystem {
-    public SpeedController motor;
+    public SpeedController motorLeft;
+    public SpeedController motorRight;
     public DigitalInput irSensor;
     public DigitalInput lowerLimit;
     public DigitalInput upperLimit;
     private boolean aboveIR;
     
     public Winch() {
-    	motor = new Victor(RobotMap.winchMotor);
+    	motorLeft = new Victor(RobotMap.winchMotorLeft);
+    	motorRight = new Victor(RobotMap.winchMotorRight);
     	irSensor = new DigitalInput(RobotMap.winchIRChannel);
     	lowerLimit = new DigitalInput(RobotMap.winchLowerLimitChannel);
     	upperLimit = new DigitalInput(RobotMap.winchUpperLimitChannel);
@@ -37,7 +39,8 @@ public class Winch extends Subsystem {
     	if ((speed < 0 && upperLimit.get()))
     		kill();
     	else
-    		motor.set(speed);
+    		motorLeft.set(speed);
+    		motorRight.set(speed);
     }
     
     public void moveToIRMedium () {
@@ -79,7 +82,8 @@ public class Winch extends Subsystem {
     
 
     public void kill() {
-    	motor.set(0);
+    	motorLeft.set(0);
+    	motorRight.set(0);
     }
     
     public boolean getIRState(){
