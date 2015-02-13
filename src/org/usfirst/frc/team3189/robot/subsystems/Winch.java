@@ -17,19 +17,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Winch extends Subsystem {
     public SpeedController motor;
-    public DigitalInput lowerIR;
-    public DigitalInput upperIR;
-    public DigitalInput winchLimit;
-    private Timer elevatorTimer;
-    private boolean hasTime;
-    private double halfTime;
+    public DigitalInput irSensor;
+    public DigitalInput lowerLimit;
+    public DigitalInput upperLimit;
+    private boolean aboveIR;
     
     public Winch() {
     	motor = new Victor(RobotMap.winchMotor);
-    	lowerIR = new DigitalInput(RobotMap.winchLowerIRChannel);
-    	upperIR = new DigitalInput(RobotMap.winchUpperIRChannel);
-    	winchLimit = new DigitalInput(RobotMap.winchLimit);
-    	elevatorTimer = new Timer();
+    	irSensor = new DigitalInput(RobotMap.winchIRChannel);
+    	lowerLimit = new DigitalInput(RobotMap.winchLowerLimitChannel);
+    	upperLimit = new DigitalInput(RobotMap.winchUpperLimitChannel);
     }
     
     public void initDefaultCommand() {
@@ -37,48 +34,47 @@ public class Winch extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	if ((speed < 0 && winchLimit.get()))
+    	if ((speed < 0 && upperLimit.get()))
     		kill();
     	else
     		motor.set(speed);
     }
     
     public void moveToIRMedium () {
-    	if (lowerIRState() && elevatorTimer.get() == 0) {
-    		setSpeed(Variables.winchUpSpeed.get());
-    		elevatorTimer.start();
-    	}
-    	else if (upperIRState() && elevatorTimer.get() > 0 && !hasTime) {
-    		setSpeed(Variables.winchDownSpeed.get());
-    		elevatorTimer.stop();
-    		halfTime =  elevatorTimer.get();
-    		elevatorTimer.reset();
-    		hasTime = true;
-    	}
-    	else if (lowerIRState() && elevatorTimer.get() == 0 && hasTime) {
-    		setSpeed(Variables.winchUpSpeed.get());
-    		elevatorTimer.start();
-    	}
-    	else if (elevatorTimer.get() >= halfTime) {
-    		setSpeed(0);
+    	if (!getIRState()) {
+    		if (aboveIR) {
+    			moveDown();
+    		} else {
+    			moveUp();
+    		}
     	}
     }
     
 
     public void moveToTop () {
-    	if (!upperIRState()) {
-    		setSpeed(Variables.winchUpSpeed.get());
+    	if (!getUpperState()) {
+    		moveUp();
     	} else {
     		kill();
+    		aboveIR = true;
     	}
     }
     
     public void moveToBottom () {
-    	if (!lowerIRState()) {
-    		setSpeed(Variables.winchDownSpeed.get());
+    	if (!getLowerState()) {
+    		moveDown();
     	} else {
     		kill();
+    		aboveIR = false;
     	}
+    }
+    
+    private void moveUp () {
+    	setSpeed(Variables.winchUpSpeed.get());
+    }
+    
+    private void moveDown () {
+    	setSpeed(Variables.winchDownSpeed.get());
     }
     
 
@@ -86,12 +82,16 @@ public class Winch extends Subsystem {
     	motor.set(0);
     }
     
-    public boolean lowerIRState(){
-    	return lowerIR.get();
+    public boolean getIRState(){
+    	return irSensor.get();
     }
     
-    public boolean upperIRState(){
-    	return upperIR.get();
+    public boolean getUpperState () {
+    	return upperLimit.get();
+    }
+    
+    public boolean getLowerState () {
+    	return lowerLimit.get();
     }
 }
 
