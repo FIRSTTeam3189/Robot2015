@@ -1,16 +1,19 @@
+
 package org.usfirst.frc.team3189.robot.commands;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class LateralCommand extends Command {
+public class ArcadeBackwardDriveCommand extends Command {
 
-    public LateralCommand() {
-    	requires(Robot.lateralDrivetrain);
+    public ArcadeBackwardDriveCommand() {
+        // Use requires() here to declare subsystem dependencies
+        requires(Robot.longDrivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -19,9 +22,8 @@ public class LateralCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(-Robot.oi.getMainJoystickX());
+    	Robot.longDrivetrain.arcadeDrive(-Robot.oi.getMainJoystickY(), -Robot.oi.getRotationalJoystickX() * Variables.arcadeJoystickXSensitivityFactor.get());
     }
-
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
@@ -29,12 +31,12 @@ public class LateralCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.lateralDrivetrain.murder();
+    	Robot.longDrivetrain.kill();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.lateralDrivetrain.murder();
+    	Robot.longDrivetrain.kill();
     }
 }

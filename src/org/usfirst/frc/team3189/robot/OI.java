@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3189.robot;
 
+import org.usfirst.frc.team3189.robot.commands.DrivetrainBackward;
+import org.usfirst.frc.team3189.robot.commands.DrivetrainForward;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.ForksExtend;
 import org.usfirst.frc.team3189.robot.commands.ForksRetract;
@@ -7,6 +9,8 @@ import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
 import org.usfirst.frc.team3189.robot.commands.WinchControlLeft;
 import org.usfirst.frc.team3189.robot.commands.WinchControlRight;
 import org.usfirst.frc.team3189.robot.commands.WinchControlDown;
+import org.usfirst.frc.team3189.robot.commands.auto.WinchDownLevel;
+import org.usfirst.frc.team3189.robot.commands.auto.WinchUpLevel;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -22,6 +26,12 @@ public class OI {
 	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
 	private Joystick winchJoystick = new Joystick(OIMap.winchJoystickChannel);
 
+	private Button Joy1But1;
+	private Button Joy1But2;
+	private Button Joy1But3;
+	
+	private Button Joy3But5;
+	private Button Joy3But4;
 	private Button Joy3But3;
 	private Button Joy3But2;
 	private Button Joy3But1;
@@ -72,6 +82,12 @@ public class OI {
 	}
 	
 	public void initButtons(){
+		Joy1But1 = new JoystickButton(mainJoystick, 1);
+		Joy1But2 = new JoystickButton(mainJoystick, 2);
+		Joy1But3 = new JoystickButton(mainJoystick, 3);
+		
+		Joy3But5 = new JoystickButton(winchJoystick, 5);
+		Joy3But4 = new JoystickButton(winchJoystick, 4);
 		Joy3But3  = new JoystickButton(winchJoystick, 3);
 		Joy3But2 = new JoystickButton(winchJoystick, 2);
 		Joy3But1 = new JoystickButton(winchJoystick, 1);
@@ -81,8 +97,13 @@ public class OI {
 		Joy3But10 = new JoystickButton(winchJoystick, 10);
 		Joy3But11 = new JoystickButton(winchJoystick, 11);
 		
-		Joy3But3.whileHeld(new ForksRetract());
-		Joy3But2.whileHeld(new ForksExtend());
+		Joy1But2.whenPressed(new DrivetrainBackward());
+		Joy1But3.whenPressed(new DrivetrainForward());
+		
+		Joy3But2.whenPressed(new WinchDownLevel());
+		Joy3But3.whenPressed(new WinchUpLevel());
+		Joy3But4.whenPressed(new ForksRetract());
+		Joy3But5.whenPressed(new ForksExtend());
 		Joy3But1.whenPressed(new ForkManualControl());
 		
 		Joy3But8.whileHeld(new WinchControlLeft());

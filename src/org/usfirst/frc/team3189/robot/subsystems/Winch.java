@@ -13,17 +13,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author Quest Osucha
  */
 public class Winch extends Subsystem {
-    public SpeedController motor;
-    public SpeedController motor2;
-    public DigitalInput irSensor;
-    public DigitalInput lowerLimit;
-    public DigitalInput upperLimit;
-    private boolean aboveIR;
+    private SpeedController motor;
+    private SpeedController motor2;
+    private DigitalInput lowerLimit;
+    private DigitalInput upperLimit;
+
+    private int currentLevel = 0;
     
     public Winch() {
     	motor = new Victor(RobotMap.winchMotor);
     	motor2 = new Victor(RobotMap.winchMotor2);
-    	irSensor = new DigitalInput(RobotMap.winchIRChannel);
     	lowerLimit = new DigitalInput(RobotMap.winchLowerLimitChannel);
     	upperLimit = new DigitalInput(RobotMap.winchUpperLimitChannel);
     }
@@ -34,6 +33,8 @@ public class Winch extends Subsystem {
     
     public void setSpeed(double speed) {
     	if ((speed < 0 && upperLimit.get()))
+    		kill();
+    	else if (speed > 0 && lowerLimit.get())
     		kill();
     	else{
     		motor.set(speed);
@@ -50,53 +51,27 @@ public class Winch extends Subsystem {
     	motor2.set(-speed);
     }
     
-    public void moveToIRMedium () {
-    	if (!getIRState()) {
-    		if (aboveIR) {
-    			moveDown();
-    		} else {
-    			moveUp();
-    		}
-    	}
+    public void upLevel(){
+    	if (currentLevel < 3)
+    		currentLevel++;
     }
     
-
-    public void moveToTop () {
-    	if (!getUpperState()) {
-    		moveUp();
-    		Variables.winchMovingUp.set("Moving Up");
-    	} else {
-    		kill();
-    		aboveIR = true;
-    		Variables.winchMovingUp.set("Not moving up");
-    	}
+    public void downLevel(){
+    	if (currentLevel > 0)
+    		currentLevel--;
     }
     
-    public void moveToBottom () {
-    	if (!getLowerState()) {
-    		moveDown();
-    	} else {
-    		kill();
-    		aboveIR = false;
-    	}
+    public double getScaledUpTime(){
+    	return Variables.winchUpLevelTime.get() - currentLevel * Variables.winchUpScaler.get();
     }
     
-    private void moveUp () {
-    	setSpeed(Variables.winchUpSpeed.get());
+    public double getScaledDownTime(){
+    	return Variables.winchDownLevelTime.get() - currentLevel * Variables.winchDownScaler.get();
     }
-    
-    private void moveDown () {
-    	setSpeed(Variables.winchDownSpeed.get());
-    }
-    
 
     public void kill() {
     	motor.set(0);
     	motor2.set(0);
-    }
-    
-    public boolean getIRState(){
-    	return irSensor.get();
     }
     
     public boolean getUpperState () {

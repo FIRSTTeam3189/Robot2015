@@ -14,6 +14,8 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.tankDriveRightPow
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchMovingUp;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpLevelTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownLevelTime;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
@@ -48,6 +50,9 @@ public class Status {
 	
 	public static final String MOVING_UP_KEY = "Winch Moving Up";
 	
+	public static final String WINCH_UP_LEVEL_TIME = "Winch Up Time";
+	public static final String WINCH_DOWN_LEVEL_TIME = "Winch Down Time";
+		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
 		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.get());
@@ -68,10 +73,14 @@ public class Status {
 		SmartDashboard.putNumber(DRIVETRAIN_INCREMENT, drivetrainIncrement.get());
 		
 		SmartDashboard.putString(MOVING_UP_KEY, winchMovingUp.get());
+		
+		SmartDashboard.putNumber(WINCH_UP_LEVEL_TIME, winchUpLevelTime.get());
+		SmartDashboard.putNumber(WINCH_DOWN_LEVEL_TIME, winchDownLevelTime.get());
 	}
 	
 	public static void updateStatus () {
 		SmartDashboard.putData(Robot.forks);
+		SmartDashboard.putData(Robot.lateralDrivetrain);
 		SmartDashboard.putNumber(FORK_CURRENT_SPEED_KEY, Robot.forks.getMotorSpeed());
 		SmartDashboard.putNumber(POTENTIOMETER_ROTATION_KEY, Robot.forks.getPotRotation());
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.longDrivetrain.getGyroAngle());
@@ -100,5 +109,7 @@ public class Status {
 		drivetrainIncrement.set(SmartDashboard.getNumber(DRIVETRAIN_INCREMENT));
 		
 		SmartDashboard.putString(MOVING_UP_KEY, winchMovingUp.get());
+		winchUpLevelTime.set(SmartDashboard.getNumber(WINCH_UP_LEVEL_TIME));
+		winchDownLevelTime.set(SmartDashboard.getNumber(WINCH_DOWN_LEVEL_TIME));
 	}
 }
