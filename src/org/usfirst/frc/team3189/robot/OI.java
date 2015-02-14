@@ -3,10 +3,10 @@ package org.usfirst.frc.team3189.robot;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.ForksExtend;
 import org.usfirst.frc.team3189.robot.commands.ForksRetract;
-import org.usfirst.frc.team3189.robot.commands.WinchControlDown;
+import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
 import org.usfirst.frc.team3189.robot.commands.WinchControlLeft;
 import org.usfirst.frc.team3189.robot.commands.WinchControlRight;
-import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
+import org.usfirst.frc.team3189.robot.commands.WinchControlDown;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;

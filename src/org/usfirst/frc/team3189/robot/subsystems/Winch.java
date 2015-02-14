@@ -47,11 +47,11 @@ public class Winch extends Subsystem {
     }
     
     public void setSpeedLeft(double speed) {
-    	motor.set(speed);
+    	motor.set(-speed);
     }
     
     public void setSpeedRight(double speed){
-    	motor2.set(speed);
+    	motor2.set(-speed);
     }
     
     public void moveToIRMedium () {

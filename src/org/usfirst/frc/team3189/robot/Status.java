@@ -5,9 +5,9 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.armExtendSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.armRetractSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.drivetrainIncrement;
 import static org.usfirst.frc.team3189.robot.utility.Variables.forkBackwardLimit;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkCloseSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkExtendSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.forkForwardLimit;
-import static org.usfirst.frc.team3189.robot.utility.Variables.forkOpenSpeed;
+import static org.usfirst.frc.team3189.robot.utility.Variables.forkRetractSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerLevelInterval;
 import static org.usfirst.frc.team3189.robot.utility.Variables.potentiometerTolerance;
 import static org.usfirst.frc.team3189.robot.utility.Variables.tankDriveRightPowerFactor;
@@ -60,8 +60,8 @@ public class Status {
 		//Forks Init
 		SmartDashboard.putNumber(ARM_BACKWARD_LIMIT, forkBackwardLimit.get());
 		SmartDashboard.putNumber(ARM_FORWARD_LIMIT, forkForwardLimit.get());
-		SmartDashboard.putNumber(ARM_CLOSE_SPEED, forkCloseSpeed.get());
-		SmartDashboard.putNumber(ARM_OPEN_SPEED, forkOpenSpeed.get());
+		SmartDashboard.putNumber(ARM_CLOSE_SPEED, forkExtendSpeed.get());
+		SmartDashboard.putNumber(ARM_OPEN_SPEED, forkRetractSpeed.get());
 		
 		SmartDashboard.putNumber(ARCADE_DRIVE_X_SENSITIVITY_FACTOR_KEY, arcadeJoystickXSensitivityFactor.get());
 		SmartDashboard.putNumber(TANK_DRIVE_RIGHT_POWER_FACTOR_KEY, tankDriveRightPowerFactor.get());
@@ -89,8 +89,8 @@ public class Status {
 		// arm update
 		forkBackwardLimit.set(SmartDashboard.getNumber(ARM_BACKWARD_LIMIT));
 		forkForwardLimit.set(SmartDashboard.getNumber(ARM_FORWARD_LIMIT));
-		forkCloseSpeed.set(SmartDashboard.getNumber(ARM_CLOSE_SPEED));
-		forkOpenSpeed.set(SmartDashboard.getNumber(ARM_OPEN_SPEED));
+		forkExtendSpeed.set(SmartDashboard.getNumber(ARM_CLOSE_SPEED));
+		forkRetractSpeed.set(SmartDashboard.getNumber(ARM_OPEN_SPEED));
 		
 		SmartDashboard.putBoolean(WINCH_UPPER_LIMIT_STATE, Robot.winch.getUpperState());
 		SmartDashboard.putBoolean(WINCH_LOWER_LIMIT_STATE, Robot.winch.getLowerState());

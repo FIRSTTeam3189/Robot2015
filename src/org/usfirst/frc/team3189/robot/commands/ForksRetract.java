@@ -20,12 +20,12 @@ public class ForksRetract extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.forks.setSpeed(Variables.forkOpenSpeed.get());
+    	Robot.forks.setSpeed(Variables.forkRetractSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return !Robot.forks.canMoveBackward();
     }
 
     // Called once after isFinished returns true
