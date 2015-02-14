@@ -54,9 +54,11 @@ public class Winch extends Subsystem {
     public void moveToTop () {
     	if (!getUpperState()) {
     		moveUp();
+    		Variables.winchMovingUp.set("Moving Up");
     	} else {
     		kill();
     		aboveIR = true;
+    		Variables.winchMovingUp.set("Not moving up");
     	}
     }
     

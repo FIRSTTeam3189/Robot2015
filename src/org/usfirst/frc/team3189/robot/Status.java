@@ -58,7 +58,9 @@ public class Status {
 	public static final String AUTO_NEXT_TOTE_ROTATE_TIME_KEY = "Tote Next Rotate Time";
 
 	public static final String AUTO_SCORE_TIME_KEY = "Score Time";
-		
+	
+	public static final String MOVING_UP_KEY = "Winch Moving Up";
+	
 	public static void initStatus () {
 		SmartDashboard.putNumber(SONAR_DISTANCE_MULTIPLIER_KEY, sonarDistanceMultiplier.get());
 		SmartDashboard.putNumber(SONAR_IN_RANGE_IN_INCHES, sonarInRangeInInches.get());
@@ -99,6 +101,8 @@ public class Status {
 		SmartDashboard.putNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY, autoNextToteRotateTime.get());
 		
 		SmartDashboard.putNumber(AUTO_SCORE_TIME_KEY, autoScoreTime.get());
+		
+		SmartDashboard.putString(MOVING_UP_KEY, winchMovingUp.get());
 	}
 	
 	public static void updateStatus () {
@@ -153,5 +157,7 @@ public class Status {
 		autoNextToteRotateTime.set(SmartDashboard.getNumber(AUTO_NEXT_TOTE_ROTATE_TIME_KEY));
 		
 		autoScoreTime.set(SmartDashboard.getNumber(AUTO_SCORE_TIME_KEY));
+		
+		SmartDashboard.putString(MOVING_UP_KEY, winchMovingUp.get());
 	}
 }

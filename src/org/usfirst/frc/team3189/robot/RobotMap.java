@@ -51,5 +51,5 @@ public class RobotMap {
 	 */
 	
 	public static final int winchIRChannel = 2;
-	public static final int winchLowerLimitChannel = 3;
+	public static final int winchLowerLimitChannel = 1;
 }

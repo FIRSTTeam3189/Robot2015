@@ -7,6 +7,7 @@ import org.usfirst.frc.team3189.robot.commands.GripperRetract;
 import org.usfirst.frc.team3189.robot.commands.RetractForks;
 import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
 import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
+import org.usfirst.frc.team3189.robot.commands.WinchLevel3;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
 import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
@@ -167,6 +168,7 @@ public class OI {
 		gripperExtend.whenPressed(new GripperExtend());
 		gripperRetract.whenPressed(new GripperRetract());
 		
+		winchToTop.whileHeld(new WinchLevel3());
 	}
 }
 

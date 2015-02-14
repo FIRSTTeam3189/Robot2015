@@ -12,25 +12,29 @@ public class WinchLevel3 extends Command {
 
     public WinchLevel3() {
         requires(Robot.winch);
+        Variables.winchMovingUp.set("Construct Command");
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Variables.winchMovingUp.set("Init Command");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Variables.winchMovingUp.set("Exec Command");
     	Robot.winch.moveToTop();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return true;
+    	return !Robot.winch.getUpperState();
     }
 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.winch.kill();
+    	Variables.winchMovingUp.set("End Cmmnd");
     }
 
     // Called when another command which requires one or more of the same

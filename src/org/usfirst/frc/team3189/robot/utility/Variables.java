@@ -19,8 +19,8 @@ public class Variables {
 	public static ValueReference<Double> forkBackwardLimit = new ValueReference<Double>(0.5);
 	
 	// The speeds of the winch to rise and fall
-	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.25);
-	public static ValueReference<Double> winchDownSpeed = new ValueReference<Double>(-.25);
+	public static ValueReference<Double> winchUpSpeed   = new ValueReference<Double>(.1);
+	public static ValueReference<Double> winchDownSpeed = new ValueReference<Double>(-.1);
 	
 	// The speeds of the arm to extend & retract
 	public static ValueReference<Double> armExtendSpeed  = new ValueReference<Double>(.25);
@@ -52,4 +52,6 @@ public class Variables {
 	public static ValueReference<Double> autoNextToteRotateTime = new ValueReference<Double>(.72);
 	public static ValueReference<Double> forkCloseSpeed = new ValueReference<Double>(-1.0);
 	public static ValueReference<Double> forkOpenSpeed = new ValueReference<Double>(1.0);
+	
+	public static ValueReference<String> winchMovingUp = new ValueReference<String>("None");
 }
