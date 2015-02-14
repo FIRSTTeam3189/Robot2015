@@ -16,6 +16,9 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.winchMovingUp;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpSpeed;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpLevelTime;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownLevelTime;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpScaler;
+import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownScaler;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
@@ -52,6 +55,9 @@ public class Status {
 	
 	public static final String WINCH_UP_LEVEL_TIME = "Winch Up Time";
 	public static final String WINCH_DOWN_LEVEL_TIME = "Winch Down Time";
+	
+	public static final String WINCH_UP_SCALAR = "Winch Up Scalar";
+	public static final String WINCH_DOWN_SCALAR = "Winch Down Scalar";
 		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
@@ -76,6 +82,8 @@ public class Status {
 		
 		SmartDashboard.putNumber(WINCH_UP_LEVEL_TIME, winchUpLevelTime.get());
 		SmartDashboard.putNumber(WINCH_DOWN_LEVEL_TIME, winchDownLevelTime.get());
+		SmartDashboard.putNumber(WINCH_UP_SCALAR, winchUpScaler.get());
+		SmartDashboard.putNumber(WINCH_DOWN_SCALAR, winchDownScaler.get());
 	}
 	
 	public static void updateStatus () {
@@ -86,6 +94,9 @@ public class Status {
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.longDrivetrain.getGyroAngle());
 		SmartDashboard.putNumber(H_DRIVE_FIXED_LEFT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
 		SmartDashboard.putNumber(H_DRIVE_FIXED_RIGHT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
+		
+		winchUpScaler.set(SmartDashboard.getNumber(WINCH_UP_SCALAR));
+		winchDownScaler.set(SmartDashboard.getNumber(WINCH_DOWN_SCALAR));
 		
 		potentiometerLevelInterval.set(SmartDashboard.getNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY));
 		potentiometerTolerance.set(SmartDashboard.getNumber(POTENTIOMETER_TOLERANCE_KEY));
