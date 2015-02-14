@@ -61,6 +61,10 @@ public class Winch extends Subsystem {
     		currentLevel--;
     }
     
+    public void resetLevel(){
+    	currentLevel = 0;
+    }
+    
     public double getScaledUpTime(){
     	return Variables.winchUpLevelTime.get() - currentLevel * Variables.winchUpScaler.get();
     }
