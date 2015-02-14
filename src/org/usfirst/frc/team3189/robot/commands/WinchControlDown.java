@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class HDriveCommand extends Command {
+public class WinchControlDown extends Command {
 
-    public HDriveCommand() {
-        requires(Robot.longDrivetrain);
+    public WinchControlDown() {
+        requires(Robot.winch);
     }
 
     // Called just before this Command runs the first time
@@ -19,20 +19,22 @@ public class HDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.tankDrive(Robot.longDrivetrain.getHDriveFixedSpeed(true), Robot.longDrivetrain.getHDriveFixedSpeed(false));
+    	Robot.winch.setSpeed(-1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
     }
-
+ 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.winch.kill();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.winch.kill();
     }
 }

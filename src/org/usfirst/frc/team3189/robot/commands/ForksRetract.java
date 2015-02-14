@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * @author Quest Osucha
  */
-public class RetractForks extends Command {
+public class ForksRetract extends Command {
 	
-    public RetractForks() {
+    public ForksRetract() {
         requires(Robot.forks);
     }
 
@@ -20,7 +20,7 @@ public class RetractForks extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.forks.setSpeed(Variables.forkCloseSpeed.get());
+    	Robot.forks.setSpeed(Variables.forkOpenSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

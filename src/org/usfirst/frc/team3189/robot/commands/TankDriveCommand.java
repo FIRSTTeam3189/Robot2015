@@ -1,17 +1,16 @@
 package org.usfirst.frc.team3189.robot.commands;
 
 import org.usfirst.frc.team3189.robot.Robot;
-import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class WinchLevel2 extends Command {
+public class TankDriveCommand extends Command {
 
-    public WinchLevel2() {
-        requires(Robot.winch);
+    public TankDriveCommand() {
+        requires(Robot.longDrivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -20,22 +19,20 @@ public class WinchLevel2 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.moveToIRMedium();
+    	Robot.longDrivetrain.tankDrive(Robot.longDrivetrain.getHDriveFixedSpeed(true), Robot.longDrivetrain.getHDriveFixedSpeed(false));
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return true;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.winch.kill();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.winch.kill();
     }
 }

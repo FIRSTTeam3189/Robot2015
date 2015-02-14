@@ -15,11 +15,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class LateralDrivetrain extends Subsystem {
     
 	private Talon centerMotor;
-    private AnalogInput sonar;
     
     public LateralDrivetrain() {
     	centerMotor = new Talon(RobotMap.centerMotorChannel);
-    	sonar = new AnalogInput(RobotMap.sonarAnalogChannel);
     }
 
     public void initDefaultCommand() {
@@ -27,11 +25,6 @@ public class LateralDrivetrain extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     	setDefaultCommand(new LateralCommand());
     }
-    
-    public double getSonarDistance(){
-    	return sonar.getValue() * Variables.sonarDistanceMultiplier.get();
-    }
-    
     
     /**
      * Sets movement speed of motor

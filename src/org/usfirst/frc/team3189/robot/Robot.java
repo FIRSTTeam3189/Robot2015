@@ -3,10 +3,7 @@ package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
 import org.usfirst.frc.team3189.robot.subsystems.Forks;
-import org.usfirst.frc.team3189.robot.subsystems.Gearbox;
-import org.usfirst.frc.team3189.robot.subsystems.Gripper;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
-import org.usfirst.frc.team3189.robot.subsystems.LifterPneumatics;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.Winch;
 
@@ -31,9 +28,6 @@ public class Robot extends IterativeRobot {
 	public static Forks forks;
 	public static LongDrivetrain longDrivetrain; 
 	public static LateralDrivetrain lateralDrivetrain;
-	public static LifterPneumatics lifterPneumatics;
-	public static Gearbox gearbox;
-	public static Gripper gripper;
 
     Command autonomousCommand;
     Preferences roboPrefs;
@@ -47,9 +41,6 @@ public class Robot extends IterativeRobot {
     	forks = new Forks();
     	longDrivetrain = new LongDrivetrain();
     	lateralDrivetrain = new LateralDrivetrain();
-    	lifterPneumatics = new LifterPneumatics();
-    	gearbox = new Gearbox();
-    	gripper = new Gripper();
 		oi = new OI();
 		Status.initStatus();
 //		Prefs.initPreferences();

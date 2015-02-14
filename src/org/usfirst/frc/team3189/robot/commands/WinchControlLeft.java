@@ -1,16 +1,15 @@
 package org.usfirst.frc.team3189.robot.commands;
 
 import org.usfirst.frc.team3189.robot.Robot;
-import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class WinchLevel1 extends Command {
+public class WinchControlLeft extends Command {
 
-    public WinchLevel1() {
+    public WinchControlLeft() {
         requires(Robot.winch);
     }
 
@@ -20,14 +19,14 @@ public class WinchLevel1 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.moveToBottom();
+    	Robot.winch.setSpeedLeft(Robot.oi.getWinchJoystickY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return true;
+        return false;
     }
-
+ 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.winch.kill();

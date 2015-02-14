@@ -1,19 +1,12 @@
 package org.usfirst.frc.team3189.robot;
 
-import org.usfirst.frc.team3189.robot.commands.ExtendForks;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
-import org.usfirst.frc.team3189.robot.commands.GripperExtend;
-import org.usfirst.frc.team3189.robot.commands.GripperRetract;
-import org.usfirst.frc.team3189.robot.commands.RetractForks;
-import org.usfirst.frc.team3189.robot.commands.SetLifterPistonState;
-import org.usfirst.frc.team3189.robot.commands.ToggleLifterPistonState;
-import org.usfirst.frc.team3189.robot.commands.WinchLevel3;
-import org.usfirst.frc.team3189.robot.commands.autonomous.AutoBackward;
-import org.usfirst.frc.team3189.robot.commands.autonomous.AutoForward;
-import org.usfirst.frc.team3189.robot.commands.autonomous.AutoNextTote;
-import org.usfirst.frc.team3189.robot.commands.autonomous.AutoRotate;
-import org.usfirst.frc.team3189.robot.commands.autonomous.Autonomous;
-import org.usfirst.frc.team3189.robot.utility.Variables;
+import org.usfirst.frc.team3189.robot.commands.ForksExtend;
+import org.usfirst.frc.team3189.robot.commands.ForksRetract;
+import org.usfirst.frc.team3189.robot.commands.WinchControlDown;
+import org.usfirst.frc.team3189.robot.commands.WinchControlLeft;
+import org.usfirst.frc.team3189.robot.commands.WinchControlRight;
+import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -29,41 +22,14 @@ public class OI {
 	private Joystick rotationalJoystick = new Joystick(OIMap.rotationalJoystickChannel);
 	private Joystick winchJoystick = new Joystick(OIMap.winchJoystickChannel);
 
-	//Debug
-	private Button debugForwardBackwardButton;
+	private Button Joy3But3;
+	private Button Joy3But2;
+	private Button Joy3But1;
 	
-	// Teleop Buttons
-	private Button extendLifterPneumaticsButton;
-	private Button retractLifterPneumaticsButton;
-	private Button toggleLifterPneumaticsButton;
-	
-	private Button openForksButton;
-	private Button closeForksButton;
-	private Button manualForksButton;
-	
-	// Auto and reset buttons
-	private Button autoCommandButton;
-	
-	// Auto next tote buttons
-	private Button autoNextToteForwardButton;
-	private Button autoNextToteRotateButton;
-	
-	// Auto pickup buttons
-	private Button autoPickupForwardButton;
-	private Button autoPickupBackwardButton;
-	private Button autoPickupRotateButton;
-	
-	// Gearbox
-	private Button gear1;
-	private Button gear2;
-	private Button toggleGears;
-	
-	// Gripper
-	private Button gripperExtend;
-	private Button gripperRetract;
-	
-	private Button winchToTop;
-	private Button winchToBottom;
+	private Button Joy3But8;
+	private Button Joy3But9;
+	private Button Joy3But10;
+	private Button Joy3But11;
 	
 	public OI() {
 		this.initButtons();
@@ -106,69 +72,23 @@ public class OI {
 	}
 	
 	public void initButtons(){
-		// Instantiation
-		// Debug buttons
-		//debugForwardBackwardButton = new JoystickButton(winchJoystick, 5);
-		// Teleop Buttons
-		extendLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonExtend);
-		retractLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonRetract);
-		toggleLifterPneumaticsButton = new JoystickButton(mainJoystick, OIMap.buttonToggle);
+		Joy3But3  = new JoystickButton(winchJoystick, 3);
+		Joy3But2 = new JoystickButton(winchJoystick, 2);
+		Joy3But1 = new JoystickButton(winchJoystick, 1);
 		
-		openForksButton  = new JoystickButton(winchJoystick, OIMap.buttonOpenForks);
-		closeForksButton = new JoystickButton(winchJoystick, OIMap.buttonCloseForks);
-		manualForksButton = new JoystickButton(winchJoystick, OIMap.buttonManualForks);
+		Joy3But8 = new JoystickButton(winchJoystick, 8);
+		Joy3But9 = new JoystickButton(winchJoystick, 9);
+		Joy3But10 = new JoystickButton(winchJoystick, 10);
+		Joy3But11 = new JoystickButton(winchJoystick, 11);
 		
-		winchToTop = new JoystickButton(winchJoystick, OIMap.buttonWinchTop);
-		winchToBottom = new JoystickButton(winchJoystick, OIMap.buttonWinchBottom);
+		Joy3But3.whileHeld(new ForksRetract());
+		Joy3But2.whileHeld(new ForksExtend());
+		Joy3But1.whenPressed(new ForkManualControl());
 		
-		// Autonomous command button
-		autoCommandButton = new JoystickButton(mainJoystick, OIMap.buttonAuto);
-		
-		// Auto next tote buttons
-		autoNextToteForwardButton = new JoystickButton(mainJoystick, OIMap.buttonNextToteForward);
-		autoNextToteRotateButton = new JoystickButton(mainJoystick, OIMap.buttonNextToteRotate);
-		
-		// Auto pickup buttons
-		autoPickupForwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupForward);
-		autoPickupBackwardButton = new JoystickButton(mainJoystick, OIMap.buttonPickupBackward);
-		autoPickupRotateButton = new JoystickButton(mainJoystick, OIMap.buttonPickupRotate);
-		
-		// Gripper
-		gripperExtend  = new JoystickButton(winchJoystick, OIMap.buttonExtendGripper);
-		gripperRetract = new JoystickButton(winchJoystick, OIMap.buttonRetractGripper);
-		
-		// Set Functionality
-		//debugForwardBackwardButton.whenPressed(new DebugMovement());
-		// Teleop Buttons
-		extendLifterPneumaticsButton.whenPressed(new SetLifterPistonState(true));
-		retractLifterPneumaticsButton.whenPressed(new SetLifterPistonState(false));
-		toggleLifterPneumaticsButton.whenPressed(new ToggleLifterPistonState());
-		
-		openForksButton.whileHeld(new ExtendForks());
-		closeForksButton.whileHeld(new RetractForks());
-		manualForksButton.whenPressed(new ForkManualControl());
-		
-		// Auto command and reset
-		autoCommandButton.whenPressed(new Autonomous());
-		
-		// Auto next tote buttons
-		autoNextToteForwardButton.whenPressed(new AutoNextTote());
-		autoNextToteRotateButton.whenPressed(new AutoRotate(Variables.autoNextToteRotateTime, false));
-		
-		// Auto pickup buttons
-		autoPickupForwardButton.whenPressed(new AutoForward(Variables.autoPickupForwardTime));
-		autoPickupBackwardButton.whenPressed(new AutoBackward(Variables.autoPickupBackwardTime));
-		autoPickupRotateButton.whenPressed(new AutoRotate(Variables.autoPickupRotateTime, true));
-		
-		// Gearbox
-//		gear1.whenPressed(new SetGearCommand(false));
-//		gear2.whenPressed(new SetGearCommand(true));
-//		toggleGears.whenPressed(new ShiftGearCommand());
-		
-		gripperExtend.whenPressed(new GripperExtend());
-		gripperRetract.whenPressed(new GripperRetract());
-		
-		winchToTop.whileHeld(new WinchLevel3());
+		Joy3But8.whileHeld(new WinchControlLeft());
+		Joy3But9.whileHeld(new WinchControlRight());
+		Joy3But10.whileHeld(new WinchControlDown());
+		Joy3But11.whileHeld(new WinchControlUp());
 	}
 }
 

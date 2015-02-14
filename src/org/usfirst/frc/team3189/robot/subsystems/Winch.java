@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
+import org.usfirst.frc.team3189.robot.commands.WinchControlCommand;
 import org.usfirst.frc.team3189.robot.commands.WinchDoNothing;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
@@ -17,6 +18,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Winch extends Subsystem {
     public SpeedController motor;
+    public SpeedController motor2;
     public DigitalInput irSensor;
     public DigitalInput lowerLimit;
     public DigitalInput upperLimit;
@@ -24,20 +26,32 @@ public class Winch extends Subsystem {
     
     public Winch() {
     	motor = new Victor(RobotMap.winchMotor);
+    	motor2 = new Victor(RobotMap.winchMotor2);
     	irSensor = new DigitalInput(RobotMap.winchIRChannel);
     	lowerLimit = new DigitalInput(RobotMap.winchLowerLimitChannel);
     	upperLimit = new DigitalInput(RobotMap.winchUpperLimitChannel);
     }
     
     public void initDefaultCommand() {
-    	setDefaultCommand(new WinchDoNothing());
+    	setDefaultCommand(new WinchControlCommand());
     }
     
     public void setSpeed(double speed) {
     	if ((speed < 0 && upperLimit.get()))
     		kill();
-    	else
+    	else{
     		motor.set(speed);
+    		motor2.set(speed);
+    	}
+    	
+    }
+    
+    public void setSpeedLeft(double speed) {
+    	motor.set(speed);
+    }
+    
+    public void setSpeedRight(double speed){
+    	motor2.set(speed);
     }
     
     public void moveToIRMedium () {
@@ -82,6 +96,7 @@ public class Winch extends Subsystem {
 
     public void kill() {
     	motor.set(0);
+    	motor2.set(0);
     }
     
     public boolean getIRState(){

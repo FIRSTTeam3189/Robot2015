@@ -1,17 +1,16 @@
-package org.usfirst.frc.team3189.robot.commands.autonomous;
+package org.usfirst.frc.team3189.robot.commands;
 
 import org.usfirst.frc.team3189.robot.Robot;
-import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class AutoSidewaysRight extends Command {
+public class WinchControlRight extends Command {
 
-    public AutoSidewaysRight() {
-        requires(Robot.lateralDrivetrain);
+    public WinchControlRight() {
+        requires(Robot.winch);
     }
 
     // Called just before this Command runs the first time
@@ -20,22 +19,22 @@ public class AutoSidewaysRight extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(Variables.autoSidewaysPower.get());
+    	Robot.winch.setSpeedRight(Robot.oi.getWinchJoystickY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.lateralDrivetrain.getSonarDistance() < Variables.sonarInRangeInInches.get();
+        return false;
     }
-
+ 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.lateralDrivetrain.murder();
+    	Robot.winch.kill();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.lateralDrivetrain.murder();
+    	Robot.winch.kill();
     }
 }
