@@ -31,7 +31,7 @@ public class Winch extends Subsystem {
     	setDefaultCommand(new WinchControlCommand());
     }
     
-    public void setSpeed(double speed) {
+    public void setSpeed(double speed){
     	if ((speed < 0 && upperLimit.get()))
     		kill();
     	else if (speed > 0 && lowerLimit.get())
