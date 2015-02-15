@@ -2,6 +2,7 @@ package org.usfirst.frc.team3189.robot.subsystems;
 
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.WinchControlCommand;
+import org.usfirst.frc.team3189.robot.commands.WinchDoNothing;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -28,7 +29,7 @@ public class Winch extends Subsystem {
     }
     
     public void initDefaultCommand() {
-    	setDefaultCommand(new WinchControlCommand());
+    	setDefaultCommand(new WinchDoNothing());
     }
     
     public void setSpeed(double speed){

@@ -13,7 +13,7 @@ public class SimpleAutonomous extends CommandGroup {
     	addSequential(new GoForward(Variables.autoGoForwardTime));
     	addSequential(new WinchUpLevel());
     	addSequential(new GoBackward(Variables.autoGoBackwardTime));
-    	addSequential(new GoRight(Variables.autoGoLeftTime));
+    	addSequential(new GoRight(Variables.autoGoRightTime));
     	addSequential(new WinchDownLevel());
         // Add Commands here:
         // e.g. addSequential(new Command1());

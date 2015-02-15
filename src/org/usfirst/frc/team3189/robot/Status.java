@@ -73,7 +73,7 @@ public class Status {
 	
 	// AUTONOMOUS TIME VARS
 	public static final String AUTO_GO_FORWARD_TIME_KEY = "Auto Go Forward Time";
-	public static final String AUTO_GO_LEFT_TIME_KEY    = "Auto Go Left Time";
+	public static final String AUTO_GO_RIGHT_TIME_KEY    = "Auto Go Right Time";
 	public static final String AUTO_GO_BACKWARD_TIME_KEY = "Auto Go Back Time";
 		
 	public static void initStatus () {
@@ -115,7 +115,7 @@ public class Status {
 		
 		// AUTONOMOUS TIME VARS
 		SmartDashboard.putNumber(AUTO_GO_FORWARD_TIME_KEY, Variables.autoGoForwardTime.get());
-		SmartDashboard.putNumber(AUTO_GO_LEFT_TIME_KEY, Variables.autoGoLeftTime.get());
+		SmartDashboard.putNumber(AUTO_GO_RIGHT_TIME_KEY, Variables.autoGoRightTime.get());
 		SmartDashboard.putNumber(AUTO_GO_BACKWARD_TIME_KEY, Variables.autoGoBackwardTime.get());
 	}
 	
@@ -169,7 +169,7 @@ public class Status {
 		
 		// AUTONOMOUS TIME VARS
 		Variables.autoGoForwardTime.set(SmartDashboard.getNumber(AUTO_GO_FORWARD_TIME_KEY));
-		Variables.autoGoLeftTime.set(SmartDashboard.getNumber(AUTO_GO_LEFT_TIME_KEY));
+		Variables.autoGoRightTime.set(SmartDashboard.getNumber(AUTO_GO_RIGHT_TIME_KEY));
 		Variables.autoGoBackwardTime.set(SmartDashboard.getNumber(AUTO_GO_BACKWARD_TIME_KEY));
 	}
 }

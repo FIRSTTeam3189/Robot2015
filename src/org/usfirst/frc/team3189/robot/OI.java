@@ -5,6 +5,7 @@ import org.usfirst.frc.team3189.robot.commands.DrivetrainForward;
 import org.usfirst.frc.team3189.robot.commands.ForkManualControl;
 import org.usfirst.frc.team3189.robot.commands.ForksExtend;
 import org.usfirst.frc.team3189.robot.commands.ForksRetract;
+import org.usfirst.frc.team3189.robot.commands.WinchControlCommand;
 import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
 import org.usfirst.frc.team3189.robot.commands.WinchControlLeft;
 import org.usfirst.frc.team3189.robot.commands.WinchControlRight;
@@ -39,7 +40,9 @@ public class OI {
 	private Button Joy3But4;
 	private Button Joy3But3;
 	private Button Joy3But2;
-	private Button Joy3But1;
+	
+	private Button Joy3But6;
+	private Button Joy3But7;
 	
 	private Button Joy3But8;
 	private Button Joy3But9;
@@ -95,7 +98,9 @@ public class OI {
 		Joy3But4 = new JoystickButton(winchJoystick, 4);
 		Joy3But3  = new JoystickButton(winchJoystick, 3);
 		Joy3But2 = new JoystickButton(winchJoystick, 2);
-		Joy3But1 = new JoystickButton(winchJoystick, 1);
+		
+		Joy3But6 = new JoystickButton(winchJoystick, 6);
+		Joy3But7 = new JoystickButton(winchJoystick, 7);
 		
 		Joy2But10 = new JoystickButton(rotationalJoystick, 10);
 		Joy2But11 = new JoystickButton(rotationalJoystick, 11);
@@ -115,7 +120,9 @@ public class OI {
 		Joy3But3.whenPressed(new WinchUpLevel());
 		Joy3But4.whenPressed(new ForksRetract());
 		Joy3But5.whenPressed(new ForksExtend());
-		Joy3But1.whenPressed(new ForkManualControl());
+		
+		Joy3But6.whileHeld(new WinchControlCommand());
+		Joy3But7.whileHeld(new ForkManualControl());
 		
 		Joy3But8.whileHeld(new WinchControlLeft());
 		Joy3But9.whileHeld(new WinchControlRight());

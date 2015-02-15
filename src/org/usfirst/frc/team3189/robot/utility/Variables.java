@@ -53,5 +53,5 @@ public class Variables {
 	//Auto Time Vars
 	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.3);
 	public static ValueReference<Double> autoGoBackwardTime = new ValueReference<Double>(.8);
-	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(2.0);
+	public static ValueReference<Double> autoGoRightTime = new ValueReference<Double>(2.5);
 }

@@ -12,8 +12,9 @@ public class BinAuto extends CommandGroup {
     
     public  BinAuto() {
     	addSequential(new ForksExtend());
-    	addSequential(new GoForward(new ValueReference<Double>(.5)));
+    	addSequential(new GoBackward(new ValueReference<Double>(.5)));
     	addSequential(new WinchUpLevel());
+    	addSequential(new GoForward(new ValueReference<Double>(.5)));
     	addSequential(new GoLeft(new ValueReference<Double>(3.0)));
     	addSequential(new WinchDownLevel());
     	
