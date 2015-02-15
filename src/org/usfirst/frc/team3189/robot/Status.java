@@ -19,6 +19,8 @@ import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownLevelTim
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchUpScaler;
 import static org.usfirst.frc.team3189.robot.utility.Variables.winchDownScaler;
 
+import org.usfirst.frc.team3189.robot.utility.Variables;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Status {
@@ -58,6 +60,14 @@ public class Status {
 	
 	public static final String WINCH_UP_SCALAR = "Winch Up Scalar";
 	public static final String WINCH_DOWN_SCALAR = "Winch Down Scalar";
+	
+	// AUTONOMOUS SPEED VARS
+	public static final String AUTO_FWD_SPEED_KEY   = "Auto Forward Speed";
+	public static final String AUTO_BCKWD_SPEED_KEY = "Auto Backward Speed";
+	public static final String AUTO_LEFT_SPEED_KEY  = "Auto Left Speed";
+	public static final String AUTO_RIGHT_SPEED_KEY = "Auto Right Speed";
+	public static final String AUTO_TURN_LEFT_SPEED_KEY = "Auto Turn Left Speed";
+	public static final String AUTO_TURN_RIGHT_SPEED_KEY = "Auto Turn Right Speed";
 		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
@@ -84,6 +94,17 @@ public class Status {
 		SmartDashboard.putNumber(WINCH_DOWN_LEVEL_TIME, winchDownLevelTime.get());
 		SmartDashboard.putNumber(WINCH_UP_SCALAR, winchUpScaler.get());
 		SmartDashboard.putNumber(WINCH_DOWN_SCALAR, winchDownScaler.get());
+		
+		
+		// AUTONOMOUS SPEED VARS
+		SmartDashboard.putNumber(AUTO_FWD_SPEED_KEY, Variables.autoForwardSpeed.get());
+		SmartDashboard.putNumber(AUTO_BCKWD_SPEED_KEY, Variables.autoBackwardSpeed.get());
+		
+		SmartDashboard.putNumber(AUTO_LEFT_SPEED_KEY, Variables.autoBackwardSpeed.get());
+		SmartDashboard.putNumber(AUTO_RIGHT_SPEED_KEY, Variables.autoRightSpeed.get());
+		
+		SmartDashboard.putNumber(AUTO_TURN_LEFT_SPEED_KEY, Variables.autoTurnLeftSpeed.get());
+		SmartDashboard.putNumber(AUTO_TURN_RIGHT_SPEED_KEY, Variables.autoTurnRightSpeed.get());
 	}
 	
 	public static void updateStatus () {
@@ -122,5 +143,16 @@ public class Status {
 		SmartDashboard.putString(MOVING_UP_KEY, winchMovingUp.get());
 		winchUpLevelTime.set(SmartDashboard.getNumber(WINCH_UP_LEVEL_TIME));
 		winchDownLevelTime.set(SmartDashboard.getNumber(WINCH_DOWN_LEVEL_TIME));
+		
+		
+		// AUTONOMOUS SPEED VARS
+		Variables.autoForwardSpeed.set(SmartDashboard.getNumber(AUTO_FWD_SPEED_KEY));
+		Variables.autoBackwardSpeed.set(SmartDashboard.getNumber(AUTO_BCKWD_SPEED_KEY));
+		
+		Variables.autoLeftSpeed.set(SmartDashboard.getNumber(AUTO_LEFT_SPEED_KEY));
+		Variables.autoRightSpeed.set(SmartDashboard.getNumber(AUTO_RIGHT_SPEED_KEY));
+		
+		Variables.autoTurnLeftSpeed.set(SmartDashboard.getNumber(AUTO_TURN_LEFT_SPEED_KEY));
+		Variables.autoTurnRightSpeed.set(SmartDashboard.getNumber(AUTO_TURN_RIGHT_SPEED_KEY));
 	}
 }
