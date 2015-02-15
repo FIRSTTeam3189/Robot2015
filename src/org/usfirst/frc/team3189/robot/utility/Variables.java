@@ -37,13 +37,17 @@ public class Variables {
 	public static ValueReference<Double> winchUpLevelTime = new ValueReference<Double>(5.0);
 	public static ValueReference<Double> winchDownLevelTime = new ValueReference<Double>(4.0);
 	
-	// Auto time vars
+	// Auto Speed Vars
 	public static ValueReference<Double> autoForwardSpeed  = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoBackwardSpeed = new ValueReference<Double>(.5);
 	
 	public static ValueReference<Double> autoLeftSpeed     = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoRightSpeed    = new ValueReference<Double>(.5);
 	
-	public static ValueReference<Double> autoTurnLeftSpeed     = new ValueReference<Double>(.5);
-	public static ValueReference<Double> autoTurnRightSpeed    = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoTurnLeftSpeed  = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoTurnRightSpeed = new ValueReference<Double>(.5);
+	
+	//Auto Time Vars
+	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.3);
+	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(3.0);
 }

@@ -64,10 +64,16 @@ public class Status {
 	// AUTONOMOUS SPEED VARS
 	public static final String AUTO_FWD_SPEED_KEY   = "Auto Forward Speed";
 	public static final String AUTO_BCKWD_SPEED_KEY = "Auto Backward Speed";
+	
 	public static final String AUTO_LEFT_SPEED_KEY  = "Auto Left Speed";
 	public static final String AUTO_RIGHT_SPEED_KEY = "Auto Right Speed";
+	
 	public static final String AUTO_TURN_LEFT_SPEED_KEY = "Auto Turn Left Speed";
 	public static final String AUTO_TURN_RIGHT_SPEED_KEY = "Auto Turn Right Speed";
+	
+	// AUTONOMOUS TIME VARS
+	public static final String AUTO_GO_FORWARD_TIME_KEY = "Auto Go Forward Time";
+	public static final String AUTO_GO_LEFT_TIME_KEY    = "Auto Go Left Time";
 		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
@@ -105,6 +111,10 @@ public class Status {
 		
 		SmartDashboard.putNumber(AUTO_TURN_LEFT_SPEED_KEY, Variables.autoTurnLeftSpeed.get());
 		SmartDashboard.putNumber(AUTO_TURN_RIGHT_SPEED_KEY, Variables.autoTurnRightSpeed.get());
+		
+		// AUTONOMOUS TIME VARS
+		SmartDashboard.putNumber(AUTO_GO_FORWARD_TIME_KEY, Variables.autoGoForwardTime.get());
+		SmartDashboard.putNumber(AUTO_GO_LEFT_TIME_KEY, Variables.autoGoLeftTime.get());
 	}
 	
 	public static void updateStatus () {
@@ -154,5 +164,9 @@ public class Status {
 		
 		Variables.autoTurnLeftSpeed.set(SmartDashboard.getNumber(AUTO_TURN_LEFT_SPEED_KEY));
 		Variables.autoTurnRightSpeed.set(SmartDashboard.getNumber(AUTO_TURN_RIGHT_SPEED_KEY));
+		
+		// AUTONOMOUS TIME VARS
+		Variables.autoGoForwardTime.set(SmartDashboard.getNumber(AUTO_GO_FORWARD_TIME_KEY));
+		Variables.autoGoLeftTime.set(SmartDashboard.getNumber(AUTO_GO_LEFT_TIME_KEY));
 	}
 }
