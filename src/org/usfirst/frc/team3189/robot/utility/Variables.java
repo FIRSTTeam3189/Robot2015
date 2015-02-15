@@ -47,6 +47,9 @@ public class Variables {
 	public static ValueReference<Double> autoTurnLeftSpeed  = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoTurnRightSpeed = new ValueReference<Double>(.5);
 	
+	public static ValueReference<Double> autoForksExtendSpeed  = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoForksRetractSpeed = new ValueReference<Double>(.5);
+	
 	//Auto Time Vars
 	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.3);
 	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(3.0);
