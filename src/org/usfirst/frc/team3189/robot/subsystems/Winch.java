@@ -32,11 +32,13 @@ public class Winch extends Subsystem {
     }
     
     public void setSpeed(double speed){
-    	if ((speed < 0 && upperLimit.get()))
+    	if (upperLimit.get() && speed > 0)
     		kill();
-    	else if (speed > 0 && lowerLimit.get())
+    	else if (lowerLimit.get() && speed < 0)
     		kill();
     	else{
+    		// account for wiring
+    		speed = -speed;
     		motor.set(speed);
     		motor2.set(speed);
     	}

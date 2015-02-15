@@ -20,7 +20,7 @@ public class WinchControlCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.setSpeed(Robot.oi.getWinchJoystickY());
+    	Robot.winch.setSpeed(-Robot.oi.getWinchJoystickY());
     }
 
     // Make this return true when this Command no longer needs to run execute()

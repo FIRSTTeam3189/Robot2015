@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3189.robot.commands.auto;
 
 import org.usfirst.frc.team3189.robot.Robot;
+import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -20,7 +21,7 @@ public class WinchDownLevel extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.setSpeed(1);
+    	Robot.winch.setSpeed(Variables.winchDownSpeed.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()
