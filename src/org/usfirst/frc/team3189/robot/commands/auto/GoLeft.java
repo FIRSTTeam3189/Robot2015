@@ -24,7 +24,7 @@ public class GoLeft extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(-Variables.autoRightSpeed.get());;
+    	Robot.lateralDrivetrain.move(Variables.autoLeftSpeed.get());;
     }
 
     // Make this return true when this Command no longer needs to run execute()

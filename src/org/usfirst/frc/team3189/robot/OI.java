@@ -9,6 +9,8 @@ import org.usfirst.frc.team3189.robot.commands.WinchControlUp;
 import org.usfirst.frc.team3189.robot.commands.WinchControlLeft;
 import org.usfirst.frc.team3189.robot.commands.WinchControlRight;
 import org.usfirst.frc.team3189.robot.commands.WinchControlDown;
+import org.usfirst.frc.team3189.robot.commands.auto.BinAuto;
+import org.usfirst.frc.team3189.robot.commands.auto.SimpleAutonomous;
 import org.usfirst.frc.team3189.robot.commands.auto.WinchDownLevel;
 import org.usfirst.frc.team3189.robot.commands.auto.WinchUpLevel;
 
@@ -29,6 +31,9 @@ public class OI {
 	private Button Joy1But1;
 	private Button Joy1But2;
 	private Button Joy1But3;
+	
+	private Button Joy2But10;
+	private Button Joy2But11;
 	
 	private Button Joy3But5;
 	private Button Joy3But4;
@@ -92,10 +97,16 @@ public class OI {
 		Joy3But2 = new JoystickButton(winchJoystick, 2);
 		Joy3But1 = new JoystickButton(winchJoystick, 1);
 		
+		Joy2But10 = new JoystickButton(rotationalJoystick, 10);
+		Joy2But11 = new JoystickButton(rotationalJoystick, 11);
+		
 		Joy3But8 = new JoystickButton(winchJoystick, 8);
 		Joy3But9 = new JoystickButton(winchJoystick, 9);
 		Joy3But10 = new JoystickButton(winchJoystick, 10);
 		Joy3But11 = new JoystickButton(winchJoystick, 11);
+		
+		Joy2But10.whenPressed(new SimpleAutonomous());
+		Joy2But11.whenPressed(new BinAuto());
 		
 		Joy1But2.whenPressed(new DrivetrainBackward());
 		Joy1But3.whenPressed(new DrivetrainForward());

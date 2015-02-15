@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3189.robot.commands.auto;
 
+import org.usfirst.frc.team3189.robot.commands.ForksExtend;
 import org.usfirst.frc.team3189.robot.utility.ValueReference;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -13,7 +14,7 @@ public class BinAuto extends CommandGroup {
     	addSequential(new ForksExtend());
     	addSequential(new GoForward(new ValueReference<Double>(.5)));
     	addSequential(new WinchUpLevel());
-    	addSequential(new GoRight(new ValueReference<Double>(3.0)));
+    	addSequential(new GoLeft(new ValueReference<Double>(3.0)));
     	addSequential(new WinchDownLevel());
     	
         // Add Commands here:

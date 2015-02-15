@@ -34,8 +34,8 @@ public class Variables {
 	public static ValueReference<String> winchMovingUp = new ValueReference<String>("None");
 	
 	// Winch Time Levels
-	public static ValueReference<Double> winchUpLevelTime = new ValueReference<Double>(5.0);
-	public static ValueReference<Double> winchDownLevelTime = new ValueReference<Double>(4.0);
+	public static ValueReference<Double> winchUpLevelTime = new ValueReference<Double>(3.0);
+	public static ValueReference<Double> winchDownLevelTime = new ValueReference<Double>(3.0);
 	
 	// Auto Speed Vars
 	public static ValueReference<Double> autoForwardSpeed  = new ValueReference<Double>(.5);
@@ -52,5 +52,6 @@ public class Variables {
 	
 	//Auto Time Vars
 	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.3);
-	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(3.0);
+	public static ValueReference<Double> autoGoBackwardTime = new ValueReference<Double>(.8);
+	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(2.0);
 }
