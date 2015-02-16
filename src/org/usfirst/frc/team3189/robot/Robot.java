@@ -2,6 +2,7 @@
 package org.usfirst.frc.team3189.robot;
 
 import org.usfirst.frc.team3189.robot.commands.ArcadeDriveCommand;
+import org.usfirst.frc.team3189.robot.subsystems.Camera;
 import org.usfirst.frc.team3189.robot.subsystems.Forks;
 import org.usfirst.frc.team3189.robot.subsystems.LateralDrivetrain;
 import org.usfirst.frc.team3189.robot.subsystems.LongDrivetrain;
@@ -28,6 +29,7 @@ public class Robot extends IterativeRobot {
 	public static Forks forks;
 	public static LongDrivetrain longDrivetrain; 
 	public static LateralDrivetrain lateralDrivetrain;
+	public static Camera camera;
 
     Command autonomousCommand;
     Preferences roboPrefs;
@@ -41,6 +43,7 @@ public class Robot extends IterativeRobot {
     	forks = new Forks();
     	longDrivetrain = new LongDrivetrain();
     	lateralDrivetrain = new LateralDrivetrain();
+    	camera = new Camera();
 		oi = new OI();
 		Status.initStatus();
 //		Prefs.initPreferences();
