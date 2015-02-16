@@ -14,8 +14,8 @@ public class Variables {
 	public static ValueReference<Double> heavyFilterConstant = new ValueReference<Double>(0.9);
 	
 	// Fork Limitation
-	public static ValueReference<Double> forkBackwardLimit = new ValueReference<Double>(500.0);
-	public static ValueReference<Double> forkForwardLimit = new ValueReference<Double>(810.0);
+	public static ValueReference<Double> forkBackwardLimit = new ValueReference<Double>(400.0);
+	public static ValueReference<Double> forkForwardLimit = new ValueReference<Double>(700.0);
 	
 	// The speeds of the winch to rise and fall
 	public static ValueReference<Double> winchUpSpeed    = new ValueReference<Double>(1.0);
