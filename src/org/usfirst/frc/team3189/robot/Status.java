@@ -79,6 +79,9 @@ public class Status {
 	
 	public static final String AUTO_2_GO_RIGHT_TIME_KEY = "Auto 2 Go Right Time";
 	public static final String AUTO_2_GO_BACKWARD_TIME_KEY = "Auto 2 Go Backward Time";
+	
+	public static final String MAIN_THROTTLE_KEY = "Main Throttle";
+	public static final String LATERAL_THROTTLE_KEY = "Lateral Throttle";
 		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
@@ -136,6 +139,8 @@ public class Status {
 		SmartDashboard.putNumber(GYRO_ANGLE_KEY, Robot.longDrivetrain.getGyroAngle());
 		SmartDashboard.putNumber(H_DRIVE_FIXED_LEFT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
 		SmartDashboard.putNumber(H_DRIVE_FIXED_RIGHT, Robot.longDrivetrain.getHDriveFixedSpeed(true));
+		SmartDashboard.putNumber(MAIN_THROTTLE_KEY, Robot.oi.getMainJoyStickThrottle());
+		SmartDashboard.putNumber(LATERAL_THROTTLE_KEY, Robot.oi.getRotationalJoyStickThrottle());
 		
 		winchUpScaler.set(SmartDashboard.getNumber(WINCH_UP_SCALAR));
 		winchDownScaler.set(SmartDashboard.getNumber(WINCH_DOWN_SCALAR));

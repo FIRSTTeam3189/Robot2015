@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
+import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.LateralCommand;
 
@@ -32,6 +33,14 @@ public class LateralDrivetrain extends Subsystem {
      */
     public void move(double power){
     	centerMotor.set(power);
+    }
+    
+    /**
+     * Sets movement speed of motor
+     * @param power
+     */
+    public void moveThrottled(double power){
+    	centerMotor.set(power * Robot.oi.getRotationalJoyStickThrottle());
     }
     
     /**

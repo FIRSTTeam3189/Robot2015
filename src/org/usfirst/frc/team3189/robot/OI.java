@@ -89,6 +89,21 @@ public class OI {
 		return winchJoystick.getY();
 	}
 	
+	public double getMainJoyStickThrottle(){
+		double thing = .5;
+		return ((Math.abs(mainJoystick.getZ() - 1) * .5) * thing) + (1 - (1 * thing));
+	}
+	
+	public double getRotationalJoyStickThrottle(){
+		double thing = .5;
+		return ((Math.abs(rotationalJoystick.getZ() - 1) * .5) * thing) + (1 - (1 * thing));
+	}
+	
+	public double getWinchJoyStickThrottle(){
+		double thing = .125;
+		return ((Math.abs(rotationalJoystick.getZ() - 1) * .5) * thing) + (1 - (1 * thing));
+	}
+	
 	public void initButtons(){
 		Joy1But1 = new JoystickButton(mainJoystick, 1);
 		Joy1But2 = new JoystickButton(mainJoystick, 2);

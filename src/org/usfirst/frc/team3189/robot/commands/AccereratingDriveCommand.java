@@ -20,7 +20,7 @@ public class AccereratingDriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.longDrivetrain.arcadeDriveIncremental(Robot.oi.getMainJoystickY(), -Robot.oi.getRotationalJoystickX() * Variables.arcadeJoystickXSensitivityFactor.get());
+    	Robot.longDrivetrain.arcadeDriveIncrementalThrottled(Robot.oi.getMainJoystickY(), -Robot.oi.getRotationalJoystickX() * Variables.arcadeJoystickXSensitivityFactor.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

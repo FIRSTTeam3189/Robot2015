@@ -19,7 +19,7 @@ public class LateralCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lateralDrivetrain.move(-Robot.oi.getMainJoystickX());
+    	Robot.lateralDrivetrain.moveThrottled(-Robot.oi.getMainJoystickX());
     }
 
     // Make this return true when this Command no longer needs to run execute()

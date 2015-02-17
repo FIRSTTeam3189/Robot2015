@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team3189.robot.subsystems;
 
+import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.AccereratingDriveCommand;
 import org.usfirst.frc.team3189.robot.utility.Variables;
@@ -53,6 +54,12 @@ public class LongDrivetrain extends Subsystem {
     }
     
     public void arcadeDriveIncremental(double magnitude, double direction) {
+    	this.magnitude = (this.magnitude * Variables.drivetrainIncrement.get()) + (magnitude * Math.abs(1 - Variables.drivetrainIncrement.get()));
+    	this.direction = (this.direction * Variables.drivetrainIncrement.get()) + (direction * Math.abs(1 - Variables.drivetrainIncrement.get()));
+    	drive.arcadeDrive(this.magnitude * Robot.oi.getMainJoyStickThrottle(), this.direction * Robot.oi.getMainJoyStickThrottle());
+    }
+    
+    public void arcadeDriveIncrementalThrottled(double magnitude, double direction) {
     	this.magnitude = (this.magnitude * Variables.drivetrainIncrement.get()) + (magnitude * Math.abs(1 - Variables.drivetrainIncrement.get()));
     	this.direction = (this.direction * Variables.drivetrainIncrement.get()) + (direction * Math.abs(1 - Variables.drivetrainIncrement.get()));
     	drive.arcadeDrive(this.magnitude, this.direction);

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3189.robot.subsystems;
 
+import org.usfirst.frc.team3189.robot.Robot;
 import org.usfirst.frc.team3189.robot.RobotMap;
 import org.usfirst.frc.team3189.robot.commands.WinchControlCommand;
 import org.usfirst.frc.team3189.robot.commands.WinchDoNothing;
@@ -41,7 +42,7 @@ public class Winch extends Subsystem {
     	else{
     		// account for wiring
     		speed = -speed;
-    		motor.set(speed);
+    		motor.set(speed * Robot.oi.getWinchJoyStickThrottle());
     		motor2.set(speed);
     	}
     	
