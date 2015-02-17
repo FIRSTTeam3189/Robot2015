@@ -75,10 +75,19 @@ public class Status {
 	public static final String AUTO_GO_FORWARD_TIME_KEY = "Auto Go Forward Time";
 	public static final String AUTO_GO_RIGHT_TIME_KEY    = "Auto Go Right Time";
 	public static final String AUTO_GO_BACKWARD_TIME_KEY = "Auto Go Back Time";
+	public static final String AUTO_GO_BACKWARD_2_TIME_KEY = "Auto Go Back Time 2";
+	
+	public static final String AUTO_2_GO_RIGHT_TIME_KEY = "Auto 2 Go Right Time";
+	public static final String AUTO_2_GO_BACKWARD_TIME_KEY = "Auto 2 Go Backward Time";
 		
 	public static void initStatus () {
 		SmartDashboard.putNumber(POTENTIOMETER_LEVEL_INTERVAL_KEY, potentiometerLevelInterval.get());
 		SmartDashboard.putNumber(POTENTIOMETER_TOLERANCE_KEY, potentiometerTolerance.get());
+		
+		SmartDashboard.putNumber(AUTO_GO_BACKWARD_2_TIME_KEY, Variables.autoGoBackwardTime2.get());
+		
+		SmartDashboard.putNumber(AUTO_2_GO_RIGHT_TIME_KEY, Variables.auto2GoRightTime.get());
+		SmartDashboard.putNumber(AUTO_2_GO_BACKWARD_TIME_KEY, Variables.auto2GoBackwardTime.get());
 		
 		SmartDashboard.putNumber(WINCH_UP_SPEED_KEY, winchUpSpeed.get());
 		SmartDashboard.putNumber(WINCH_DOWN_SPEED_KEY, winchDownSpeed.get());
@@ -115,7 +124,7 @@ public class Status {
 		
 		// AUTONOMOUS TIME VARS
 		SmartDashboard.putNumber(AUTO_GO_FORWARD_TIME_KEY, Variables.autoGoForwardTime.get());
-		SmartDashboard.putNumber(AUTO_GO_RIGHT_TIME_KEY, Variables.autoGoRightTime.get());
+		SmartDashboard.putNumber(AUTO_GO_RIGHT_TIME_KEY, Variables.autoGoLeftTime.get());
 		SmartDashboard.putNumber(AUTO_GO_BACKWARD_TIME_KEY, Variables.autoGoBackwardTime.get());
 	}
 	
@@ -169,7 +178,11 @@ public class Status {
 		
 		// AUTONOMOUS TIME VARS
 		Variables.autoGoForwardTime.set(SmartDashboard.getNumber(AUTO_GO_FORWARD_TIME_KEY));
-		Variables.autoGoRightTime.set(SmartDashboard.getNumber(AUTO_GO_RIGHT_TIME_KEY));
+		Variables.autoGoLeftTime.set(SmartDashboard.getNumber(AUTO_GO_RIGHT_TIME_KEY));
 		Variables.autoGoBackwardTime.set(SmartDashboard.getNumber(AUTO_GO_BACKWARD_TIME_KEY));
+		Variables.autoGoBackwardTime2.set(SmartDashboard.getNumber(AUTO_GO_BACKWARD_2_TIME_KEY));
+		
+		Variables.auto2GoBackwardTime.set(SmartDashboard.getNumber(AUTO_2_GO_BACKWARD_TIME_KEY));
+		Variables.auto2GoRightTime.set(SmartDashboard.getNumber(AUTO_2_GO_RIGHT_TIME_KEY));
 	}
 }

@@ -3,6 +3,7 @@ package org.usfirst.frc.team3189.robot.commands.auto;
 import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -13,8 +14,10 @@ public class SimpleAutonomous extends CommandGroup {
     	addSequential(new GoForward(Variables.autoGoForwardTime));
     	addSequential(new WinchUpLevel());
     	addSequential(new GoBackward(Variables.autoGoBackwardTime));
-    	addSequential(new GoRight(Variables.autoGoRightTime));
-    	addSequential(new WinchDownLevel());
+    	addSequential(new GoRight(Variables.autoGoLeftTime));
+    	addParallel(new WinchDownLevel());
+    	addSequential(new WaitCommand(.5));
+    	addSequential(new GoBackward(Variables.autoGoBackwardTime2));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

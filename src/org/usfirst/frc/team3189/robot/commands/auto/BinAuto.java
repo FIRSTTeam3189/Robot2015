@@ -2,8 +2,10 @@ package org.usfirst.frc.team3189.robot.commands.auto;
 
 import org.usfirst.frc.team3189.robot.commands.ForksExtend;
 import org.usfirst.frc.team3189.robot.utility.ValueReference;
+import org.usfirst.frc.team3189.robot.utility.Variables;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -11,13 +13,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class BinAuto extends CommandGroup {
     
     public  BinAuto() {
-    	addSequential(new ForksExtend());
-    	addSequential(new GoBackward(new ValueReference<Double>(.5)));
+    	addSequential(new GoForward(Variables.autoGoForwardTime));
     	addSequential(new WinchUpLevel());
-    	addSequential(new GoForward(new ValueReference<Double>(.5)));
-    	addSequential(new GoLeft(new ValueReference<Double>(3.0)));
-    	addSequential(new WinchDownLevel());
-    	
+    	addSequential(new GoRight(Variables.auto2GoRightTime));
+    	addSequential(new GoBackward(Variables.auto2GoBackwardTime));
+    	addParallel(new WinchDownLevel());
+    	addSequential(new WaitCommand(.5));
+    	addSequential(new GoBackward(Variables.autoGoBackwardTime2));    	
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

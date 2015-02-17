@@ -34,24 +34,28 @@ public class Variables {
 	public static ValueReference<String> winchMovingUp = new ValueReference<String>("None");
 	
 	// Winch Time Levels
-	public static ValueReference<Double> winchUpLevelTime = new ValueReference<Double>(3.0);
-	public static ValueReference<Double> winchDownLevelTime = new ValueReference<Double>(3.0);
+	public static ValueReference<Double> winchUpLevelTime = new ValueReference<Double>(4.0);
+	public static ValueReference<Double> winchDownLevelTime = new ValueReference<Double>(4.0);
 	
 	// Auto Speed Vars
-	public static ValueReference<Double> autoForwardSpeed  = new ValueReference<Double>(.5);
-	public static ValueReference<Double> autoBackwardSpeed = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoForwardSpeed  = new ValueReference<Double>(.6);
+	public static ValueReference<Double> autoBackwardSpeed = new ValueReference<Double>(.6);
 	
-	public static ValueReference<Double> autoLeftSpeed     = new ValueReference<Double>(.5);
-	public static ValueReference<Double> autoRightSpeed    = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoLeftSpeed     = new ValueReference<Double>(.6);
+	public static ValueReference<Double> autoRightSpeed    = new ValueReference<Double>(.6);
 	
-	public static ValueReference<Double> autoTurnLeftSpeed  = new ValueReference<Double>(.5);
-	public static ValueReference<Double> autoTurnRightSpeed = new ValueReference<Double>(.5);
+	public static ValueReference<Double> autoTurnLeftSpeed  = new ValueReference<Double>(.6);
+	public static ValueReference<Double> autoTurnRightSpeed = new ValueReference<Double>(.6);
 	
 	public static ValueReference<Double> autoForksExtendSpeed  = new ValueReference<Double>(.5);
 	public static ValueReference<Double> autoForksRetractSpeed = new ValueReference<Double>(.5);
 	
 	//Auto Time Vars
-	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.3);
-	public static ValueReference<Double> autoGoBackwardTime = new ValueReference<Double>(.8);
-	public static ValueReference<Double> autoGoRightTime = new ValueReference<Double>(2.5);
+	public static ValueReference<Double> autoGoForwardTime = new ValueReference<Double>(.2);
+	public static ValueReference<Double> autoGoBackwardTime = new ValueReference<Double>(4.3);
+	public static ValueReference<Double> autoGoLeftTime = new ValueReference<Double>(1.75);
+	
+	public static ValueReference<Double> autoGoBackwardTime2 = new ValueReference<Double>(.75);
+	public static ValueReference<Double> auto2GoRightTime = new ValueReference<Double>(1.75);
+	public static ValueReference<Double> auto2GoBackwardTime = new ValueReference<Double>(4.3);
 }
